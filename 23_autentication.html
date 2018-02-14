@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Authentication and secure access &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Sensors" href="24_sensors.html"/>
+        <link rel="prev" title="Examples" href="22_examples.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Authentication and secure access</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/23_autentication.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="authentication-and-secure-access">
+<h1>Authentication and secure access<a class="headerlink" href="#authentication-and-secure-access" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of <strong>RPi-Monitor</strong> is to... monitor. For different reason (security,
+time, scope of project...) it do not add any authentication.</p>
+<p>We will see here how to configure a reverse proxy which will be in charge of
+user authentication and ssl connections. We will also configure a firewall to
+make the <strong>RPi-Monitor</strong> host ready to be directly connected to Internet.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To install nginx execute the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">nginx</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="manage-authentication">
+<h2>Manage authentication<a class="headerlink" href="#manage-authentication" title="Permalink to this headline">¶</a></h2>
+<p>To manage authentication we need to create a file gathering the username and
+passwords. The following script will help you to generate new users id
+and encrypted password.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">if</span> <span class="p">[</span> <span class="s2">&quot;$(id -u)&quot;</span> <span class="o">!=</span> <span class="s2">&quot;0&quot;</span> <span class="p">];</span> <span class="n">then</span>
+<span class="n">echo</span> <span class="s2">&quot;This script must be run as root&quot;</span>
+<span class="n">exit</span> <span class="mi">1</span>
+<span class="n">fi</span>
+
+<span class="n">echo</span> <span class="o">-</span><span class="n">n</span> <span class="s2">&quot;Enter new username: &quot;</span><span class="p">;</span> <span class="n">read</span> <span class="n">user</span>
+<span class="n">echo</span> <span class="o">-</span><span class="n">n</span> <span class="s2">&quot;Enter new password: &quot;</span><span class="p">;</span> <span class="n">read</span> <span class="k">pass</span>
+
+<span class="n">printf</span> <span class="s2">&quot;$user:$(openssl passwd -crypt $pass)</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/.</span><span class="n">htpasswd</span>
+</pre></div>
+</div>
+<p>This script is also downloadable from Github. Execute the following command to use it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">goo</span><span class="o">.</span><span class="n">gl</span><span class="o">/</span><span class="n">DO1hw</span> <span class="o">-</span><span class="n">O</span> <span class="n">addnginxuser</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">addnginxuser</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">addnginxuser</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Answer to the question and you are done. If you need to enter additionnal user,
+execute the script again.</p>
+</div>
+<div class="section" id="manage-secured-connection">
+<h2>Manage secured connection<a class="headerlink" href="#manage-secured-connection" title="Permalink to this headline">¶</a></h2>
+<p>To activate SSL connection we need to create certificate. In this post we
+will create a simple self signed certificate.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">localcerts</span>
+<span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">new</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">days</span> <span class="mi">3650</span> <span class="o">-</span><span class="n">nodes</span> <span class="o">-</span><span class="n">out</span> \
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">localcerts</span><span class="o">/</span><span class="n">RPi</span><span class="o">-</span><span class="n">Experiences</span><span class="o">-</span><span class="n">cert</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">keyout</span> \
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">localcerts</span><span class="o">/</span><span class="n">RPi</span><span class="o">-</span><span class="n">Experiences</span><span class="o">-</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span>
+<span class="n">chmod</span> <span class="mi">600</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">localcerts</span><span class="o">/*</span>
+</pre></div>
+</div>
+<p>This certificate is self signed it will then be required to accept it when the
+browser will raise the certificate warning.</p>
+</div>
+<div class="section" id="reverse-proxy-configuration">
+<h2>Reverse proxy configuration<a class="headerlink" href="#reverse-proxy-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s first deactivate the default site since we want to use ngnix as a reverse
+proxy only. To do so, delete the symbolic link from sites-enable directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enable</span><span class="o">/</span><span class="n">default</span>
+</pre></div>
+</div>
+<p>Create the file <code class="docutils literal"><span class="pre">/etc/nginx/sites-available/reverseproxy</span></code> with the following
+content (also downloadable from Github):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>access_log off;
+add_header Cache-Control public;
+server_tokens off;
+
+# HTTP 80
+server {
+listen         80;
+#Force the usage of https
+rewrite - https://$host$request_uri? permanent;
+}
+
+# HTTPS 443
+server  {
+listen 443 ssl;
+keepalive_timeout 70;
+
+# SSL config
+ssl on;
+ssl_certificate /etc/ssl/localcerts/RPi-Experiences-cert.pem;
+ssl_certificate_key /etc/ssl/localcerts/RPi-Experiences-key.pem;
+
+ssl_session_timeout 5m;
+ssl_protocols SSLv3 TLSv1.2;
+ssl_ciphers RC4:HIGH:!aNULL:!MD5;
+ssl_prefer_server_ciphers on;
+ssl_session_cache shared:SSL:10m;
+
+# Allow to use frame from same origin
+add_header X-Frame-Options SAMEORIGIN;
+
+# DDOS protection - Tune Values or deactivate in case of issue
+# limit_conn conn_limit_per_ip 20;
+# limit_req zone=req_limit_per_ip burst=20 nodelay;
+
+# Proxy Config
+proxy_redirect          off;
+proxy_set_header        Host            $host;
+proxy_set_header        X-Real-IP       $remote_addr;
+proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+client_max_body_size    10m;
+client_body_buffer_size 128k;
+proxy_connect_timeout   90;
+proxy_send_timeout      90;
+proxy_read_timeout      90;
+proxy_buffers           32 4k;
+
+# Define the default site
+location / {
+    rewrite - /rpimonitor/ permanent;
+}
+
+location /rpimonitor/ {
+proxy_pass http://localhost:8888;
+    auth_basic            &quot;Access Restricted&quot;;
+    auth_basic_user_file  &quot;/etc/nginx/.htpasswd&quot;;
+    access_log /var/log/nginx/rpimonitor.access.log;
+    error_log /var/log/nginx/rpimonitor.error.log;
+}
+
+location /shellinabox/ {
+proxy_pass http://localhost:4200;
+    auth_basic            &quot;Access Restricted&quot;;
+    auth_basic_user_file  &quot;/etc/nginx/.htpasswd&quot;;
+    access_log /var/log/nginx/shellinabox.access.log;
+    error_log /var/log/nginx/shellinabox.error.log;
+}
+}
+</pre></div>
+</div>
+<p>Activate the reverse proxy site and retart nginx with the following commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">available</span><span class="o">/</span><span class="n">reverseproxy</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">service</span> <span class="n">nginx</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<p>You can now start to test to access your configuration by browsing
+<a class="reference external" href="http://RPiIpAddresss/">http://RPiIpAddresss/</a>. You will be automatically redirected to <a class="reference external" href="https://RPiIpAddress/rpimonitor/">https://RPiIpAddress/rpimonitor/</a>.</p>
+</div>
+<div class="section" id="configure-the-firewall">
+<h2>Configure the firewall<a class="headerlink" href="#configure-the-firewall" title="Permalink to this headline">¶</a></h2>
+<p>To finish our protection, we will then configure some basic firewall rules to
+reject every traffic but http (redirected to https), https and ssh. The
+following lines are doing the job:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">F</span>
+<span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">i</span> <span class="n">lo</span> <span class="o">-</span><span class="n">p</span> <span class="nb">all</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">o</span> <span class="n">lo</span> <span class="o">-</span><span class="n">p</span> <span class="nb">all</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">ESTABLISHED</span><span class="p">,</span><span class="n">RELATED</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="n">http</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="n">https</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">sudo</span> <span class="n">iptables</span> <span class="o">-</span><span class="n">P</span> <span class="n">INPUT</span> <span class="n">DROP</span>
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li>line 1 : clean previously existing rules</li>
+<li>lines 2 and 3 : Add a full access to lo interface (which can only be accessed locally and which is used by the reverse proxy to reach RPi-Monitor and shellinabox)</li>
+<li>line 4 : continue to accept established connection on interface eth0</li>
+<li>line 5 : accept connection to port ssh (22)</li>
+<li>line 6 : accept connection to port http (80)</li>
+<li>line 7 : accept connection to port https (443)</li>
+<li>line 8 : drop anything else</li>
+</ul>
+<p>Executing the command lines described upper will apply the firewall
+configuration but without persistence  this means that the firewall
+configuration will disappear after reboot. To make the firewall persistent
+we need to install an additional package:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">iptables</span><span class="o">-</span><span class="n">persistent</span>
+</pre></div>
+</div>
+<p>When the installation program ask you to record the actual ipv4 rules, answer
+<code class="docutils literal"><span class="pre">yes</span></code> and the job is done (you can skip ipv6 rules recording). The
+configuration is now stored into <code class="docutils literal"><span class="pre">/etc/iptables/rules.v4</span></code> and will be
+reapplied at start-up.</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Now your host is protected. You can try to access to <strong>RPi-Monitor</strong> directly
+<a class="reference external" href="http://RPiIpAddress:8888/">http://RPiIpAddress:8888/</a> and you will have an error. If you try to access to
+it through the revers proxy <a class="reference external" href="http://RPiIpAddress/">http://RPiIpAddress/</a> you will have to authenticate
+before accessing to the server and once authenticated, you will be connected
+through a secured https connection.</p>
+<p>Here it is we have a server which is now able to be connected on the internet.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="24_sensors.html" class="btn btn-neutral float-right" title="Sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="22_examples.html" class="btn btn-neutral" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

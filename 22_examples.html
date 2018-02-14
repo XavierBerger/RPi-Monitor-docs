@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Examples &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Authentication and secure access" href="23_autentication.html"/>
+        <link rel="prev" title="Customisation" href="21_customisation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/22_examples.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example-files">
+<h2>Example files<a class="headerlink" href="#example-files" title="Permalink to this headline">¶</a></h2>
+<p><strong>RPi-Monitor</strong> comes with example files showing the capabilities of some features
+and functions available in status page.
+These files are installed into <code class="docutils literal"><span class="pre">/etc/rpimonotor/templates/</span></code>
+To see how a specific file is behaving, you can include this file into your
+configuration file using the <code class="docutils literal"><span class="pre">include</span></code>. By default, files are included and
+commented out into <code class="docutils literal"><span class="pre">data.conf</span></code>. To activate them, you can simply uncomment
+them and restart <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
+<div class="section" id="the-following-files-are-available">
+<h3>The following files are available<a class="headerlink" href="#the-following-files-are-available" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-badge-and-label-conf">
+<h4>example.badge_and_label.conf<a class="headerlink" href="#example-badge-and-label-conf" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/examples002.png"><img alt="_images/examples002.png" src="_images/examples002.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show colors of labels and badges</span></p>
+</div>
+</div>
+<div class="section" id="example-progressbar-conf">
+<h4>example.progressbar.conf<a class="headerlink" href="#example-progressbar-conf" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/examples003.png"><img alt="_images/examples003.png" src="_images/examples003.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show warning and critical and colors</span></p>
+</div>
+</div>
+<div class="section" id="example-justgage-conf">
+<h4>example.justgage.conf<a class="headerlink" href="#example-justgage-conf" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/examples004.png"><img alt="_images/examples004.png" src="_images/examples004.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show justgage and customisation</span></p>
+</div>
+</div>
+<div class="section" id="example-visibility-conf">
+<h4>example.visibility.conf<a class="headerlink" href="#example-visibility-conf" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/examples005.png"><img alt="_images/examples005.png" src="_images/examples005.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show visibility feature</span></p>
+</div>
+<p>Remember to restart RPi-Monitor to apply the configuration change:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="n">restart</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="monitoring-a-wifi-network">
+<h2>Monitoring a WiFi network<a class="headerlink" href="#monitoring-a-wifi-network" title="Permalink to this headline">¶</a></h2>
+<p>The following configuration is showing how to configure the monitoring of e WiFi
+interface visible in <code class="docutils literal"><span class="pre">wlan0</span></code></p>
+<p>To extract metrics representing the trafic on the interface we need to create
+a <code class="docutils literal"><span class="pre">dynamic</span></code> configuration to collect data in pseudo file system
+<code class="docutils literal"><span class="pre">/sys/class/net/wlan0/statistics/</span></code>.</p>
+<div class="section" id="collect-metrics">
+<h3>Collect metrics<a class="headerlink" href="#collect-metrics" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>dynamic.1.name=wifi_received
+dynamic.1.source=/sys/class/net/wlan0/statistics/rx_bytes
+dynamic.1.regexp=(.*)
+dynamic.1.postprocess=$1*-1
+dynamic.1.rrd=DERIVE
+
+dynamic.2.name=wifi_send
+dynamic.2.source=/sys/class/net/wlan0/statistics/tx_bytes
+dynamic.2.regexp=(.*)
+dynamic.2.postprocess=
+dynamic.2.rrd=DERIVE
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We dicided to represent downstream data with negative values. This is
+performed by the postprocess command: <code class="docutils literal"><span class="pre">$1*-1</span></code></p>
+</div>
+</div>
+<div class="section" id="add-status">
+<h3>Add status<a class="headerlink" href="#add-status" title="Permalink to this headline">¶</a></h3>
+<p>The collected metrics will be displayed in <code class="docutils literal"><span class="pre">status</span></code> page as define in the
+configuration bellow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">name</span><span class="o">=</span><span class="n">WiFi</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">icon</span><span class="o">=</span><span class="n">wifi</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;WiFi Sent: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">wifi_send</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;i class=&#39;icon-arrow-up&#39;&gt;&lt;/i&gt;&lt;/b&gt; Received: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">wifi_received</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;&lt;i class=&#39;icon-arrow-down&#39;&gt;&lt;/i&gt;&lt;/b&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-statistics">
+<h3>Add statistics<a class="headerlink" href="#add-statistics" title="Permalink to this headline">¶</a></h3>
+<p>The following configuration add one graph to statistics page with the 2 curves
+representing upstream and downstream metrics:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">WiFi</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">wifi_send</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">wifi_received</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">wifi_send</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Upload</span> <span class="n">bandwidth</span> <span class="p">(</span><span class="n">bits</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">wifi_send</span><span class="o">.</span><span class="n">lines</span><span class="o">=</span><span class="p">{</span> <span class="n">fill</span><span class="p">:</span> <span class="n">true</span> <span class="p">}</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">wifi_send</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF7777&quot;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">wifi_received</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Download</span> <span class="n">bandwidth</span> <span class="p">(</span><span class="n">bits</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">wifi_received</span><span class="o">.</span><span class="n">lines</span><span class="o">=</span><span class="p">{</span> <span class="n">fill</span><span class="p">:</span> <span class="n">true</span> <span class="p">}</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">wifi_received</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#77FF77&quot;</span>
+</pre></div>
+</div>
+<p>In this configuration, we set color to green for downstream and red for upstream.
+The curves are filled.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure to use Linux filefeed format with line ending with LF (and not CR/LF like in Windows).</p>
+</div>
+</div>
+</div>
+<div class="section" id="monitor-external-disk">
+<h2>Monitor external disk<a class="headerlink" href="#monitor-external-disk" title="Permalink to this headline">¶</a></h2>
+<p>The disk have a disk with two partition <code class="docutils literal"><span class="pre">/dev/sda1</span></code> and <code class="docutils literal"><span class="pre">/dev/sda3</span></code>.</p>
+<p>The command and regular expression will be the following:</p>
+<ul class="simple">
+<li>sda1 disk size command : <code class="docutils literal"><span class="pre">df</span> <span class="pre">-t</span> <span class="pre">ext2,</span>&nbsp; <span class="pre">regular</span> <span class="pre">expression:</span> <span class="pre">sda1\s+(\d+)</span></code></li>
+<li>sda1 used space command : <code class="docutils literal"><span class="pre">df</span> <span class="pre">-t</span> <span class="pre">ext2,</span>&nbsp; <span class="pre">regular</span> <span class="pre">expression:</span> <span class="pre">sda1\s+\d+\s+(\d+)</span></code></li>
+<li>sda3 disk size command : <code class="docutils literal"><span class="pre">df</span> <span class="pre">-t</span> <span class="pre">ext4,</span>&nbsp; <span class="pre">regular</span> <span class="pre">expression:</span> <span class="pre">sda3\s+(\d+)</span></code></li>
+<li>sda3 used space command : <code class="docutils literal"><span class="pre">df</span> <span class="pre">-t</span> <span class="pre">ext4,</span>&nbsp; <span class="pre">regular</span> <span class="pre">expression:</span> <span class="pre">sda3\s+\d+\s+(\d+)</span></code></li>
+</ul>
+<p>First we need to configure the extraction of partitions sizes which are extracted once at RPi-Monitor startup. We will create a file /etc/rpimonitord.conf.d/custo.conf with the data configured as static data like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>static.1.name=storage1_total
+static.1.source=df -t ext2
+static.1.regexp=sda1\s+(\d+)
+static.1.postprocess=$1/1024
+static.1.name=storage2_total
+static.1.source=df -t ext4
+static.1.regexp=sda3\s+(\d+)
+static.1.postprocess=$1/1024
+</pre></div>
+</div>
+<p>The post processing is configured to transform kB into MB by dividing the extracted result by 1024.</p>
+<p>For dynamic values extracted every 10 seconds, the configuration will be:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>dynamic.1.name=storage1_used
+dynamic.1.source=df -t ext2
+dynamic.1.regexp=sda1\s+\d+\s+(\d+)
+dynamic.1.postprocess=$1/1024
+dynamic.1.rrd=GAUGE
+dynamic.2.name=storage2_used
+dynamic.2.source=df -t ext4
+dynamic.2.regexp=sda3\s+\d+\s+(\d+)
+dynamic.2.postprocess=$1/1024
+dynamic.2.rrd=GAUGE
+</pre></div>
+</div>
+<p>Dynamic stat will be stored into a RRD File as GAUGE. Ref to RRDTool help for detail about Data Source Types.</p>
+<p>Now we will add a status line for this disk whit the following icon:</p>
+<p>Disk icon has been found here</p>
+<p>This icons has to be installed into the img directory of <strong>RPi-Monitor</strong> which is
+by default <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/img/</span></code>.</p>
+<p>The configuration to add a new status strip will then be the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Storage</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">usb_hdd</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;/storage1&lt;/b&gt; Used: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_used</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;/b&gt; (&lt;b&gt;&quot;</span><span class="o">+</span><span class="n">Percent</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_used</span><span class="p">,</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_total</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;/b&gt;) Free: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_total</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_used</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;&lt;/b&gt; Total: &lt;b&gt;&quot;</span><span class="o">+</span> <span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_total</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot;&lt;/b&gt;&quot;</span> <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_used</span><span class="p">,</span><span class="n">data</span><span class="o">.</span><span class="n">storage1_total</span><span class="p">)</span> <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">line</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;/storage2&lt;/b&gt; Used: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage2_used</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;/b&gt; (&lt;b&gt;&quot;</span><span class="o">+</span><span class="n">Percent</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage2_used</span><span class="p">,</span><span class="n">data</span><span class="o">.</span><span class="n">storage2_total</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;/b&gt;) Free: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage2_total</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">storage2_used</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;&lt;/b&gt; Total: &lt;b&gt;&quot;</span><span class="o">+</span> <span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">storage2_total</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot;&lt;/b&gt;&quot;</span>
+</pre></div>
+</div>
+<p>The configuration may need some explanation:</p>
+<p>We do configure 4 lines. Each line is describing a javascript line using some
+predefined functions: KMG, Precent and ProgressBar. This function are called by
+the browser while rendering the page. Some variable coming from the extracted
+data are also used. These variables are starting by the keyword <code class="docutils literal"><span class="pre">data</span></code>. For
+deeper detail about this configuration execute the command man rpimonitord.conf</p>
+<p>To see our modification we need to restart <strong>RPi-Monitor</strong> and refresh the
+statistics page into our browser.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span>  <span class="n">service</span> <span class="n">rpimonitor</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<p>The result of the configuration is at the bottom of the following screenshot:</p>
+<p>The status page is working, let&#8217;s now add a graphic of the disk usage.
+This is done with the following configuration:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Storage1</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">storage1_total</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">storage1_used</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage1_total</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Storage1</span> <span class="n">total</span> <span class="n">space</span> <span class="p">(</span><span class="n">MB</span><span class="p">)</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage1_total</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF7777&quot;</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage1_used</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Storage1</span> <span class="n">used</span> <span class="n">space</span> <span class="p">(</span><span class="n">MB</span><span class="p">)</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage1_used</span><span class="o">.</span><span class="n">lines</span><span class="o">=</span><span class="p">{</span> <span class="n">fill</span><span class="p">:</span> <span class="n">true</span> <span class="p">}</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage1_used</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#7777FF&quot;</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">name</span><span class="o">=</span><span class="n">Storage2</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">graph</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">storage2_total</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">graph</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">storage2_used</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage2_total</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Storage2</span> <span class="n">total</span> <span class="n">space</span> <span class="p">(</span><span class="n">MB</span><span class="p">)</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage2_total</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF7777&quot;</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage2_used</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Storage2</span> <span class="n">used</span> <span class="n">space</span> <span class="p">(</span><span class="n">MB</span><span class="p">)</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage2_used</span><span class="o">.</span><span class="n">lines</span><span class="o">=</span><span class="p">{</span> <span class="n">fill</span><span class="p">:</span> <span class="n">true</span> <span class="p">}</span> <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">10.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">storage2_used</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#7777FF&quot;</span>
+</pre></div>
+</div>
+<p>The configuration may also need some explanation</p>
+<p>We do configure 2 graphs each having 2 curves. The first curve represent the
+total and is using static data extracted previously. This curve will be represented as a light red line.</p>
+<p>The second curve is representing the usage of disk and is represented as a
+light blue line filled. The parameters defining the curve are define by the keyword
+ds_graph_options. Details of this parameter can be found in javascriptrrd help page.
+Restart rpimonitor to activate the new graph.</p>
+<p>After waiting a little time to let the system extract data you will see this kind of graph.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="23_autentication.html" class="btn btn-neutral float-right" title="Authentication and secure access" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="21_customisation.html" class="btn btn-neutral" title="Customisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

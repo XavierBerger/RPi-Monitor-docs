@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Addons configuration &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Alert configuration" href="15_alert.html"/>
+        <link rel="prev" title="Web interface configuration" href="13_web.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Addons configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/14_addons.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="addons-configuration">
+<h1>Addons configuration<a class="headerlink" href="#addons-configuration" title="Permalink to this headline">¶</a></h1>
+<p><strong>RPi-Monitor</strong> is providing addons. Addons are custom pages designed to give
+you the possibility to free your imagination and cutomise <strong>RPi-Monitor</strong> to your needs.</p>
+<p>Addons are <code class="docutils literal"><span class="pre">html</span></code> pages, <code class="docutils literal"><span class="pre">javascript</span></code> and <code class="docutils literal"><span class="pre">css</span></code> directly integrated into <strong>RPi-Monitor</strong>.
+The activation of an addon is done into <strong>RPi-Monitor</strong> configuration file.</p>
+<p>The following line is showing how to activate the default addons explaing addons feature:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Addons</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">about</span>
+</pre></div>
+</div>
+<p>It is possible to use an addon many time into a same configuration file
+(using different parameters if the addon support them).</p>
+<p>The next part of this chapter shows some examples of addons and highlight
+the possibilities of this feature.</p>
+<div class="section" id="top3-addon">
+<h2>Top3 Addon<a class="headerlink" href="#top3-addon" title="Permalink to this headline">¶</a></h2>
+<p>Top3 is showing how to use addons to add additionnal information into status
+page. This addons is designed to periodically generate HTML content. This
+content can be accessible from the addons menu (if addon is configured in
+<code class="docutils literal"><span class="pre">rpimonotord</span></code> configuration file) and/or can be inserted into status page
+using the function InsertHTML().</p>
+<p>To activate this addon, add the following lines to your configuration file</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">Top3</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">2.</span><span class="n">addons</span><span class="o">=</span><span class="n">top3</span>
+</pre></div>
+</div>
+<p>and configure the <code class="docutils literal"><span class="pre">cron</span></code> of your Raspberry Pi to update the HTML content
+periodically. This can be done with the following lines:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">root</span> <span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">web</span><span class="o">/</span><span class="n">addons</span><span class="o">/</span><span class="n">top3</span><span class="p">;</span> <span class="o">./</span><span class="n">top3</span> <span class="o">&gt;</span> <span class="n">top3</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>For deeper details, refer to rpimonitor manpage and to comments available into the script top3.</p>
+</div>
+<div class="section" id="example-addon">
+<h2>Example Addon<a class="headerlink" href="#example-addon" title="Permalink to this headline">¶</a></h2>
+<p>If you want to develop your own addon, you can refer to the example addons to
+see how to implement such a feature.
+Example addon is providing a <code class="docutils literal"><span class="pre">html</span></code> page, a <code class="docutils literal"><span class="pre">javacript</span></code> and a <code class="docutils literal"><span class="pre">css</span></code> showing
+how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
+<p>Example addon can activate by adding the following lines into the configuration file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">Addon</span> <span class="n">example</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">addons</span><span class="o">=</span><span class="n">example</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">parameter</span><span class="o">=</span><span class="n">parameter_example</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shellinabox-addon">
+<h2>Shellinabox Addon<a class="headerlink" href="#shellinabox-addon" title="Permalink to this headline">¶</a></h2>
+<p>Activating Shellinabox addon allow to have and access to shell inside browser.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">4.</span><span class="n">name</span><span class="o">=</span><span class="n">ShelleInABox</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">4.</span><span class="n">addons</span><span class="o">=</span><span class="n">shellinabox</span>
+</pre></div>
+</div>
+<p>The behavior of this addon remain the same as previously embedded feature.</p>
+</div>
+<div class="section" id="custom-addon">
+<h2>Custom Addon<a class="headerlink" href="#custom-addon" title="Permalink to this headline">¶</a></h2>
+<p>If you are not confortable with html, javascript and css, the addon custom may
+help you to customise RPi-Monitor to your wishes. This addons implement an
+iframe that can display any other web pages.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">5.</span><span class="n">name</span><span class="o">=</span><span class="n">Custom</span> <span class="n">addons</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">5.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">5.</span><span class="n">url</span><span class="o">=/</span><span class="n">addons</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">custominfo</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>url is defining the page to be displayed into the iframe. It can be a file
+reachable from <strong>RPi-Monitor</strong> internal server or a site available into the Internet.</p>
+</div>
+<div class="section" id="webcam-addon">
+<h2>Webcam Addon<a class="headerlink" href="#webcam-addon" title="Permalink to this headline">¶</a></h2>
+<p>If you want to see the image of your webcam in your brower, you can use hawkeye.
+Once hawkeye installed, it is very easy to add it into RPi-Monitor interface
+using the custom addon. The configuration will then be the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">Webcam</span> <span class="o">-</span> <span class="n">Hawkeye</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">raspberry_adress</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>url parameter point to hawkeye web interface. If you are doing such a
+configuration, keep in mind about the security of your images. You should
+use the capacity of hawkeye to restrict the access to the image using a
+login and a password. You can also have a look to my article showing how
+to secure the access to <strong>RPi-monitor</strong>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="15_alert.html" class="btn btn-neutral float-right" title="Alert configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="13_web.html" class="btn btn-neutral" title="Web interface configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

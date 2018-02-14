@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Alert configuration &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Customisation" href="21_customisation.html"/>
+        <link rel="prev" title="Addons configuration" href="14_addons.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Alert configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/15_alert.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="alert-configuration">
+<h1>Alert configuration<a class="headerlink" href="#alert-configuration" title="Permalink to this headline">¶</a></h1>
+<p><strong>RPi-Monitor</strong> is able to detect if value exceed a defined value or come back
+to the normal.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Alert/Cancel are sent only when the state is stable to avoid messages
+flooding when limit is about to be exceeded as shown in schema bellow:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+                        send alert
+                            ^
+ th      th <span class="p">&lt;</span><span class="nt">------dh------</span><span class="p">&gt;</span>|        th
+  _____   __________________|______   _______           send cancel
+  |   |   |                       |   |     |              ^
+  |   |   |                       |   |     |              |
+__|   |___|                       |___|     |______________|_____
+      tl                          tl        tl<span class="p">&lt;</span><span class="nt">-----dl-----</span><span class="p">&gt;</span>
+                            |------------------------------|
+                                    Alert is raised
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If alert is still active after resend period, alerte is sent again:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+                  send alert                                    resend alert
+                      ^                                               ^
+    th <span class="p">&lt;</span><span class="nt">-----dh------</span><span class="p">&gt;</span>|<span class="p">&lt;</span><span class="nt">---------------------dr----------------------</span><span class="p">&gt;</span>|
+    __________________|_______________________________________________|_____
+    |
+    |
+____|
+    tl                |-----------------------------------------------------&gt;
+                                    Alert is raised
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="condifuration">
+<h2>Condifuration<a class="headerlink" href="#condifuration" title="Permalink to this headline">¶</a></h2>
+<p>Alert configuration is performed as follow:</p>
+<p>Each alert is identified by its &lt;alert name&gt;.</p>
+<dl class="docutils">
+<dt>alert.&lt;alert name&gt;.active=&lt;activation condition&gt;</dt>
+<dd>&lt;activation condition&gt; defines the alert pre-condition. If this formula
+returns false, the trigger will not be checked. Default value is 1.
+This command could refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+<dt>alert.&lt;alert name&gt;.kpi=&lt;trigger&gt;</dt>
+<dd>&lt;trigger&gt; is defining the formula to evaluate. If formula returns true, the
+alert is detected. This command should refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+<dt>alert.&lt;alert name&gt;.maxalertduration=&lt;duration before raise&gt;</dt>
+<dd>The alert will be dectected immediatly but alert raised commande will
+be executed only afer a defined &lt;duration before raise&gt; in seconds
+(&#8216;dh&#8217; in the upper schema)</dd>
+<dt>alert.&lt;alert name&gt;.cancelvalidation=&lt;duration before cancel&gt;</dt>
+<dd>As for alert raising, cancellation command will be executed only after
+&lt;duration before cancel&gt; seconds (&#8216;dl&#8217; in the upper schema)</dd>
+<dt>alert.&lt;alert name&gt;.resendperiod=&lt;period&gt;</dt>
+<dd>If alert is still active after &lt;period&gt; seconds, the raise command
+will be executed again (&#8216;dr&#8217; in the upper schema).</dd>
+<dt>alert.&lt;alert name&gt;.raisecommand=&lt;Raise Command&gt;</dt>
+<dd>&lt;Raise Command&gt;&gt; is the command to executed when an alert is raised.
+This command could refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+<dt>alert.&lt;alert name&gt;.cancelcommand=&lt;Cancel Command&gt;</dt>
+<dd>&lt;Cancel Command&gt; is the command to executed when an alert is canceled
+This command could refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="21_customisation.html" class="btn btn-neutral float-right" title="Customisation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="14_addons.html" class="btn btn-neutral" title="Addons configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Customisation &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Examples" href="22_examples.html"/>
+        <link rel="prev" title="Alert configuration" href="15_alert.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Customisation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/21_customisation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="customisation">
+<h1>Customisation<a class="headerlink" href="#customisation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="friends">
+<h2>Friends<a class="headerlink" href="#friends" title="Permalink to this headline">¶</a></h2>
+<p>Add &#8220;friends&#8221; links <strong>RPi-Monitor</strong> running on different platform together.</p>
+<p>A friend is simply another computer running <strong>RPi-Monitor</strong>. Configuring friends
+will add a drop down list on the right of the top menu with a links to
+<strong>RPi-Monitor</strong> sitting on the other computer.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/friends001.png"><img alt="_images/friends001.png" src="_images/friends001.png" style="width: 500px;" /></a>
+</div>
+<p>In <code class="docutils literal"><span class="pre">/etc/rpimonitord/data.conf</span></code>, each friend is identified by an <code class="docutils literal"><span class="pre">id</span></code> and is
+described by 2 parameters: <code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;link&gt;</span></code>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Detaiiled <a class="reference external" href="13_web.html#friends">Friends definition</a></p>
+</div>
+<p>Here is an example of configuration for 3 friends:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Raspberry</span> <span class="n">Pi</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.123</span><span class="o">/</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">Shuttle</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">Laptop</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.38</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/friends002.png" src="_images/friends002.png" />
+</div>
+</div>
+<div class="section" id="multiple-pages">
+<h2>Multiple pages<a class="headerlink" href="#multiple-pages" title="Permalink to this headline">¶</a></h2>
+<p>This version of RPi-Monitor introduce the notion of pages. Adding a new page
+can be done in configuration file by setting the parameter named <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code>.
+RPi-Monitor will automatically interpret this new id and create the associated
+page. The new page will be accessible by a drop down menu as shown in the
+screenshot bellow.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/multipages001.png"><img alt="_images/multipages001.png" src="_images/multipages001.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">RPi-Monitor showing multiple status pages</span></p>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/multipages002.png"><img alt="_images/multipages002.png" src="_images/multipages002.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">RPi-Monitor showing multiple graph pages</span></p>
+</div>
+</div>
+<div class="section" id="labels">
+<h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/label001.png" class="align-center" src="_images/label001.png" />
+<p>The goal of this function is to add a colored text reflecting the status of a service.</p>
+<div class="section" id="label-funtion-overview">
+<h3>Label funtion overview<a class="headerlink" href="#label-funtion-overview" title="Permalink to this headline">¶</a></h3>
+<p>The function Label is designed to write a text highligted by a color.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>This function determine if the label has to be displayed ot not base on a value</dt>
+<dd>(extracted by <strong>RPi-Monitor</strong>) and a condition. The label contains a text to
+be displayed and a level. 6 levels of labels are available with 6 differences colors:</dd>
+</dl>
+<img alt="_images/label002.png" class="align-center" src="_images/label002.png" />
+</div>
+<div class="section" id="how-to-use-it">
+<h3>How to use it?<a class="headerlink" href="#how-to-use-it" title="Permalink to this headline">¶</a></h3>
+<p>The file <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/services.conf</span></code> is showing an example of Label usage.</p>
+<p>In this example, we monitor if the service <code class="docutils literal"><span class="pre">ssh</span></code> is listening on port <code class="docutils literal"><span class="pre">22</span></code> and display a
+label <code class="docutils literal"><span class="pre">OK</span></code> if yes or a label <code class="docutils literal"><span class="pre">KO</span></code> if not.</p>
+<p>We do the same for <strong>RPi-Monitor</strong> on port <code class="docutils literal"><span class="pre">8888</span></code> and for <code class="docutils literal"><span class="pre">nginx</span></code> on port <code class="docutils literal"><span class="pre">80</span></code> and <code class="docutils literal"><span class="pre">443</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">########################################################################</span>
+<span class="c1"># External daemons information added into Raspberry Pi page # icon from:</span>
+<span class="c1"># http://www.iconseeker.com/search-icon/crystal-project-application/daemons.html</span>
+<span class="c1">########################################################################</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">16.</span><span class="n">name</span><span class="o">=</span><span class="n">ssh</span> <span class="n">dynamic</span><span class="o">.</span><span class="mf">16.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">16.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">22</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">name</span><span class="o">=</span><span class="n">rpimonitor</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">8888</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">18.</span><span class="n">name</span><span class="o">=</span><span class="n">http</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">18.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">18.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">80</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">19.</span><span class="n">name</span><span class="o">=</span><span class="n">https</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">19.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">19.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">443</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">name</span><span class="o">=</span><span class="n">Servers</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">icon</span><span class="o">=</span><span class="n">daemons</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;ssh&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ssh</span><span class="p">,</span><span class="s2">&quot;==22&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ssh</span><span class="p">,</span><span class="s2">&quot;!=22&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &lt;b&gt;rpimonitor&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rpimonitor</span><span class="p">,</span><span class="s2">&quot;==8888&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rpimonitor</span><span class="p">,</span><span class="s2">&quot;!=8888&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &lt;b&gt;nginx http&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">http</span><span class="p">,</span><span class="s2">&quot;==80&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">http</span><span class="p">,</span><span class="s2">&quot;!=80&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &lt;b&gt;nginx https&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">https</span><span class="p">,</span><span class="s2">&quot;==443&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">https</span><span class="p">,</span><span class="s2">&quot;!=443&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-does-it-work">
+<h3>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h3>
+<p>Information is extracted from the command <code class="docutils literal"><span class="pre">netstat</span></code>.</p>
+<p>The regular expression will return the port number if a service is listening
+on this port or nothing if no service is listenning on this port.</p>
+<p>Note: these regular expression may be optimised to return more accurrate result.</p>
+<p>The results are accessible into javascript from the variable data. This
+variable is passed to the Label function as value.</p>
+<p>For ssh, the condition is <code class="docutils literal"><span class="pre">&quot;==22&quot;</span></code> to check if the value is equal to
+<code class="docutils literal"><span class="pre">22</span></code> or <code class="docutils literal"><span class="pre">&quot;!=22&quot;</span></code> to check if the value is different form 22. As only one of
+the condition will be <code class="docutils literal"><span class="pre">true</span></code>, only one label will be displayed.</p>
+<p>Other ports checking are using the same technic.</p>
+<p>Example of Label function used to show server status</p>
+<img alt="_images/label001.png" class="align-center" src="_images/label001.png" />
+<p>As you see, the usage of this new function is quite easy. You can now
+imagine how to use it for your own needs.</p>
+</div>
+</div>
+<div class="section" id="customise-web-page-header">
+<h2>Customise WEB page header<a class="headerlink" href="#customise-web-page-header" title="Permalink to this headline">¶</a></h2>
+<p>This new function allow to define a custom logo, custome title and add the
+hostname of the machine int the title of the browser.</p>
+<p>Here are the configuration lines used by default:</p>
+<blockquote>
+<div>web.page.icon=&#8217;img/avatar.png&#8217;
+web.page.menutitle=&#8217;XB-Monitor  &lt;sub&gt;(&#8216;+data.hostname+&#8217;)&lt;/sub&gt;&#8217;
+web.page.pagetitle=&#8217;XB-Monitor (&#8216;+data.hostname+&#8217;)&#8217;</div></blockquote>
+<p>data.hostname is a value automatically extracted by RPi-Monitor. It is not
+needed to add a configuration to do such a thing.</p>
+<p>The file avatar.png has been added into /usr/share/rpimonitor/web/img/.</p>
+<p>Here is the result:</p>
+<p>Inside Firefox title bar and tab, the title has been changed and hostmane
+has been added between parentheses.
+Inside RPi-Monitor menu bar, le logo and the title have been changed and
+hostmane has been added between parentheses.</p>
+</div>
+<div class="section" id="justgagebar">
+<h2>JustGageBar<a class="headerlink" href="#justgagebar" title="Permalink to this headline">¶</a></h2>
+<p>A new widget is now available to display information in status page. Justgage is a handy JavaScript plugin for generating and animating nice &amp; clean gauges. It is based on Raphaël library for vector drawing, so it’s completely resolution independent and self-adjusting.</p>
+<blockquote>
+<div>JustGageBar(title, label,min, value, max, width, height, levelColors, warning, critical)</div></blockquote>
+<p>To see how justgage behave, you can activate the configuration file example.justgage.conf (Ref example explaination and screenshot upper).</p>
+<p>The detail of function usage is available into the manpage:</p>
+<blockquote>
+<div>man rpimonitord.conf</div></blockquote>
+</div>
+<div class="section" id="visibility">
+<h2>Visibility<a class="headerlink" href="#visibility" title="Permalink to this headline">¶</a></h2>
+<p>A new parameter can be used in configuration file defining a visibility of a row:</p>
+<blockquote>
+<div>web.status.&lt;page id&gt;.content.&lt;row id&gt;.visibility=&lt;visibility formula&gt;</div></blockquote>
+<dl class="docutils">
+<dt>&lt;visibility formula&gt; should be a valid javascript formula returning</dt>
+<dd>0: to hide the row
+anything else but 0: show the row</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="22_examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="15_alert.html" class="btn btn-neutral" title="Alert configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

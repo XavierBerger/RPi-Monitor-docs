@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Non standard configuration &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Frequently Asked Questions" href="31_faq.html"/>
+        <link rel="prev" title="RPi-Monitor-LCD" href="25_lcd.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Non standard configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/26_external.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="non-standard-configuration">
+<h1>Non standard configuration<a class="headerlink" href="#non-standard-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="use-it-with-my-own-web-server">
+<h2>Use it with my own Web Server<a class="headerlink" href="#use-it-with-my-own-web-server" title="Permalink to this headline">¶</a></h2>
+<p>In this example I will use <strong>nginx</strong> server. You could use the same tactic with
+your preferred web server.</p>
+<p>Let&#8217;s first update the configuration file to disable the embedded web server.
+Edit the file <code class="docutils literal"><span class="pre">/etc/rpimonitord.conf</span></code> and set daemon.noserver=1.</p>
+<p>Then restart RPi-Monitor with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">rpimonitor</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<p>The embedded server is no more running so, we will need to configure another server to access the data.</p>
+<p>For nginx we will create the file <code class="docutils literal"><span class="pre">/etc/nginx/sites-enabled/rpimonitor</span></code> with the following content:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">server</span> <span class="p">{</span>
+    <span class="n">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="n">index</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="p">;</span>
+    <span class="n">root</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">web</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and restart the server with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">nginx</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<p>Now you can reach <strong>RPi-Monitor</strong> with your favorite browser on your favorite web server.</p>
+</div>
+<div class="section" id="rpi-monitor-on-sunxi">
+<h2>RPi-Monitor on sunxi<a class="headerlink" href="#rpi-monitor-on-sunxi" title="Permalink to this headline">¶</a></h2>
+<p><strong>Author</strong>: Thomas Kaiser</p>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p><strong>RPi-Monitor</strong> is a self monitoring application designed to run on Raspberry Pi.</p>
+<p>With a few adjustments it can also be used on numerous <a class="reference external" href="http://linux-sunxi.org/Main_Page">sunxi devices</a>
+that are using the <a class="reference external" href="http://linux-sunxi.org/Category:A10_Boards">A10</a>,
+<a class="reference external" href="http://linux-sunxi.org/Category:A13_Boards">A13</a> or
+<a class="reference external" href="http://linux-sunxi.org/Category:A20_Boards">A20</a> SoC since they all feature
+the same power management unit <a class="reference external" href="http://linux-sunxi.org/AXP209">AXP209</a>.</p>
+</div>
+<div class="section" id="installation-configuration">
+<h3>Installation/Configuration<a class="headerlink" href="#installation-configuration" title="Permalink to this headline">¶</a></h3>
+<p>All you have to do is to relink RPi-Monitor&#8217;s <cite>data.conf</cite> to <cite>sunxi_axp209.conf</cite>,
+ensure that <cite>/usr/share/rpimonitor/scripts/sunxi-temp-daemon.sh</cite> is running as
+root and restart the <em>rpimonitor</em> service/daemon afterwards:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># stop rpimonitor</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">template</span><span class="o">/</span><span class="n">sunxi_axp209</span><span class="o">.</span><span class="n">conf</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">nohup</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">sunxi</span><span class="o">-</span><span class="n">temp</span><span class="o">-</span><span class="n">daemon</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;</span>
+<span class="c1"># start rpimonitor</span>
+</pre></div>
+</div>
+<p>You should ensure that the <cite>sunxi-temp-daemon.sh</cite> daemon is started at boot, eg.
+by adding <cite>/usr/share/rpimonitor/scripts/sunxi-temp-daemon.sh &amp;</cite> to
+<cite>/etc/rc.local</cite> or creating an appropriate systemd service. We chose a daemon
+approach since otherwise it wasn&#8217;t possible to gather thermal values of connected
+SATA disks and the SoC&#8217;s temperature under high load. Now the daemon collects
+these thermal values in a loop and writes them to 3 files below /tmp/ where
+they can be fetched by rpimonitor.</p>
+</div>
+<div class="section" id="monitoring-disks">
+<h3>Monitoring disks<a class="headerlink" href="#monitoring-disks" title="Permalink to this headline">¶</a></h3>
+<p>If you use a SATA disk and want its temperature to be monitored you&#8217;ll need to
+install the <em>hddtemp</em> package since the daemon relies on the <cite>/usr/sbin/hddtemp</cite>
+binary. If you&#8217;ve a USB disk instead that is
+[able to be queried using S.M.A.R.T.](<a class="reference external" href="https://www.smartmontools.org/wiki/Supported_USB-Devices">https://www.smartmontools.org/wiki/Supported_USB-Devices</a>)
+then you might install the <em>smartmontools</em> package and replace the <cite>hddtemp</cite> call in
+<cite>sunxi-temp-daemon.sh</cite> with an appropriate <cite>smartctl -d</cite> call:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">smartctl</span> <span class="o">-</span><span class="n">d</span> <span class="n">sat</span><span class="o">|</span><span class="n">usbsunplus</span><span class="o">|</span><span class="n">usbcypress</span><span class="o">|</span><span class="n">usbjmicron</span><span class="o">|</span><span class="n">usbprolific</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span> <span class="o">|</span> <span class="n">awk</span> <span class="o">-</span><span class="n">F</span><span class="s2">&quot; &quot;</span> <span class="s1">&#39;/Temperature_Cel/ {print $10}&#39;</span>
+</pre></div>
+</div>
+<p>You&#8217;ve to try out which expressions work for your combination of USB enclosure
+and disk since different enclosures can be accessed differently and temperature
+S.M.A.R.T. attributes aren&#8217;t standardized. Still using <cite>hddtemp</cite>
+is recommended since it doesn&#8217;t wake up disks that are in standby/sleep mode.
+Using <cite>smartctl</cite> you can create data sources for any other
+[relevant S.M.A.R.T. attribute](<a class="reference external" href="https://en.wikipedia.org/wiki/S.M.A.R.T">https://en.wikipedia.org/wiki/S.M.A.R.T</a>.#Known_ATA_S.M.A.R.T._attributes)
+you&#8217;re interested in, especially those related to drive health. But this is left
+as an excercise for the reader and a better job for
+[smartd](<a class="reference external" href="https://www.smartmontools.org/browser/trunk/smartmontools/smartd.8.in">https://www.smartmontools.org/browser/trunk/smartmontools/smartd.8.in</a>).</p>
+</div>
+<div class="section" id="caveats">
+<h3>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Most informations regarding the power management unit rely on the ability to</dt>
+<dd><p class="first">query the AXP209 via I2C/sysfs. A driver for kernel 3.4 provides internal
+PMU informations below <cite>/sys/devices/platform/sunxi-i2c.0/i2c-0/0-0034/</cite></p>
+<blockquote class="last">
+<div>but unfortunately this is still missing in mainline kernel.</div></blockquote>
+</dd>
+</dl>
+<p>Informations regarding [cpufreq settings](<a class="reference external" href="http://linux-sunxi.org/Cpufreq">http://linux-sunxi.org/Cpufreq</a>)
+(CPU clock speed, governor) can only be queried if cpufreq support is built
+into the kernel. This should apply to all 3.4.x kernels used nowadays and</p>
+<blockquote>
+<div>with mainline kernel starting with 4.0 for A10/A13/A20 too.</div></blockquote>
+<p>If you use mainline kernel 4.0 or above the SoC&#8217;s temperature will be read
+out using <cite>/sys/class/thermal/thermal_zone0/temp</cite>. If you&#8217;ve applied the
+patches at the bottom of [this page](<a class="reference external" href="http://sunxi.montjoie.ovh">http://sunxi.montjoie.ovh</a>) and installed
+the lm-sensors package it should be possible to read out at least the AXP209&#8217;s
+internal thermal sensor (that is more reliable than the SoC&#8217;s) when using
+mainline kernel.</p>
+</div>
+</div>
+<div class="section" id="use-it-into-another-linux-distribution">
+<h2>Use it into another Linux distribution<a class="headerlink" href="#use-it-into-another-linux-distribution" title="Permalink to this headline">¶</a></h2>
+<p>RPi-Monitor has been designed to run into a Raspberry Pi but as it is using only
+standard Linux resources, it is not hardware dependent. A simple configuration
+update can make it run on Ubuntu, CentOS or any other distribution.</p>
+<p>Ubuntu is a Debian based distribution as Raspbian. The installation can then be
+done using the deb package available for each releases. Download and install
+the package as described in this previous post.</p>
+<p>With CentOS and withe any non Debian based distribution it will required to
+perform a manual installation.</p>
+<p>First install the perl dependencies: <a class="reference external" href="HTTP::Daemon">HTTP::Daemon</a> (<code class="docutils literal"><span class="pre">perl-libwww-perl</span></code>), RRD (<code class="docutils literal"><span class="pre">rrdtool-perl</span></code>) and JSON(<code class="docutils literal"><span class="pre">perl-JSON</span></code>)</p>
+<p>Connect to github  and select the latest stable branch on the top left dropdown list.</p>
+<p>Then download the code as zip file from the link &#8220;Download zip&#8221; visible at the bottom of the right menu.</p>
+<p>Unpack it.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">unzip</span> <span class="n">Version</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+<p>Finally install rpimonitor manually:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="o">-</span>
+<span class="n">mv</span> <span class="n">Version</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
+</pre></div>
+</div>
+<p>You can now start RPi-Monitor with the following commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">rpimonitor</span>
+<span class="o">./</span><span class="n">rpimonitird</span> <span class="o">-</span><span class="n">c</span> <span class="n">rpimonitor</span><span class="o">.</span><span class="n">conf</span> <span class="o">-</span><span class="n">c</span> <span class="n">default</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>Note: I will not describe here how to configure the auto startup since each
+distribution has its own way to do so. An upstart script is available into
+<strong>RPi-Monitor</strong> github tools directory, it may help you in such an action.</p>
+<p>Once the installation is done you can start RPi-Monitor and connect to it
+with your favorite browser.</p>
+<p>You may notice that some values are undefined or displayed as NaN (Not a Number).
+To fix these issues, you will have to update the configuration file
+(rpimonitord.conf or default.conf in /etc/ + /etc/rpimonitord.conf.d or
+/usr/local/rpimonitor/ depending on your installation).</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="31_faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="25_lcd.html" class="btn btn-neutral" title="RPi-Monitor-LCD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

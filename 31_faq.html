@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Frequently Asked Questions &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Contributing" href="32_contributing.html"/>
+        <link rel="prev" title="Non standard configuration" href="26_external.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Frequently Asked Questions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/31_faq.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="frequently-asked-questions">
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<p>RPi-Monitor&#8217;s graphs are not clean and frequently drop down to zero as in
+screenshot bellow. How can I have a clean curve?</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/faq001.png"><img alt="_images/faq001.png" class="align-center" src="_images/faq001.png" style="width: 400px;" /></a>
+<p><strong>RPi-Monitor</strong> is periodically getting data from program of files.
+If the program is not answering or if the file is empty, the value is unknown.
+This unknown value will be drawn as a zero in graphs. If, as in the upper
+example, the program reading the sensor is giving reliable values, it is
+advised to create a script writing the temperature result into a file and to
+configure <strong>RPi-Monitor</strong> to read this file. In this case, if the file is not
+updated, the previous value will be read and drawn in graphs.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>RPi-Monitor&#8217;s web interface is not working, I&#8217;ve only white pages?</dt>
+<dd><strong>RPi-Monitor</strong> requires HTML5 local storage and cookies to work properly.
+You should check that these both functionalities are activated into your browser and check that no plug-ins is blocking them.</dd>
+<dt>Is RPi-Monitor supporting distribution XXX?</dt>
+<dd>Can you make <strong>RPi-Monitor</strong> compatible with distribution XXX?</dd>
+<dt>RPi-Monitor was developed on Raspbian. This distribution is then fully supported.</dt>
+<dd>I will not officially support any other distribution but you will find in
+github repository some configuration files that may help you to configure
+<strong>RPi-Monitor</strong> on your system.
+Remember, <strong>RPi-Monitor</strong> is highly configurable and should be able to run on
+every system able to run perl. Have a look to <strong>RPi-Monitor</strong> articles for examples.</dd>
+<dt>I have a problems running rpimonitord:  failed &#8220;Can&#8217;t locate _______.pm  in &#64;INC ...</dt>
+<dd>The installation is not done properly. You should read again the installation
+procedure and pay attention to the dependencies.</dd>
+<dt>I would like to use my favorite web server instead of the one embedded into RPi-Monitor. Is it possible?</dt>
+<dd>Yes, this is possible but not recommended. <strong>RPi-Monitor</strong> embedded web server is
+optimized to reduce the usage of the SDCard, reduce the resources used into
+the system. The Web interface is requiring some specific feature that can only
+be delivered by <strong>RPi-Monitor</strong> embedded web server (like empty.rrd file generation
+ensuring a clean display of graphs).</dd>
+<dt>Can you add login/password and authentication to RPI-Monitor web interface?</dt>
+<dd>No. I&#8217;ll never add such a feature to <strong>RPi-Monitor</strong>. Why? Just because it is
+something complex to do in a clean and fully secured way. Some software are
+already design to do the job and they do it well. Refer to this article if
+you need such a feature.</dd>
+<dt>How can I do customize RPi-Monitor, change data extracted, add images, change texts...</dt>
+<dd>In <strong>RPi-Monitor</strong> almost everything is configurable. This can be done by
+configuration file. Have a look to <strong>RPi-Monitor</strong> articles for examples.</dd>
+<dt>I tried to install RPi-Monitor into an OS not officially supported and some data are missing. How can I fix it?</dt>
+<dd>As I said previously, in <strong>RPi-Monitor</strong> almost everything is configurable. You
+should find the command to execute or the file to read to get the missing
+value directly in the shell. Once the command is found you will need to
+update the configuration file. Have a look to <strong>RPi-Monitor</strong> articles for
+examples (have a look to the command rpimonitord -i).</dd>
+<dt>I would like to monitor a cluster of raspberries with your tool. Is there a way to gather the whole data in one node?</dt>
+<dd>It could have any answer to such a question. One possibility would be to use
+ssh and configure <strong>RPi-Monitor</strong> to execute commands on ech remote nodes of
+your cluster and process the data locally.
+To do so, you should create one configuration file per node to monitor and
+use all of them in RPi-Monitor. Using pages feature could be very usefull.
+You can use the main page to display some consolidate data in addition to one
+page per cluster.
+This question is interresting and I&#8217;ll think about writing one article about
+this subjet.</dd>
+<dt>I found a bug into RPi-Monitor. How can I share my discovery?</dt>
+<dd>You should open an issue in github and describe you problem and how to reproduce it.</dd>
+<dt>Download bandwidth is shown as negative values. It&#8217;s bug or feature?</dt>
+<dd>This is a feature :-). But, remember, everything is customizable in <strong>RPI-Monitor</strong>...</dd>
+<dt>I want to create a package for my favorite distribution which is not supported by defalut. How can I contribute to this project?</dt>
+<dd><strong>RPi-Monitor</strong> source code is hosted in github. The file PACKAGING.md should
+catch your interest.</dd>
+<dt>I&#8217;ve some issue with my installation or customization of RPi-Monitor and I want to reinstall it from scratch. How can I do it?</dt>
+<dd><p class="first">Here is the instruction to reinstall <strong>RPi-Monitor</strong> from scratch:
+First, uninstall <strong>RPi-Monitor</strong> with the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">rpimonitor</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rpimonitor</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">rpimonitor</span>
+</pre></div>
+</div>
+<p class="last">Then reinstall by following the instruction gathered in this page.</p>
+</dd>
+<dt>Some data are not extracting correctly at boot but when I restart rpimonotird everything becomes OK until I reboot. How can I fix thi issue?</dt>
+<dd>If you reach such situation, you certainly configure your source using a
+command whitout the full path. For example <code class="docutils literal"><span class="pre">gettemp.sh</span></code> instead of
+<code class="docutils literal"><span class="pre">/usr/bin/gettemp.sh</span></code>.The first command is working in your shell because the
+variable $PATH is set and the executable is reachable (that why it work when
+you restart rpimonitord).
+When you start your computer, the $PATH variable is not set so <code class="docutils literal"><span class="pre">gettemp.sh</span></code>
+will not work. The solution is to use the full path command <code class="docutils literal"><span class="pre">/usr/bin/gettemp.sh</span></code></dd>
+<dt>I just update my distribution and RPi-Monitor is still saying that packages required to be updated. Why?</dt>
+<dd>Every night at 3h10, a script is executed to update the package update
+information displayed in <strong>RPi-Monitor</strong>. If you want to update this information
+immediately, you can execute this script manually:  <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/scripts/updatePackagesStatus.pl</span></code></dd>
+<dt>I required better resolutions of the reading provided by the RPI monitor. Can we increase the frequency with which the RPI monitor collects the data?</dt>
+<dd>Yes, since version 2.11, it is possible to define the RRD structure per data
+extracted. Refer to documentation and man page to know how use this
+advanced feature.</dd>
+</dl>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="32_contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="26_external.html" class="btn btn-neutral" title="Non standard configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

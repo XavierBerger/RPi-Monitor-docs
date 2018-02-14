@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Metrics extraction configuration &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Web interface configuration" href="13_web.html"/>
+        <link rel="prev" title="Daemon configuration" href="11_daemon.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Metrics extraction configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/12_extraction.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="metrics-extraction-configuration">
+<h1>Metrics extraction configuration<a class="headerlink" href="#metrics-extraction-configuration" title="Permalink to this headline">¶</a></h1>
+<p>This part of the configuration file is defining which data to extract how to
+extract them and when.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You will notice that metrics in <strong>RPi-Monitor</strong> are named <strong>KPI</strong>.
+<strong>KPI</strong> means Key Performance Indicator.</p>
+</div>
+<div class="section" id="include">
+<h2>Include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
+<p>Specific <code class="docutils literal"><span class="pre">include</span></code> keyword is available to add a file to the list of
+configuration files to be loaded.</p>
+<dl class="docutils">
+<dt>include=&lt;full path to configuration file&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;full</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code> is the full path to the
+configuration file to add at the end of the list of configuration
+files to be loaded.</dd>
+</dl>
+</div>
+<div class="section" id="static">
+<h2>Static<a class="headerlink" href="#static" title="Permalink to this headline">¶</a></h2>
+<p>Static KPI are extracted once at rpimonitord startup. Each statistic
+is identified into the conf file by a line stating with the keyword
+static and an identifier <code class="docutils literal"><span class="pre">&lt;static</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code></p>
+<p>Each static KPI is defined by an id and with 4 parameters</p>
+<dl class="docutils">
+<dt>static.&lt;static data id&gt;.name=&lt;data name&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
+separated by comma. Each name has to be unique.
+Only alpha numerical charter and underscore are accepted.</dd>
+<dt>static.&lt;static data id&gt;.source=&lt;data source&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable file within the path.
+If the file exists, rpimonitord will read its content. If the file
+is not existing, rpimonirotd will try to execute it and will parse
+the output.
+Warning: specifying an executable by its absolute name will tell
+rpimonitord to read the content of the executable.1.graph.</dd>
+</dl>
+<dl class="docutils">
+<dt>static.&lt;static data id&gt;.regexp=&lt;data regexp&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code> is the regular expression extracting information from
+data source. Regexp groups <code class="docutils literal"><span class="pre">()</span></code> has to be used to extract the data
+In case of KPI list, each group will be affected to a KPI name.</dd>
+<dt>static.&lt;static data id&gt;.postprocess=&lt;data postprocess&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code> is an expression defining the postprocessing to
+be applied on result. KPI are idendified by <code class="docutils literal"><span class="pre">$1</span></code>. In case of list,
+other KPI are identified by <code class="docutils literal"><span class="pre">$2</span></code>, <code class="docutils literal"><span class="pre">$3</span></code> <code class="docutils literal"><span class="pre">.graph.</span></code>.
+This parameter will be evaluate by the command eval of perl.</dd>
+</dl>
+</div>
+<div class="section" id="dynamic">
+<h2>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic KPI are extracted periodically (defined by daemon.delay)
+Each statistic is identified into the conf file by a line stating
+with the keyword dynamic and an identifier <code class="docutils literal"><span class="pre">&lt;dynamic</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code></p>
+<p>Each dynamic KPI is defined by an id and with 9 parameters</p>
+<dl class="docutils">
+<dt>dynamic.&lt;dynamic data id&gt;.name=&lt;data name&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
+separated by comma. Each name has to be unique.
+Only alpha numerical charter and underscore are accepted.</dd>
+<dt>dynamic.&lt;dynamic data id&gt;.source=&lt;data source&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable file within the path.
+If the file exists, rpimonitord will read its content. If the file
+is not existing, rpimonirotd will try to execute it and will parse
+the output.
+Warning: specifying an executable by its absolute name will tell
+rpimonitord to read the content of the executable.1.graph.</dd>
+<dt>dynamic.&lt;dynamic data id&gt;.regexp=&lt;data regexp&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code> is the regular expression extracting information from
+data source. Regexp groups <code class="docutils literal"><span class="pre">()</span></code> has to be used to extract the data
+In case of KPI list, each group will be affected to a KPI name.</dd>
+<dt>dynamic.&lt;dynamic data id&gt;.postprocess=&lt;data postprocess&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code>
+This 4 first parameters have the same signification as for static
+parameters.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Static values are accessible for the post processing using the
+variable <code class="docutils literal"><span class="pre">$this-&gt;{'static'}-&gt;{'static_data_name'}</span></code> and can be used.
+You can refer to swap data extraction to see an example (cf. <code class="docutils literal"><span class="pre">swap.conf</span></code>).</p>
+</div>
+<dl class="docutils">
+<dt>dynamic.&lt;dynamic data id&gt;.interval=&lt;interval&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">rpimonitord</span></code> extracts data every <code class="docutils literal"><span class="pre">daemon.delay</span></code> seconds. <code class="docutils literal"><span class="pre">&lt;interval&gt;</span></code>
+define how many loop have to be waited before extracting this data.
+Default value is <code class="docutils literal"><span class="pre">1</span></code>. This means that data is extracted at every loop.</dd>
+<dt>dynamic.&lt;dynamic data id&gt;.default=&lt;default&gt;</dt>
+<dd>If rpimonitor can&#8217;t extract information, it is now possible to define
+a <code class="docutils literal"><span class="pre">&lt;default&gt;</span></code> value which will be set for the KPI.</dd>
+<dt>dynamic.&lt;dynamic data id&gt;.rrd=&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</dt>
+<dd>The 5th parameter is defining if the KPI has to be stored into a RRD
+database and how <code class="docutils literal"><span class="pre">&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</span></code>. If the
+parameter is defined as empty, no RRD database will be created. If
+this parameter is defined, a RRD database will be created and data
+will be stored at every extraction.
+Ref <a class="reference external" href="http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html">http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html</a> for RRD
+parameter description.</dd>
+</dl>
+<p><strong>dynamic.&lt;dynamic data id&gt;.min=&lt;minimal value acceptable in RRD&gt;</strong></p>
+<dl class="docutils">
+<dt>dynamic.&lt;dynamic data id&gt;.max=&lt;maximal value acceptable in RRD&gt;</dt>
+<dd>If a value extracted by is less than minimal of greater than maximal
+value, it will be stored int RRD database as unknown.
+These limits are usefull to handle counter that fall down to 0 when
+they reach their limit (Ex: network graphs)</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Static values are accessible for the post processing using the
+variable <code class="docutils literal"><span class="pre">$this-&gt;{'static'}-&gt;{'static_data_name'}</span></code> and can be used.
+You can refer to swap data extraction to see an example.</p>
+</div>
+</div>
+<div class="section" id="snmp-oid">
+<h2>SNMP OID<a class="headerlink" href="#snmp-oid" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>RPi-Monitor is able to act as an snmp agent. Snmp configuration is based
+on KPI name. KPI could be <code class="docutils literal"><span class="pre">static</span></code> or <code class="docutils literal"><span class="pre">dynamic</span></code>.</p>
+<dl class="docutils">
+<dt>snmp.&lt;kpi name&gt;.id=&lt;id&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;id&gt;</span></code> is the last number of OID appended at the end of OID configuration
+defined for snmp agent. (ref. SNMP agent configuration section)</dd>
+<dt>snmp.&lt;kpi name&gt;.type=&lt;type&gt;</dt>
+<dd>Type of data can be : <code class="docutils literal"><span class="pre">counter</span></code>, <code class="docutils literal"><span class="pre">counter64</span></code>, <code class="docutils literal"><span class="pre">gauge</span></code>, <code class="docutils literal"><span class="pre">integer</span></code>,
+<code class="docutils literal"><span class="pre">ipaddr</span></code>, <code class="docutils literal"><span class="pre">ipaddress</span></code>, <code class="docutils literal"><span class="pre">netaddr</span></code>, <code class="docutils literal"><span class="pre">objectid</span></code>, <code class="docutils literal"><span class="pre">octetstr</span></code>,
+<code class="docutils literal"><span class="pre">string</span></code>, <code class="docutils literal"><span class="pre">timeticks</span></code></dd>
+<dt>snmp.&lt;kpi name&gt;.description=&lt;text description&gt;</dt>
+<dd>Description of KPI to be added in MIB</dd>
+<dt>snmp.&lt;kpi name&gt;.postprocess=&lt;formula&gt;</dt>
+<dd>Post process formula to apply to KPI before sending over SNMP.
+Ex: Convert float to interger by mutiplying by 100: <code class="docutils literal"><span class="pre">$1*100</span></code></dd>
+<dt>Commands to use to get MIB information:</dt>
+<dd><dl class="first last docutils">
+<dt>Snmp Configuration</dt>
+<dd>See configuration file example in <code class="docutils literal"><span class="pre">/etc/snmp/snmpd.conf.rpimonitor</span></code>
+and activate pass_persist extension</dd>
+<dt>Extract MIB from RPi-Monitor</dt>
+<dd><code class="docutils literal"><span class="pre">rpimonitord</span> <span class="pre">-m</span> <span class="pre">&gt;</span> <span class="pre">~/mib.txt</span></code></dd>
+<dt>Get data from SNMP</dt>
+<dd><code class="docutils literal"><span class="pre">snmpwalk</span> <span class="pre">-v</span> <span class="pre">2c</span> <span class="pre">-m</span> <span class="pre">~/mib.txt</span> <span class="pre">-c</span> <span class="pre">public</span> <span class="pre">127.0.0.1</span> <span class="pre">1.3.6.1.4.1.54321.42</span></code></dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="13_web.html" class="btn btn-neutral float-right" title="Web interface configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="11_daemon.html" class="btn btn-neutral" title="Daemon configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

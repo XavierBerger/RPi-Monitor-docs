@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sensors &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="RPi-Monitor-LCD" href="25_lcd.html"/>
+        <link rel="prev" title="Authentication and secure access" href="23_autentication.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Sensors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/24_sensors.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sensors">
+<h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dht11-temperature-and-humidity-sensor">
+<h2>DHT11 temperature and humidity sensor<a class="headerlink" href="#dht11-temperature-and-humidity-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>In this chapter we will see how to connect a DHT11 or DHT22 Temperature and
+Humidity sensor and configure <strong>RPi-Monitor</strong> to present and draw the outputs.</p>
+<p>This article will also explain another capability of <strong>RPi-Monitor</strong> 2.x: the dual-axis.</p>
+<p>Adafruit created a very good tutorial explaining how to use DHT11 or DHT22 .
+This tutorial is available at this <a class="reference external" href="http://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/wiring">here</a>.</p>
+</div>
+<div class="section" id="electronic-assembly">
+<h3>Electronic assembly<a class="headerlink" href="#electronic-assembly" title="Permalink to this headline">¶</a></h3>
+<p>This electronic assembly is quite simple and will need:</p>
+<ul class="simple">
+<li>1 x DHT11 or 1 x DHT22</li>
+<li>1 x 4.7k resistor</li>
+</ul>
+<p>Plug them as described in the following schema:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/sensor001.png"><img alt="_images/sensor001.png" src="_images/sensor001.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Schema extracted from Adafruit but using GPIO #27 instead of GPIO #4</span></p>
+</div>
+</div>
+<div class="section" id="software-installation">
+<h3>Software installation<a class="headerlink" href="#software-installation" title="Permalink to this headline">¶</a></h3>
+<p>Thanks to Adafruit ( again ;-) ) the installation is quite simple and can be
+done with two command lines.</p>
+<p>Download Adafruit_DHT form Adafruit&#8217;s github repository and copy is in <code class="docutils literal"><span class="pre">/usr/bin</span></code> as follow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">goo</span><span class="o">.</span><span class="n">gl</span><span class="o">/</span><span class="n">oadpl</span> <span class="o">-</span><span class="n">O</span> <span class="n">Adafruit_DHT</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="n">Adafruit_DHT</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>To test the electronic assembly and the software installation execute the
+following command (for DHT11):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>pi@raspberrypi ~ $ sudo Adafruit_DHT 11 27
+Using pin #17Data (40): 0x28 0x0 0x18 0x0 0x40
+Temp = 24 *C, Hum = 40 %
+</pre></div>
+</div>
+<p>You should see the information about temperature and humidity displayed as shown upper.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The DHT11 and DHT22 sensors will only respond every second so if you
+are not getting data, be sure to wait few seconds before trying again.</p>
+</div>
+</div>
+<div class="section" id="rpi-monitor-configuration">
+<h3>RPi-Monitor configuration<a class="headerlink" href="#rpi-monitor-configuration" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure to use Linux linefeed format with line ending with LF
+(and not CR/LF like in Windows).</p>
+</div>
+<p>Let&#8217;s now use this information and add humidity graphs on existing temperature graph.</p>
+<p>We first have to extract the data. This is done like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">name</span><span class="o">=</span><span class="n">humidity</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">source</span><span class="o">=</span><span class="n">Adafruit_DHT</span> <span class="mi">11</span> <span class="mi">27</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">regexp</span><span class="o">=</span><span class="n">Hum</span> <span class="o">=</span> <span class="p">(</span>\<span class="n">S</span><span class="o">+</span><span class="p">)</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">postprocess</span><span class="o">=</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">rrd</span><span class="o">=</span><span class="n">GAUGE</span>
+</pre></div>
+</div>
+<p>We will now add the humidity curve into the graph of temperature.
+This can be done with the configuration bellow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">name</span><span class="o">=</span><span class="n">humidity</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Humidity</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">yaxis</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">graph_options</span><span class="o">.</span><span class="n">y2axis</span><span class="o">=</span><span class="p">{</span> <span class="n">position</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">:</span> <span class="mi">100</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>As the unit are different than the one existing on the initial axis,
+we will add a second axis for the percentage of humidity. This is the purpose
+of the two last lines of the configuration bellow.</p>
+<p>The first line is defining the usage of axis number 2 for the humidity.</p>
+<p>The last line is defining how this graph should be drawn: On the right,
+starting from 0 up to 100.</p>
+<p><code class="docutils literal"><span class="pre">graph_options</span></code> can have other usefull option. They are described in the
+documentation of <a class="reference external" href="http://javascriptrrd.sourceforge.net/docs/javascriptrrd_v0.6.3/doc/lib/rrdFlot_js.html">javascriptrrd</a>.</p>
+<p>After restarting RPi-Monotor with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">rpimonitor</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<p>You will see a new curve in Temperature graph as shown in the screenshot bellow:</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/sensor001.png"><img alt="_images/sensor001.png" src="_images/sensor001.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Graph with 2 Y axis: °C in left axis and % humidity (fixed from 0% to 100%)
+on right axis</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="ds18b20-1wire-temperature-sensor">
+<h2>DS18B20 1wire temperature sensor<a class="headerlink" href="#ds18b20-1wire-temperature-sensor" title="Permalink to this headline">¶</a></h2>
+<p>Add other graphs from additional sources: external temperature probe</p>
+<p>Let&#8217;s build a little electronic device to measure the room temperature and add this in the temperature graph.
+Do do that, you will need:</p>
+<blockquote>
+<div>1 x DS18B20
+1 x 4.7k resistor</div></blockquote>
+<p>Plug them as described in the following schema extracted from Adafruit Lesson 11:</p>
+<dl class="docutils">
+<dt>Lets first load the kernel module required to get the information from this probe:</dt>
+<dd>sudo modprobe gpio
+sudo modprobe w1-gpio
+sudo modprobe w1-therm</dd>
+<dt>First we have to identify the id of our probe:</dt>
+<dd>ls /sys/bus/w1/devices/
+28-000004fe1847  w1_bus_master1</dd>
+<dt>the id is: 28-000004fe1847. Let&#8217;s now check if we can get the temperature:</dt>
+<dd>cat /sys/bus/w1/devices/28-000004fe1847/w1_slave
+5a 01 4b 46 7f ff 06 10 a3 : crc=a3 YES
+5a 01 4b 46 7f ff 06 10 a3 t=21625</dd>
+</dl>
+<p>It looks to work. So now we need to extract the the numbers ending the second line (21625). The regular expression will then be t.(d+)$. I&#8217;ll not do a course about what a regexp is there are many site on the internet explaining it.
+Note: In version 1.x of RPi-Monitor it is prohibited to use = in regular expression.</p>
+<dl class="docutils">
+<dt>To add a graph to RPi-Monitor statistic, we need to create a new section. Let&#8217;s call it [room_temperature]. Then we have to declare the new data name room_temp, its source /sys/bus/w1/devices/28-000004fe1847/w1_slave and the associated regular expression t.(d+)$. The line to append will look like that:</dt>
+<dd># Room temperature
+[room_temperature]
+room_temp=/sys/bus/w1/devices/28-000004fe1847/w1_slave=t.(d+)$</dd>
+<dt>Restart RPi-Monitor with the following command and it is done:</dt>
+<dd>sudo  service rpimonitor restart</dd>
+</dl>
+<p>A new graph is available in statistics (wait a little bit to have data and drawing):</p>
+<p>Use zoom feature to see the freshly added data.
+If you want to add a curve into the Temperature graph, it is possible by adding the KPI line into the section [temperature] as describe bellow:</p>
+<blockquote>
+<div>[temperature]
+soc_temp=/sys/devices/virtual/thermal/thermal_zone0/temp=(.*)
+home_temp=/sys/bus/w1/devices/28-000004fe1847/w1_slave=t.(d+)$</div></blockquote>
+<dl class="docutils">
+<dt>It will then be required to delete the associated rrd file:</dt>
+<dd>sudo rm /usr/share/rpimonitor/web/stat/temperature.rrd</dd>
+</dl>
+<p>Restarting RPi-Monitor will regenerate this file with the two describes temperature. After waiting some time to let data to be added, you will have a graph with two temperatures as in the screenshot bellow:</p>
+<p>soc_temp and home_temp drawn on the same graph</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="25_lcd.html" class="btn btn-neutral float-right" title="RPi-Monitor-LCD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="23_autentication.html" class="btn btn-neutral" title="Authentication and secure access" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

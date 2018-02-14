@@ -1,0 +1,712 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RPi-Monitor-LCD &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="next" title="Non standard configuration" href="26_external.html"/>
+        <link rel="prev" title="Sensors" href="24_sensors.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_gettingstarted.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#interactive-configuration-helper">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_gettingstarted.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="11_daemon.html">Daemon configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#global-configuration">Global configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_daemon.html#snmp-configuration">SNMP configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12_extraction.html">Metrics extraction configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#include">Include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#dynamic">Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_extraction.html#snmp-oid">SNMP OID</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13_web.html">Web interface configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#multi-pages">Multi-pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_web.html#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14_addons.html">Addons configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#top3-addon">Top3 Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#example-addon">Example Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#shellinabox-addon">Shellinabox Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#custom-addon">Custom Addon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_addons.html#webcam-addon">Webcam Addon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15_alert.html">Alert configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_alert.html#condifuration">Condifuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="21_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="23_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="24_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="26_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">To got further</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="33_license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#gnu-general-public-license">GNU GENERAL PUBLIC LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#preamble">Preamble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#terms-and-conditions">TERMS AND CONDITIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_license.html#how-to-apply-these-terms-to-your-new-programs">How to Apply These Terms to Your New Programs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>RPi-Monitor-LCD</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/25_lcd.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rpi-monitor-lcd">
+<h1>RPi-Monitor-LCD<a class="headerlink" href="#rpi-monitor-lcd" title="Permalink to this headline">¶</a></h1>
+<p>PCD8544 is a small and cheap LCD screen. We will see in this chapter how to use
+it and connect it to <strong>RPi-Monitor</strong>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/lcd001.png"><img alt="_images/lcd001.png" src="_images/lcd001.png" style="width: 200px;" /></a>
+</div>
+<div class="section" id="lcd-connection">
+<h2>LCD connection<a class="headerlink" href="#lcd-connection" title="Permalink to this headline">¶</a></h2>
+<p>PCD8544 comes in two parts (the lcd screen and the pins) that need to be
+soldered together. Once done, it can be installed in the breadboard as shown
+in the drawing bellow:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/lcd002.png"><img alt="_images/lcd002.png" src="_images/lcd002.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Schema made with Fritzing (fritzing.org)</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to reproduce this assembly, check carefully the pin order,</p>
+</div>
+<p>it may be different.</p>
+</div>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>My first goal is to test this new display. I look on the internet and find
+different solution using Python or C. After few tries, I decided to use
+Python based on the information shared into this post.</p>
+<dl class="docutils">
+<dt>To use the PCD8544 display we need to install few software and load a</dt>
+<dd>kernel module.</dd>
+</dl>
+<p>First, let&#8217;s install wiringpi2 from drogon.net</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">git</span><span class="o">.</span><span class="n">drogon</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">wiringPi</span>
+<span class="n">cd</span> <span class="n">wiringPi</span>
+<span class="o">./</span><span class="n">build</span>
+</pre></div>
+</div>
+<p>Once wiringpi is installed, it is possible to test it with the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gpio</span> <span class="n">readall</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="13%" />
+<col width="12%" />
+<col width="8%" />
+<col width="8%" />
+<col width="0%" />
+<col width="8%" />
+<col width="8%" />
+<col width="12%" />
+<col width="13%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">wPi</th>
+<th class="head">Name</th>
+<th class="head">Mode</th>
+<th class="head">Val</th>
+<th class="head" colspan="3">Physical</th>
+<th class="head">Val</th>
+<th class="head">Mode</th>
+<th class="head">Name</th>
+<th class="head">wPi</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td>3.3v</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1</td>
+<td>&nbsp;</td>
+<td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>5v</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>SDA</td>
+<td>IN</td>
+<td>Lo</td>
+<td>3</td>
+<td>&nbsp;</td>
+<td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>5V</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>9</td>
+<td>SCL</td>
+<td>IN</td>
+<td>Lo</td>
+<td>5</td>
+<td>&nbsp;</td>
+<td>6</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>0v</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>GPIO7</td>
+<td>IN</td>
+<td>Lo</td>
+<td>7</td>
+<td>&nbsp;</td>
+<td>8</td>
+<td>Lo</td>
+<td>ALT0</td>
+<td>TxD</td>
+<td>15</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>0v</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>10</td>
+<td>Lo</td>
+<td>ALT0</td>
+<td>RxD</td>
+<td>16</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>GPIO0</td>
+<td>IN</td>
+<td>Hi</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>12</td>
+<td>Hi</td>
+<td>OUT</td>
+<td>GPIO1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>GPIO2</td>
+<td>IN</td>
+<td>Lo</td>
+<td>13</td>
+<td>&nbsp;</td>
+<td>14</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>0v</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>GPIO3</td>
+<td>IN</td>
+<td>Hi</td>
+<td>15</td>
+<td>&nbsp;</td>
+<td>16</td>
+<td>Lo</td>
+<td>OUT</td>
+<td>GPIO4</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>3.3v</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>17</td>
+<td>&nbsp;</td>
+<td>18</td>
+<td>Lo</td>
+<td>OUT</td>
+<td>GPIO5</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td>12</td>
+<td>MOSI</td>
+<td>ALT0</td>
+<td>Hi</td>
+<td>19</td>
+<td>&nbsp;</td>
+<td>20</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>0v</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>13</td>
+<td>MISO</td>
+<td>ALT0</td>
+<td>Hi</td>
+<td>21</td>
+<td>&nbsp;</td>
+<td>22</td>
+<td>Hi</td>
+<td>IN</td>
+<td>GPIO6</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>14</td>
+<td>SCLK</td>
+<td>ALT0</td>
+<td>Hi</td>
+<td>23</td>
+<td>&nbsp;</td>
+<td>24</td>
+<td>Lo</td>
+<td>ALT0</td>
+<td>CE1</td>
+<td>10</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>0v</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>25</td>
+<td>&nbsp;</td>
+<td>26</td>
+<td>Lo</td>
+<td>ALT0</td>
+<td>CE1</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>Now, install the python binding of wiringpi:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span> <span class="n">python</span><span class="o">-</span><span class="n">imaging</span> <span class="n">python</span><span class="o">-</span><span class="n">imaging</span><span class="o">-</span><span class="n">tk</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">wiringpi2</span>
+</pre></div>
+</div>
+<p>The program we will use require <code class="docutils literal"><span class="pre">spidev</span></code> to be activated. The kernel module
+should then be activated.</p>
+<p>To do so, comment the line blacklist <code class="docutils literal"><span class="pre">spi-bcm2708</span></code> by adding a heading <code class="docutils literal"><span class="pre">#</span></code>
+in the file <code class="docutils literal"><span class="pre">/etc/modprobe.d/raspi-blacklist.conf</span></code> then reboot the
+Raspberry Pi to activate this module.</p>
+<p>Finally install <code class="docutils literal"><span class="pre">spidev</span></code> python library:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">spidev</span>
+</pre></div>
+</div>
+<p>The prerequisite are now installed. In next chapter we will see how to install
+the python library in charge of driving the PCD8544 LCD and how to use it.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Into Raspberry Pi forum, an interesting post catch my attention. I used it as
+the base to control the LCD.</p>
+<p>The library written Richard Hull&#8217;s is also interesting I then took this as a
+example to create module that can be directly installed on the Raspberry Pi.</p>
+<p>This pcd8544 library resulting is available into its own dedicated repository
+in github.</p>
+<p>To install it, execute the following commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>   <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">XavierBerger</span><span class="o">/</span><span class="n">pcd8544</span><span class="o">.</span><span class="n">git</span>
+   <span class="n">cd</span> <span class="n">pcd8544</span>
+   <span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">clean</span> <span class="n">build</span>
+   <span class="n">sudo</span> <span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+
+<span class="n">You</span> <span class="n">can</span> <span class="n">now</span> <span class="n">test</span> <span class="n">the</span> <span class="n">installation</span> <span class="k">with</span> <span class="n">the</span> <span class="n">proposed</span> <span class="n">examples</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">examples</span>
+<span class="o">./</span><span class="n">pi_logo</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>If installation works properly, you should see the following screen:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/lcd003.png"><img alt="_images/lcd003.png" src="_images/lcd003.png" style="width: 250px;" /></a>
+</div>
+<p>You can try to execute other examples to see what the library is capable to do with this LCD.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>As I said in introduction, RPi-Monitor is gathering a lot of information and
+some of them may be interesting to have without having to start a PC.
+Information are made available from the embedded web server. To get and
+display the information we then just have to create a web client and use
+the library to display.</p>
+<p>For people interesting about learning development I did comment my code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">httplib</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pcd8544.lcd</span> <span class="kn">as</span> <span class="nn">lcd</span>
+
+<span class="c1"># class Process dedicated to process data get from Client</span>
+<span class="c1"># and send information to LCD and console</span>
+<span class="k">class</span> <span class="nc">Process</span><span class="p">:</span>
+  <span class="c1"># Process constructor</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Initialize LCD</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="c1"># Turn the backlight on</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jsonString</span><span class="p">):</span>
+    <span class="c1"># Parse data as json</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span> <span class="n">jsonString</span> <span class="p">)</span>
+    <span class="c1"># Try to get data from json or return default value</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">rpi_temperature</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;living_room_temp&#39;</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+      <span class="n">rpi_temperature</span><span class="o">=</span><span class="s2">&quot;--.---&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">rpi_humidity</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+      <span class="n">rpi_humidity</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span>
+    <span class="c1"># Construct string to be displayed on screens</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="s2">&quot;Temp: </span><span class="si">%s</span><span class="s2"> C&quot;</span> <span class="o">%</span> <span class="n">rpi_temperature</span>
+    <span class="n">humidity</span> <span class="o">=</span> <span class="s2">&quot;Humidity: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">rpi_humidity</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">gotorc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;RPi-Monitor&quot;</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">gotorc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">gotorc</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">humidity</span><span class="p">)</span>
+    <span class="c1"># Also print string in console</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;clear&quot;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot; RPi-Monitor &quot;</span>
+    <span class="k">print</span>
+    <span class="k">print</span> <span class="n">temperature</span>
+    <span class="k">print</span> <span class="n">humidity</span>
+    <span class="k">print</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Class client design to work as web client and get information</span>
+<span class="c1"># from RPi-Monitor embedded web server</span>
+<span class="k">class</span> <span class="nc">Client</span><span class="p">:</span>
+  <span class="c1"># Client constructor</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Create a Process object</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Infinite loop</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="c1"># Initiate a connection to RPi-Monitor embedded server</span>
+      <span class="n">connection</span> <span class="o">=</span> <span class="n">httplib</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8888</span><span class="p">)</span>
+      <span class="c1"># Get the file dynamic.json</span>
+      <span class="n">connection</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="s2">&quot;/dynamic.json&quot;</span><span class="p">)</span>
+      <span class="c1"># Get the server response</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">200</span> <span class="p">):</span>
+        <span class="c1"># If response is OK, read data</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="c1"># Run process object on extracted data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+      <span class="c1"># Close the connection to RPi-Monitor embedded server</span>
+      <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">finally</span><span class="p">:</span>
+      <span class="c1"># Wait 5 secondes before restarting the loop</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Main function</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Create a Client object</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+    <span class="c1"># Run it</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+  <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="c1"># if Ctrl+C has been pressed</span>
+    <span class="c1"># turn off the lcd backlight</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="c1"># exit from the program</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Execute main if the script is directly called</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This code is dedicated to extract the living room temperature and humidity
+from RPi-Monitor information.</p>
+<p>Copy this code into a file <code class="docutils literal"><span class="pre">rpimonitor-testlcd.py</span></code> the make this file
+executable <code class="docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">rpimonitor-testlcd.py</span></code> then execute <code class="docutils literal"><span class="pre">./rpimonitor-testlcd.py</span></code> it to see:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/lcd004.png"><img alt="_images/lcd004.png" src="_images/lcd004.png" style="width: 250px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="26_external.html" class="btn btn-neutral float-right" title="Non standard configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="24_sensors.html" class="btn btn-neutral" title="Sensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
