@@ -89,10 +89,20 @@
             
               <p class="caption"><span class="caption-text">Overview</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#collecting-metrics">Collecting metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#storing-metrics">Storing metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#presenting-collected-metrics">Presenting collected metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#configurable">Configurable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#processing-metrics-and-raising-alerts">Processing metrics and raising alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#read-only-mode">Read only mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#sharing-metrics-with-external-monitoring-system">Sharing metrics with external monitoring system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_features.html#extending-the-capabilities-of-rpi-monitor">Extending the capabilities of <strong>RPi-Monitor</strong></a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#startup">Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execution">Execution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#interactive-configuration-helper">Interactive Configuration Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#uninstallation">Uninstallation</a></li>
 </ul>
@@ -144,7 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="21_customisation.html#visibility">Visibility</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="22_examples.html">Condifuration examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="22_examples.html#example-files">Example files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_examples.html#monitor-external-disk">Monitor external disk</a></li>
@@ -296,6 +306,11 @@ installation and update accessible with the command <code class="docutils litera
 <p class="last"><strong>RPi-Monitor</strong> is designed to start automatically and collect metrics.
 The web interface is available on address <a class="reference external" href="http://IPaddress:8888">http://IPaddress:8888</a>.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may notice that <strong>RPiMonitor</strong> repository is hosted on
+<a class="reference external" href="http://giteduberger.fr/en">http://giteduberger.fr/</a></p>
+</div>
 </div>
 <div class="section" id="upgrade-from-the-repository">
 <h3>Upgrade from the repository<a class="headerlink" href="#upgrade-from-the-repository" title="Permalink to this headline">¶</a></h3>
@@ -312,9 +327,8 @@ about upgradable packages:</p>
 </div>
 <div class="section" id="manual-installation-from-debian-package">
 <h3>Manual installation from Debian package<a class="headerlink" href="#manual-installation-from-debian-package" title="Permalink to this headline">¶</a></h3>
-<p>Download the latest package from the official repository in Github
-(<a class="reference external" href="https://github.com/XavierBerger/RPi-Monitor-deb/tree/master/packages">https://github.com/XavierBerger/RPi-Monitor-deb/tree/master/packages</a>)
-with the following command (replace <code class="docutils literal"><span class="pre">latest_package_url</span></code> by the real url fond on github):</p>
+<p>Download the latest package from the official repository in <a class="reference external" href="https://github.com/XavierBerger/RPi-Monitor-deb/tree/master/packages">Github</a>
+with the following command (replace <code class="docutils literal"><span class="pre">latest_package_url</span></code> by the real url found on github):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">latest_package_url</span> <span class="o">-</span><span class="n">O</span> <span class="n">rpimonitor_latest_all</span><span class="o">.</span><span class="n">deb</span>
 </pre></div>
 </div>
@@ -345,10 +359,34 @@ instruction which describes how and where install files.</p>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="startup">
-<h2>Startup<a class="headerlink" href="#startup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="execution">
+<h2>Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="startup-script">
+<h3>Startup script<a class="headerlink" href="#startup-script" title="Permalink to this headline">¶</a></h3>
+<p><strong>RPi-Monitor</strong> is configured to start automatically. <code class="docutils literal"><span class="pre">/etc/init.d/rpimonitor</span></code>
+and link in runlevel startup directory do the job. This script can be executed
+with the folllowing commands:</p>
+<dl class="docutils">
+<dt>start</dt>
+<dd>Start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>stop</dt>
+<dd>Stop <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>restart</dt>
+<dd>Stop and start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>status</dt>
+<dd>Show <code class="docutils literal"><span class="pre">rpimonitord</span></code> status</dd>
+<dt>update</dt>
+<dd>Update packages to be installed list. This information is displayed in default
+configuration of Web interface</dd>
+<dt>install_auto_package_status_update</dt>
+<dd>Add a script to automatically call package update script when <a href="#id1"><span class="problematic" id="id2">``</span></a>apt```commands are executes</dd>
+<dt>remove_auto_package_status_update</dt>
+<dd>Remove script automatically call for package update</dd>
+</dl>
+</div>
 <div class="section" id="command-line">
 <h3>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">rpimonitord</span></code> can be directly executed with the following parameters:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rpimonitord</span> <span class="p">[</span><span class="o">-</span><span class="n">a</span> <span class="n">address</span><span class="p">][</span> <span class="o">-</span><span class="n">b</span> <span class="n">pidfile</span><span class="p">][[</span><span class="o">-</span><span class="n">c</span> <span class="n">configuration_file</span><span class="p">]</span><span class="o">...</span><span class="p">][</span><span class="o">-</span><span class="n">d</span> <span class="n">delay</span><span class="p">][</span><span class="o">-</span><span class="n">h</span><span class="p">][</span><span class="o">-</span><span class="n">k</span><span class="p">][</span><span class="o">-</span><span class="n">l</span> <span class="n">logfile</span><span class="p">]</span>
 <span class="p">[</span><span class="o">-</span><span class="n">m</span><span class="p">][</span><span class="o">-</span><span class="n">n</span><span class="p">][</span><span class="o">-</span><span class="n">p</span> <span class="n">port</span><span class="p">][</span><span class="o">-</span><span class="n">s</span><span class="p">][</span><span class="o">-</span><span class="n">t</span> <span class="n">timeout</span><span class="p">][</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="o">...</span><span class="p">]]][</span><span class="o">-</span><span class="n">V</span><span class="p">]</span>
 </pre></div>
@@ -499,7 +537,7 @@ available in json format and can be downloaded from the root of the web interfac
 <p><strong>RPi-Monitor</strong> Interactive Configuration Helper is a tool embedded into
 <code class="docutils literal"><span class="pre">rpimonitord</span></code> helping to create configuration files
 .
-This article is detailling how to use it to monitor a ntfs volume.</p>
+This chapter is detailling how to use it to monitor a ntfs volume.</p>
 <p>First execute the following command:</p>
 <p><code class="docutils literal"><span class="pre">rpimonitord</span> <span class="pre">-i</span></code></p>
 <img alt="_images/helper001.png" src="_images/helper001.png" />
