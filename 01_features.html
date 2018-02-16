@@ -200,13 +200,13 @@
 <p>At the beginning <strong>RPi-Monitor</strong> was designed to run on <strong>Raspberry Pi</strong>. This
 is explaining the name of this software. In reality <strong>RPi-Monitor</strong> can run
 on every computers running <cite>perl</cite>.</p>
-<p>Since the beginning <strong>Rpi-Monitor</strong> as been designed for embedded devices and
+<p>Since the beginning <strong>RPi-Monitor</strong> as been designed for embedded devices and
 performances is the core of development strategy. The software is divided into
 two main part:</p>
 <blockquote>
 <div><ul class="simple">
-<li>A daemon running on the device and gathering data</li>
-<li>A WEB application running in browser in charge of data rendering</li>
+<li>A lightweight daemon running on the device and gathering data</li>
+<li>A powerfull WEB application running in browser in charge of data rendering</li>
 </ul>
 </div></blockquote>
 <div class="figure">
@@ -220,31 +220,35 @@ two main part:</p>
 <div class="section" id="storing-metrics">
 <h2>Storing metrics<a class="headerlink" href="#storing-metrics" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Metrics are stored into a Round Robin Database (RRD). This ensure a fixed size for
-the data storage and keep by default data over 1 year.</div></blockquote>
+<div>Metrics are stored into a <a class="reference external" href="https://oss.oetiker.ch/rrdtool/">Round Robin Database</a> (RRD).
+This ensure a fixed size for the data storage and keep by default data over 1 year.</div></blockquote>
 </div>
 <div class="section" id="presenting-collected-metrics">
 <h2>Presenting collected metrics<a class="headerlink" href="#presenting-collected-metrics" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><strong>RPi-Monitor</strong> embed a web server designed to present collected metrics.
+<div><p><strong>RPi-Monitor</strong> embed a web server designed to present collected metrics.
 Instantaneous data are presented in the status page. Metrics stored into the RRD
 are presented as statistics pages. The web interface allow user to reoganise
 statistics by drag&#8217;n drop. Statistics page allow to zoom over graph to see
-details of the mertics.
-Embedded web server can be disable and page can be served by an external web server.</div></blockquote>
+details of the mertics.</p>
+<p>Embedded web server can be disable and page can be served by an external web server.</p>
+</div></blockquote>
 </div>
 <div class="section" id="configurable">
 <h2>Configurable<a class="headerlink" href="#configurable" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>In <strong>RPi-Monitor</strong> everything is configurable:
-* Define what metrics to extract and how to extract them
-* Define how to store metrics
-* Define how to present and share metrics and statistics
-* Define how to detect an alert and what to do when alert appears or disappears
-* Define ... what you want to do with <strong>RPi-Monitor</strong></div></blockquote>
+<div><p>In <strong>RPi-Monitor</strong> everything is configurable:</p>
+<ul class="simple">
+<li>Define what metrics to extract and how to extract them</li>
+<li>Define how to store metrics</li>
+<li>Define how to present and share metrics and statistics</li>
+<li>Define how to detect an alert and what to do when alert appears or disappears</li>
+<li>Define ... what you want to do with <strong>RPi-Monitor</strong></li>
+</ul>
+</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">See next chapters for configuration details and examples.</p>
+<p class="last">See <a class="reference external" href="10_index.html">configuration</a> chapter for details and examples.</p>
 </div>
 </div>
 <div class="section" id="processing-metrics-and-raising-alerts">
@@ -272,10 +276,10 @@ server), read on disk or remotely accessed through snmp.</div></blockquote>
 <h2>Extending the capabilities of <strong>RPi-Monitor</strong><a class="headerlink" href="#extending-the-capabilities-of-rpi-monitor" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>RPi-Monitor</strong> is extensible. It provides addons allowing customisation of
-the interface Shellinabox, Hawkeye, top3...</p>
-<p><strong>RPi-Monitor-Peeble</strong> allows to see monitoring status on Peeble smart watch.</p>
-<p><strong>RPi-Monitor</strong> is also available for <strong>Docker</strong> and for embedded devices created
-with <strong>Yocto Project</strong></p>
+the interface <a class="reference external" href="https://github.com/shellinabox/shellinabox">Shellinabox</a>, <a class="reference external" href="https://github.com/ipartola/hawkeye">Hawkeye</a>, top3...</p>
+<p><strong>RPi-Monitor-Peeble</strong> allows to see monitoring status on <a class="reference external" href="https://www.pebble.com/">Peeble</a> smart watch.</p>
+<p><strong>RPi-Monitor</strong> is also available for <a class="reference external" href="https://www.docker.com/">Docker</a> and for embedded devices created
+with <a class="reference external" href="https://www.yoctoproject.org/">Yocto Project</a></p>
 </div></blockquote>
 </div>
 </div>

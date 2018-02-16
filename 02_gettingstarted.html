@@ -199,8 +199,10 @@
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="installation-using-the-repository">
-<h3>Installation using the repository<a class="headerlink" href="#installation-using-the-repository" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation-and-upgrade-from-repository">
+<h3>Installation and upgrade from repository<a class="headerlink" href="#installation-and-upgrade-from-repository" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="install-from-repository">
+<h4>Install from repository<a class="headerlink" href="#install-from-repository" title="Permalink to this headline">¶</a></h4>
 <p><strong>RPi-Monitor</strong> is providing a debian repository. This repository makes
 installation and update accessible with the command <code class="docutils literal"><span class="pre">apt-get</span></code> or <code class="docutils literal"><span class="pre">aptitude</span></code>.</p>
 <p>To use this repository follow the instruction bellow:</p>
@@ -217,8 +219,8 @@ installation and update accessible with the command <code class="docutils litera
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">rpimonitor</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
 <p class="last"><strong>RPi-Monitor</strong> is designed to start automatically and collect metrics.
 The web interface is available on address <a class="reference external" href="http://IPaddress:8888">http://IPaddress:8888</a>.</p>
 </div>
@@ -229,7 +231,7 @@ The web interface is available on address <a class="reference external" href="ht
 </div>
 </div>
 <div class="section" id="upgrade-from-the-repository">
-<h3>Upgrade from the repository<a class="headerlink" href="#upgrade-from-the-repository" title="Permalink to this headline">¶</a></h3>
+<h4>Upgrade from the repository<a class="headerlink" href="#upgrade-from-the-repository" title="Permalink to this headline">¶</a></h4>
 <p>To upgrade <strong>RPi-Monitor</strong>, execute the following command:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>
@@ -239,6 +241,7 @@ The web interface is available on address <a class="reference external" href="ht
 about upgradable packages:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="n">update</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="manual-installation-from-debian-package">
@@ -281,7 +284,7 @@ instruction which describes how and where install files.</p>
 <h3>Startup script<a class="headerlink" href="#startup-script" title="Permalink to this headline">¶</a></h3>
 <p><strong>RPi-Monitor</strong> is configured to start automatically. <code class="docutils literal"><span class="pre">/etc/init.d/rpimonitor</span></code>
 and link in runlevel startup directory do the job. This script can be executed
-with the folllowing commands:</p>
+with the following parameters:</p>
 <dl class="docutils">
 <dt>start</dt>
 <dd>Start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
@@ -343,7 +346,7 @@ configuration of Web interface</dd>
 </tr>
 <tr class="row-odd"><td rowspan="2">-l, &#8211;logfile</td>
 <td rowspan="2">log file</td>
-<td>Logfile directory and prefix (ex: /var/log/rpimonitor)</td>
+<td>Logfile directory and prefix (ex: <code class="docutils literal"><span class="pre">/var/log/rpimonitor</span></code>)</td>
 </tr>
 <tr class="row-even"><td>Default:</td>
 </tr>
@@ -420,7 +423,7 @@ how to customize <code class="docutils literal"><span class="pre">rpimonitord</s
 <p class="first admonition-title">Warning</p>
 <p class="last">Be sure to use Linux filefeed format with line ending with LF (and not CR/LF like in Windows)</p>
 </div>
-<p>See next chapter for datail about configuration.</p>
+<p>See <a class="reference external" href="10_index.html">configuration</a> chapter for details and examples.</p>
 </div>
 <div class="section" id="snmp-agent">
 <h3>snmp-agent<a class="headerlink" href="#snmp-agent" title="Permalink to this headline">¶</a></h3>
@@ -450,10 +453,9 @@ available in json format and can be downloaded from the root of the web interfac
 <hr class="docutils" />
 <div class="section" id="interactive-configuration-helper">
 <h2>Interactive Configuration Helper<a class="headerlink" href="#interactive-configuration-helper" title="Permalink to this headline">¶</a></h2>
-<p><strong>RPi-Monitor</strong> Interactive Configuration Helper is a tool embedded into
-<code class="docutils literal"><span class="pre">rpimonitord</span></code> helping to create configuration files
-.
-This chapter is detailling how to use it to monitor a ntfs volume.</p>
+<p><strong>RPi-Monitor</strong> <cite>Interactive Configuration Helper</cite> is a tool embedded into
+<code class="docutils literal"><span class="pre">rpimonitord</span></code> helping to create configuration files.</p>
+<p>This example is detailling how to use it to monitor a ntfs volume.</p>
 <p>First execute the following command:</p>
 <p><code class="docutils literal"><span class="pre">rpimonitord</span> <span class="pre">-i</span></code></p>
 <img alt="_images/helper001.png" src="_images/helper001.png" />
