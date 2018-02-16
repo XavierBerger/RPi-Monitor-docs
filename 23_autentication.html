@@ -35,7 +35,7 @@
     <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
         <link rel="up" title="Integration examples" href="20_index.html"/>
         <link rel="next" title="Sensors" href="24_sensors.html"/>
-        <link rel="prev" title="Condifuration examples" href="22_examples.html"/>
+        <link rel="prev" title="Configuration examples" href="22_examples.html"/>
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -107,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="10_index.html">Configuration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="20_index.html">Integration examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="21_customisation.html">Customisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="22_examples.html">Condifuration examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_examples.html">Configuration examples</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Authentication and secure access</a></li>
 <li class="toctree-l2"><a class="reference internal" href="24_sensors.html">Sensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="25_lcd.html">RPi-Monitor-LCD</a></li>
@@ -269,66 +269,66 @@ server_tokens off;
 
 # HTTP 80
 server {
-listen         80;
-#Force the usage of https
-rewrite - https://$host$request_uri? permanent;
+    listen         80;
+    #Force the usage of https
+    rewrite - https://$host$request_uri? permanent;
 }
 
 # HTTPS 443
 server  {
-listen 443 ssl;
-keepalive_timeout 70;
+    listen 443 ssl;
+    keepalive_timeout 70;
 
-# SSL config
-ssl on;
-ssl_certificate /etc/ssl/localcerts/RPi-Experiences-cert.pem;
-ssl_certificate_key /etc/ssl/localcerts/RPi-Experiences-key.pem;
+    # SSL config
+    ssl on;
+    ssl_certificate /etc/ssl/localcerts/RPi-Experiences-cert.pem;
+    ssl_certificate_key /etc/ssl/localcerts/RPi-Experiences-key.pem;
 
-ssl_session_timeout 5m;
-ssl_protocols SSLv3 TLSv1.2;
-ssl_ciphers RC4:HIGH:!aNULL:!MD5;
-ssl_prefer_server_ciphers on;
-ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1.2;
+    ssl_ciphers RC4:HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+    ssl_session_cache shared:SSL:10m;
 
-# Allow to use frame from same origin
-add_header X-Frame-Options SAMEORIGIN;
+    # Allow to use frame from same origin
+    add_header X-Frame-Options SAMEORIGIN;
 
-# DDOS protection - Tune Values or deactivate in case of issue
-# limit_conn conn_limit_per_ip 20;
-# limit_req zone=req_limit_per_ip burst=20 nodelay;
+    # DDOS protection - Tune Values or deactivate in case of issue
+    # limit_conn conn_limit_per_ip 20;
+    # limit_req zone=req_limit_per_ip burst=20 nodelay;
 
-# Proxy Config
-proxy_redirect          off;
-proxy_set_header        Host            $host;
-proxy_set_header        X-Real-IP       $remote_addr;
-proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-client_max_body_size    10m;
-client_body_buffer_size 128k;
-proxy_connect_timeout   90;
-proxy_send_timeout      90;
-proxy_read_timeout      90;
-proxy_buffers           32 4k;
+    # Proxy Config
+    proxy_redirect          off;
+    proxy_set_header        Host            $host;
+    proxy_set_header        X-Real-IP       $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    client_max_body_size    10m;
+    client_body_buffer_size 128k;
+    proxy_connect_timeout   90;
+    proxy_send_timeout      90;
+    proxy_read_timeout      90;
+    proxy_buffers           32 4k;
 
-# Define the default site
-location / {
-    rewrite - /rpimonitor/ permanent;
-}
+    # Define the default site
+    location / {
+        rewrite - /rpimonitor/ permanent;
+    }
 
-location /rpimonitor/ {
-proxy_pass http://localhost:8888;
-    auth_basic            &quot;Access Restricted&quot;;
-    auth_basic_user_file  &quot;/etc/nginx/.htpasswd&quot;;
-    access_log /var/log/nginx/rpimonitor.access.log;
-    error_log /var/log/nginx/rpimonitor.error.log;
-}
+    location /rpimonitor/ {
+        proxy_pass http://localhost:8888;
+        auth_basic            &quot;Access Restricted&quot;;
+        auth_basic_user_file  &quot;/etc/nginx/.htpasswd&quot;;
+        access_log /var/log/nginx/rpimonitor.access.log;
+        error_log /var/log/nginx/rpimonitor.error.log;
+    }
 
-location /shellinabox/ {
-proxy_pass http://localhost:4200;
-    auth_basic            &quot;Access Restricted&quot;;
-    auth_basic_user_file  &quot;/etc/nginx/.htpasswd&quot;;
-    access_log /var/log/nginx/shellinabox.access.log;
-    error_log /var/log/nginx/shellinabox.error.log;
-}
+    location /shellinabox/ {
+        proxy_pass http://localhost:4200;
+        auth_basic            &quot;Access Restricted&quot;;
+        auth_basic_user_file  &quot;/etc/nginx/.htpasswd&quot;;
+        access_log /var/log/nginx/shellinabox.access.log;
+        error_log /var/log/nginx/shellinabox.error.log;
+    }
 }
 </pre></div>
 </div>
@@ -338,7 +338,7 @@ proxy_pass http://localhost:4200;
 </pre></div>
 </div>
 <p>You can now start to test to access your configuration by browsing
-<a class="reference external" href="http://RPiIpAddresss/">http://RPiIpAddresss/</a>. You will be automatically redirected to <a class="reference external" href="https://RPiIpAddress/rpimonitor/">https://RPiIpAddress/rpimonitor/</a>.</p>
+<a class="reference external" href="http://IpAddresss/">http://IpAddresss/</a>. You will be automatically redirected to <a class="reference external" href="https://IpAddress/rpimonitor/">https://IpAddress/rpimonitor/</a>.</p>
 </div>
 <div class="section" id="configure-the-firewall">
 <h2>Configure the firewall<a class="headerlink" href="#configure-the-firewall" title="Permalink to this headline">¶</a></h2>
@@ -380,8 +380,8 @@ reapplied at start-up.</p>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>Now your host is protected. You can try to access to <strong>RPi-Monitor</strong> directly
-<a class="reference external" href="http://RPiIpAddress:8888/">http://RPiIpAddress:8888/</a> and you will have an error. If you try to access to
-it through the revers proxy <a class="reference external" href="http://RPiIpAddress/">http://RPiIpAddress/</a> you will have to authenticate
+<a class="reference external" href="http://IpAddress:8888/">http://IpAddress:8888/</a> and you will have an error. If you try to access to
+it through the revers proxy <a class="reference external" href="http://IpAddress/">http://IpAddress/</a> you will have to authenticate
 before accessing to the server and once authenticated, you will be connected
 through a secured https connection.</p>
 <p>Here it is we have a server which is now able to be connected on the internet.</p>
@@ -401,7 +401,7 @@ through a secured https connection.</p>
         <a href="24_sensors.html" class="btn btn-neutral float-right" title="Sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="22_examples.html" class="btn btn-neutral" title="Condifuration examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="22_examples.html" class="btn btn-neutral" title="Configuration examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

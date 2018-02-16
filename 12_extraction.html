@@ -317,7 +317,7 @@ You can refer to swap data extraction to see an example.</p>
 <div class="section" id="snmp-oid">
 <h2>SNMP OID<a class="headerlink" href="#snmp-oid" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>RPi-Monitor is able to act as an snmp agent. Snmp configuration is based
+<div><p><strong>RPi-Monitor</strong> is able to act as an snmp agent. Snmp configuration is based
 on KPI name. KPI could be <code class="docutils literal"><span class="pre">static</span></code> or <code class="docutils literal"><span class="pre">dynamic</span></code>.</p>
 <dl class="docutils">
 <dt>snmp.&lt;kpi name&gt;.id=&lt;id&gt;</dt>
@@ -332,8 +332,12 @@ defined for snmp agent. (ref. SNMP agent configuration section)</dd>
 <dt>snmp.&lt;kpi name&gt;.postprocess=&lt;formula&gt;</dt>
 <dd>Post process formula to apply to KPI before sending over SNMP.
 Ex: Convert float to interger by mutiplying by 100: <code class="docutils literal"><span class="pre">$1*100</span></code></dd>
-<dt>Commands to use to get MIB information:</dt>
-<dd><dl class="first last docutils">
+</dl>
+</div></blockquote>
+<div class="section" id="commands-to-use-to-get-mib-information">
+<h3>Commands to use to get MIB information:<a class="headerlink" href="#commands-to-use-to-get-mib-information" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="docutils">
 <dt>Snmp Configuration</dt>
 <dd>See configuration file example in <code class="docutils literal"><span class="pre">/etc/snmp/snmpd.conf.rpimonitor</span></code>
 and activate pass_persist extension</dd>
@@ -342,9 +346,8 @@ and activate pass_persist extension</dd>
 <dt>Get data from SNMP</dt>
 <dd><code class="docutils literal"><span class="pre">snmpwalk</span> <span class="pre">-v</span> <span class="pre">2c</span> <span class="pre">-m</span> <span class="pre">~/mib.txt</span> <span class="pre">-c</span> <span class="pre">public</span> <span class="pre">127.0.0.1</span> <span class="pre">1.3.6.1.4.1.54321.42</span></code></dd>
 </dl>
-</dd>
-</dl>
 </div></blockquote>
+</div>
 </div>
 </div>
 

@@ -206,8 +206,7 @@ to the normal.</p>
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Alert/Cancel are sent only when the state is stable to avoid messages
 flooding when limit is about to be exceeded as shown in schema bellow:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
-                        send alert
+<div class="highlight-html"><div class="highlight"><pre><span></span>                        send alert
                             ^
  th      th <span class="p">&lt;</span><span class="nt">------dh------</span><span class="p">&gt;</span>|        th
   _____   __________________|______   _______           send cancel
@@ -217,12 +216,10 @@ __|   |___|                       |___|     |______________|_____
       tl                          tl        tl<span class="p">&lt;</span><span class="nt">-----dl-----</span><span class="p">&gt;</span>
                             |------------------------------|
                                     Alert is raised
-<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>If alert is still active after resend period, alerte is sent again:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
-                  send alert                                    resend alert
+<div class="highlight-html"><div class="highlight"><pre><span></span>                  send alert                                    resend alert
                       ^                                               ^
     th <span class="p">&lt;</span><span class="nt">-----dh------</span><span class="p">&gt;</span>|<span class="p">&lt;</span><span class="nt">---------------------dr----------------------</span><span class="p">&gt;</span>|
     __________________|_______________________________________________|_____
@@ -231,38 +228,36 @@ __|   |___|                       |___|     |______________|_____
 ____|
     tl                |-----------------------------------------------------&gt;
                                     Alert is raised
-<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="condifuration">
-<h2>Condifuration<a class="headerlink" href="#condifuration" title="Permalink to this headline">¶</a></h2>
-<p>Alert configuration is performed as follow:</p>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>Each alert is identified by its &lt;alert name&gt;.</p>
 <dl class="docutils">
 <dt>alert.&lt;alert name&gt;.active=&lt;activation condition&gt;</dt>
 <dd>&lt;activation condition&gt; defines the alert pre-condition. If this formula
 returns false, the trigger will not be checked. Default value is 1.
-This command could refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.kpi=&lt;trigger&gt;</dt>
 <dd>&lt;trigger&gt; is defining the formula to evaluate. If formula returns true, the
-alert is detected. This command should refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+alert is detected. This command should refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.maxalertduration=&lt;duration before raise&gt;</dt>
 <dd>The alert will be dectected immediatly but alert raised commande will
-be executed only afer a defined &lt;duration before raise&gt; in seconds
-(&#8216;dh&#8217; in the upper schema)</dd>
+be executed only afer a defined <code class="docutils literal"><span class="pre">&lt;duration</span> <span class="pre">before</span> <span class="pre">raise&gt;</span></code> in seconds
+(<code class="docutils literal"><span class="pre">dh</span></code> in the upper schema)</dd>
 <dt>alert.&lt;alert name&gt;.cancelvalidation=&lt;duration before cancel&gt;</dt>
 <dd>As for alert raising, cancellation command will be executed only after
-&lt;duration before cancel&gt; seconds (&#8216;dl&#8217; in the upper schema)</dd>
+<code class="docutils literal"><span class="pre">&lt;duration</span> <span class="pre">before</span> <span class="pre">cancel&gt;</span></code> seconds (<code class="docutils literal"><span class="pre">dl</span></code> in the upper schema)</dd>
 <dt>alert.&lt;alert name&gt;.resendperiod=&lt;period&gt;</dt>
-<dd>If alert is still active after &lt;period&gt; seconds, the raise command
-will be executed again (&#8216;dr&#8217; in the upper schema).</dd>
+<dd>If alert is still active after <code class="docutils literal"><span class="pre">&lt;period&gt;</span></code> seconds, the raise command
+will be executed again (<code class="docutils literal"><span class="pre">dr</span></code> in the upper schema).</dd>
 <dt>alert.&lt;alert name&gt;.raisecommand=&lt;Raise Command&gt;</dt>
-<dd>&lt;Raise Command&gt;&gt; is the command to executed when an alert is raised.
-This command could refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;Raise</span> <span class="pre">Command&gt;</span></code> is the command to executed when an alert is raised.
+This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.cancelcommand=&lt;Cancel Command&gt;</dt>
-<dd>&lt;Cancel Command&gt; is the command to executed when an alert is canceled
-This command could refer to KPI using keyword &#8216;data.&lt;kpi&gt;&#8217;</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;Cancel</span> <span class="pre">Command&gt;</span></code> is the command to executed when an alert is canceled
+This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
 </dl>
 </div>
 </div>
