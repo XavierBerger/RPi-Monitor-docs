@@ -233,10 +233,21 @@ Only alpha numerical charter and underscore are accepted.</dd>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable file within the path.
 If the file exists, rpimonitord will read its content. If the file
 is not existing, rpimonirotd will try to execute it and will parse
-the output.
-Warning: specifying an executable by its absolute name will tell
-rpimonitord to read the content of the executable.1.graph.</dd>
+the output.</dd>
 </dl>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Specifying an executable by its absolute name will tell
+<code class="docutils literal"><span class="pre">rpimonitord</span></code> to read the content of the executable.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> it is possible to refer to another <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>
+with the prefix <code class="docutils literal"><span class="pre">data.</span></code> followed by <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>: <code class="docutils literal"><span class="pre">data.&lt;data</span> <span class="pre">name&gt;</span></code></p>
+<p><strong>Example</strong>: <code class="docutils literal"><span class="pre">data.kernel_version</span></code></p>
+<p class="last">This data could refer to <code class="docutils literal"><span class="pre">dynamic</span></code> or <code class="docutils literal"><span class="pre">static</span></code> KPI. The order of KPI
+extraction is important. Data used should already been extracted.</p>
+</div>
 <dl class="docutils">
 <dt>static.&lt;static data id&gt;.regexp=&lt;data regexp&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code> is the regular expression extracting information from
@@ -251,7 +262,7 @@ This parameter will be evaluate by the command eval of perl.</dd>
 </div>
 <div class="section" id="dynamic">
 <h2>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this headline">¶</a></h2>
-<p>Dynamic KPI are extracted periodically (defined by daemon.delay)
+<p>Dynamic KPI are extracted periodically (defined by <code class="docutils literal"><span class="pre">daemon.delay</span></code>)
 Each statistic is identified into the conf file by a line stating
 with the keyword dynamic and an identifier <code class="docutils literal"><span class="pre">&lt;dynamic</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code></p>
 <p>Each dynamic KPI is defined by an id and with 9 parameters</p>
@@ -296,7 +307,7 @@ database and how <code class="docutils literal"><span class="pre">&lt;GAUGE|COUN
 parameter is defined as empty, no RRD database will be created. If
 this parameter is defined, a RRD database will be created and data
 will be stored at every extraction.
-Ref <a class="reference external" href="http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html">http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html</a> for RRD
+Ref <a class="reference external" href="http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html">RRDTool documentation</a> for RRD
 parameter description.</dd>
 </dl>
 <p><strong>dynamic.&lt;dynamic data id&gt;.min=&lt;minimal value acceptable in RRD&gt;</strong></p>
