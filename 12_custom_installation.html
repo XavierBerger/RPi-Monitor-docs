@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting startep &mdash; RPi-Monitor v2.13-r0</title>
+  <title>Custom installation &mdash; RPi-Monitor v2.13-r0</title>
   
 
   
@@ -33,8 +33,9 @@
 
   
     <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="next" title="First installation" href="11_first_installation.html"/>
-        <link rel="prev" title="Keys features of RPi-Monitor" href="01_features.html"/>
+        <link rel="up" title="Getting startep" href="10_index.html"/>
+        <link rel="next" title="Upgrade or uninstall" href="13_upgrade_uninstall.html"/>
+        <link rel="prev" title="First installation" href="11_first_installation.html"/>
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -114,9 +115,9 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting startep</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Getting startep</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="11_first_installation.html">First installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html">Custom installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Custom installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html">Upgrade or uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="14_execution.html">Understanding program</a></li>
 <li class="toctree-l2"><a class="reference internal" href="15_configuration_helper.html">Interactive Configuration Helper</a></li>
@@ -191,7 +192,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Getting startep</li>
+          <li><a href="10_index.html">Getting startep</a> &raquo;</li>
+        
+      <li>Custom installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -199,7 +202,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/00_index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/03_custom_installation.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -213,54 +216,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-startep">
-<h1>Getting startep<a class="headerlink" href="#getting-startep" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="11_first_installation.html">First installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="11_first_installation.html#installation-from-repository">Installation from repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11_first_installation.html#first-step">First step</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="custom-installation">
+<h1>Custom installation<a class="headerlink" href="#custom-installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-from-debian-package">
+<h2>Installation from Debian package<a class="headerlink" href="#installation-from-debian-package" title="Permalink to this headline">¶</a></h2>
+<p>Download the latest package from the official repository in <a class="reference external" href="https://github.com/XavierBerger/RPi-Monitor-deb/tree/master/packages">Github</a>
+with the following command (replace <code class="docutils literal"><span class="pre">latest_package_url</span></code> by the real url found on github):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">latest_package_url</span> <span class="o">-</span><span class="n">O</span> <span class="n">rpimonitor_latest_all</span><span class="o">.</span><span class="n">deb</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="12_custom_installation.html">Custom installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html#installation-from-debian-package">Installation from Debian package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html#installation-from-sources">Installation from sources</a></li>
-</ul>
-</li>
-</ul>
+<p>If you have issue with GnuTLS: A TLS warning alert coming from Github you
+can download it with the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="n">latest_package_url</span> <span class="o">-</span><span class="n">o</span> <span class="n">rpimonitor_latest_all</span><span class="o">.</span><span class="n">deb</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="13_upgrade_uninstall.html">Upgrade or uninstall</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html#upgrade-from-the-repository">Upgrade from the repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html#uninstallation">Uninstallation</a></li>
-</ul>
-</li>
-</ul>
+<p>Install the dependencies by executing the following command (use command
+<code class="docutils literal"><span class="pre">apt-get</span></code> if <code class="docutils literal"><span class="pre">aptitude</span></code> is not available on your target system):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">librrds</span><span class="o">-</span><span class="n">perl</span> <span class="n">libhttp</span><span class="o">-</span><span class="n">daemon</span><span class="o">-</span><span class="n">perl</span> <span class="n">libjson</span><span class="o">-</span><span class="n">perl</span> \
+<span class="n">libipc</span><span class="o">-</span><span class="n">sharelite</span><span class="o">-</span><span class="n">perl</span> <span class="n">libfile</span><span class="o">-</span><span class="n">which</span><span class="o">-</span><span class="n">perl</span> <span class="n">libsnmp</span><span class="o">-</span><span class="n">extension</span><span class="o">-</span><span class="n">passpersist</span><span class="o">-</span><span class="n">perl</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="14_execution.html">Understanding program</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#startup-script">Startup script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#command-line">Command line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#configuration">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#snmp-agent">snmp-agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#raw-data-access">Raw data access</a></li>
-</ul>
-</li>
-</ul>
+<p>Installation or upgrade can be done with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">rpimonitor_latest_all</span><span class="o">.</span><span class="n">deb</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="15_configuration_helper.html">Interactive Configuration Helper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="15_configuration_helper.html#uninstallation">Uninstallation</a></li>
-</ul>
-</li>
-</ul>
+<p>Complete the installation with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">updatePackagesStatus</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-from-sources">
+<h2>Installation from sources<a class="headerlink" href="#installation-from-sources" title="Permalink to this headline">¶</a></h2>
+<p>For manual installation, refer to <a class="reference external" href="32_contributing.html#packaging">Packaging</a>
+instruction which describes how and where install files.</p>
 </div>
 </div>
 
@@ -274,10 +262,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="11_first_installation.html" class="btn btn-neutral float-right" title="First installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="13_upgrade_uninstall.html" class="btn btn-neutral float-right" title="Upgrade or uninstall" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="01_features.html" class="btn btn-neutral" title="Keys features of RPi-Monitor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="11_first_installation.html" class="btn btn-neutral" title="First installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

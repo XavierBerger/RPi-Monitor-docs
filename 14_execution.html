@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Understanding program &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="up" title="Getting startep" href="10_index.html"/>
+        <link rel="next" title="Interactive Configuration Helper" href="15_configuration_helper.html"/>
+        <link rel="prev" title="Upgrade or uninstall" href="13_upgrade_uninstall.html"/>
+
+
+<script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6853682829194266",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114314379-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114314379-1');
+</script>
+
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Getting startep</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="11_first_installation.html">First installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html">Custom installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html">Upgrade or uninstall</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Understanding program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_configuration_helper.html">Interactive Configuration Helper</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="20_index.html">Configuration</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="30_index.html">Integration examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="40_index.html">To go further</a></li>
+</ul>
+
+            
+          
+
+<hr />
+<div style="padding: 0;">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-6853682829194266"
+         data-ad-slot="2876944524"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="10_index.html">Getting startep</a> &raquo;</li>
+        
+      <li>Understanding program</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/05_execution.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="understanding-program">
+<h1>Understanding program<a class="headerlink" href="#understanding-program" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="startup-script">
+<h2>Startup script<a class="headerlink" href="#startup-script" title="Permalink to this headline">¶</a></h2>
+<p><strong>RPi-Monitor</strong> is configured to start automatically. <code class="docutils literal"><span class="pre">/etc/init.d/rpimonitor</span></code>
+and link in runlevel startup directory do the job. This script can be executed
+with the following parameters:</p>
+<dl class="docutils">
+<dt>start</dt>
+<dd>Start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>stop</dt>
+<dd>Stop <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>restart</dt>
+<dd>Stop and start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>status</dt>
+<dd>Show <code class="docutils literal"><span class="pre">rpimonitord</span></code> status</dd>
+<dt>update</dt>
+<dd>Update packages to be installed list. This information is displayed in default
+configuration of Web interface</dd>
+<dt>install_auto_package_status_update</dt>
+<dd>Add a script to automatically call package update script when <code class="docutils literal"><span class="pre">apt</span></code> commands are executed</dd>
+<dt>remove_auto_package_status_update</dt>
+<dd>Remove script automatically call for package update</dd>
+</dl>
+</div>
+<div class="section" id="command-line">
+<h2>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">rpimonitord</span></code> can be directly executed with the following parameters:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rpimonitord</span> <span class="p">[</span><span class="o">-</span><span class="n">a</span> <span class="n">address</span><span class="p">][</span> <span class="o">-</span><span class="n">b</span> <span class="n">pidfile</span><span class="p">][[</span><span class="o">-</span><span class="n">c</span> <span class="n">configuration_file</span><span class="p">]</span><span class="o">...</span><span class="p">][</span><span class="o">-</span><span class="n">d</span> <span class="n">delay</span><span class="p">][</span><span class="o">-</span><span class="n">h</span><span class="p">][</span><span class="o">-</span><span class="n">k</span><span class="p">][</span><span class="o">-</span><span class="n">l</span> <span class="n">logfile</span><span class="p">]</span>
+<span class="p">[</span><span class="o">-</span><span class="n">m</span><span class="p">][</span><span class="o">-</span><span class="n">n</span><span class="p">][</span><span class="o">-</span><span class="n">p</span> <span class="n">port</span><span class="p">][</span><span class="o">-</span><span class="n">s</span><span class="p">][</span><span class="o">-</span><span class="n">t</span> <span class="n">timeout</span><span class="p">][</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="o">...</span><span class="p">]]][</span><span class="o">-</span><span class="n">V</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="options">
+<h3>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="14%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">-a, &#8211;addr</td>
+<td rowspan="2">address</td>
+<td>Web server bind address</td>
+</tr>
+<tr class="row-even"><td>Default: 0.0.0.0</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">-b, &#8211;background</td>
+<td rowspan="2">pid file</td>
+<td>Define the pid file when run in background</td>
+</tr>
+<tr class="row-even"><td>Default: not set</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">-c, &#8211;conf</td>
+<td rowspan="2">conf file</td>
+<td>Define the configuration file</td>
+</tr>
+<tr class="row-even"><td>Default: <code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code> <code class="docutils literal"><span class="pre">/etc/rpimonitor/daemon.conf</span></code></td>
+</tr>
+<tr class="row-odd"><td rowspan="2">-d, &#8211;delay</td>
+<td rowspan="2">delay</td>
+<td>Delay between check ins seconds</td>
+</tr>
+<tr class="row-even"><td>Default : 10</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">-l, &#8211;logfile</td>
+<td rowspan="2">log file</td>
+<td>Logfile directory and prefix (ex: <code class="docutils literal"><span class="pre">/var/log/rpimonitor</span></code>)</td>
+</tr>
+<tr class="row-even"><td>Default:</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">-p, &#8211;port</td>
+<td rowspan="2">port</td>
+<td>Web server port</td>
+</tr>
+<tr class="row-even"><td>Default: 8888</td>
+</tr>
+<tr class="row-odd"><td rowspan="2">-t, &#8211;timeout</td>
+<td rowspan="2">timeout</td>
+<td>KPI read timeout in seconds</td>
+</tr>
+<tr class="row-even"><td>Default: 5</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to change the default <code class="docutils literal"><span class="pre">delay</span></code>, the rrd file will have to be deleted.
+<code class="docutils literal"><span class="pre">rpimonitord</span></code> will recreate database at next startup with the new time slice.</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>-h, &#8211;help</td>
+<td>Shows this help and exit</td>
+</tr>
+<tr class="row-even"><td>-i, &#8211;interactive</td>
+<td>Interactive configuration helper</td>
+</tr>
+<tr class="row-odd"><td>-k, &#8211;keep</td>
+<td>Keep log file (Default: logfile is delete at each start)</td>
+</tr>
+<tr class="row-even"><td>-m, &#8211;mib</td>
+<td>Get MIB for current configuration</td>
+</tr>
+<tr class="row-odd"><td>-n, &#8211;noserver</td>
+<td>Don&#8217;t start embeded web server</td>
+</tr>
+<tr class="row-even"><td>-r, &#8211;readonly</td>
+<td>Read only mode.</td>
+</tr>
+<tr class="row-odd"><td>-s, &#8211;show</td>
+<td>Show configuration as loaded and exit</td>
+</tr>
+<tr class="row-even"><td>-v, &#8211;verbose</td>
+<td>Write debug info on screen</td>
+</tr>
+<tr class="row-odd"><td>-V, &#8211;Version</td>
+<td>Show version and exit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Configuration can be defined into <code class="docutils literal"><span class="pre">/etc/rpimonitor/daemon.conf</span></code> and
+<code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code> or in a list of files specified by <code class="docutils literal"><span class="pre">-c</span></code> parameter.
+In <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/*.conf</span></code>, provided at installation, you can see
+how to customize <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Configuration defined inside a configuration file always overwrite default values.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Configuration given as option of the command line always overwrite the one defined into a file.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure to use Linux filefeed format with line ending with LF (and not CR/LF like in Windows)</p>
+</div>
+<p>See <a class="reference external" href="10_index.html">configuration</a> chapter for details and examples.</p>
+</div>
+<div class="section" id="snmp-agent">
+<h2>snmp-agent<a class="headerlink" href="#snmp-agent" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">rpimonotord-snmp</span></code> is the snmp agent provided by <strong>RPi-Monitor</strong>. This agent
+allow <code class="docutils literal"><span class="pre">snmpd</span></code> to access to data exctracted by <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
+</div>
+<div class="section" id="raw-data-access">
+<h2>Raw data access<a class="headerlink" href="#raw-data-access" title="Permalink to this headline">¶</a></h2>
+<p>Once <code class="docutils literal"><span class="pre">rpimonitord</span></code> is started the data representing the current status are
+available in json format and can be downloaded from the root of the web interface
+(ex: <a class="reference external" href="http://raspberrypi.local:8888">http://raspberrypi.local:8888</a>)</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">static.json</span></code> : Static information extracted at startup</li>
+<li><code class="docutils literal"><span class="pre">dynamic.json</span></code> : Current values of dynamic information extracted periodically</li>
+<li><code class="docutils literal"><span class="pre">menu.json</span></code> : Description of menus when multiple pages are configured</li>
+</ul>
+<p>The web interface configuration can also be downloaded in json format:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">statistics.json</span></code> : Description of statistics page</li>
+<li><code class="docutils literal"><span class="pre">status.json</span></code> : Description of status page</li>
+<li><code class="docutils literal"><span class="pre">friends.json</span></code> : List of friends</li>
+<li><code class="docutils literal"><span class="pre">addons.json</span></code> : List of addons</li>
+</ul>
+<p>Statistic information are stored into RRD file available in the directory <code class="docutils literal"><span class="pre">/var/lib/rpimonitor/stat/</span></code></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="15_configuration_helper.html" class="btn btn-neutral float-right" title="Interactive Configuration Helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="13_upgrade_uninstall.html" class="btn btn-neutral" title="Upgrade or uninstall" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+      Last updated on Feb 17, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6853682829194266"
+     data-ad-slot="2876944524"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -33,9 +33,9 @@
 
   
     <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="up" title="Configuration" href="10_index.html"/>
-        <link rel="next" title="Web interface configuration" href="13_web.html"/>
-        <link rel="prev" title="Daemon configuration" href="11_daemon.html"/>
+        <link rel="up" title="Configuration" href="20_index.html"/>
+        <link rel="next" title="Web interface configuration" href="23_web.html"/>
+        <link rel="prev" title="Daemon configuration" href="21_daemon.html"/>
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -111,18 +111,27 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="00_index.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Configuration</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="11_daemon.html">Daemon configuration</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="20_index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="21_daemon.html">Daemon configuration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Metrics extraction configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="13_web.html">Web interface configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_addons.html">Addons configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="15_alert.html">Alert configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_web.html">Web interface configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_addons.html">Addons configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_alert.html">Alert configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="20_index.html">Integration examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="30_index.html">To go further</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="30_index.html">Integration examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="40_index.html">To go further</a></li>
 </ul>
 
             
@@ -183,7 +192,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="10_index.html">Configuration</a> &raquo;</li>
+          <li><a href="20_index.html">Configuration</a> &raquo;</li>
         
       <li>Metrics extraction configuration</li>
     
@@ -209,13 +218,8 @@
             
   <div class="section" id="metrics-extraction-configuration">
 <h1>Metrics extraction configuration<a class="headerlink" href="#metrics-extraction-configuration" title="Permalink to this headline">¶</a></h1>
-<p>This part of the configuration file is defining which data to extract how to
-extract them and when.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You will notice that metrics in <strong>RPi-Monitor</strong> are named <strong>KPI</strong>.
-<strong>KPI</strong> means Key Performance Indicator.</p>
-</div>
+<p>This chapter is defining which data to extract how to extract them and when.</p>
+<p>You will notice that metrics in <strong>RPi-Monitor</strong> are named <strong>KPI</strong> for Key Performance Indicator.</p>
 <div class="section" id="include">
 <h2>Include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
 <p>Specific <code class="docutils literal"><span class="pre">include</span></code> keyword is available to add a file to the list of
@@ -226,38 +230,51 @@ configuration files to be loaded.</p>
 configuration file to add at the end of the list of configuration
 files to be loaded.</dd>
 </dl>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The initial order of information displayed in status page depends on the
+order of file inclusion.</p>
+</div>
 </div>
 <div class="section" id="static">
 <h2>Static<a class="headerlink" href="#static" title="Permalink to this headline">¶</a></h2>
-<p>Static KPI are extracted once at rpimonitord startup. Each statistic
-is identified into the conf file by a line stating with the keyword
-static and an identifier <code class="docutils literal"><span class="pre">&lt;static</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code></p>
+<p>KPI representing a metric limit or anything else which do not change over the time
+is extracted once at <code class="docutils literal"><span class="pre">rpimonitord</span></code> startup (example: memory size, disk size, ...).
+Each KPI is identified into the configuration file by a line starting with the
+keyword <code class="docutils literal"><span class="pre">static</span></code> and an identifier <code class="docutils literal"><span class="pre">&lt;static</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Inside a configuration file <code class="docutils literal"><span class="pre">&lt;static</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code> should be unique per KPI.</p>
+</div>
 <p>Each static KPI is defined by an id and with 4 parameters</p>
 <dl class="docutils">
 <dt>static.&lt;static data id&gt;.name=&lt;data name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
 separated by comma. Each name has to be unique.
-Only alpha numerical charter and underscore are accepted.</dd>
-<dt>static.&lt;static data id&gt;.source=&lt;data source&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable file within the path.
-If the file exists, rpimonitord will read its content. If the file
-is not existing, rpimonirotd will try to execute it and will parse
-the output.</dd>
-</dl>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Specifying an executable by its absolute name will tell
-<code class="docutils literal"><span class="pre">rpimonitord</span></code> to read the content of the executable.</p>
+Only alpha numerical charter and underscore are accepted.</p>
+<div class="last admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Do not use <code class="docutils literal"><span class="pre">-</span></code> in <code class="docutils literal"><span class="pre">data</span> <span class="pre">name</span></code>: This is a limitation of javascript.</p>
 </div>
-<div class="admonition note">
+</dd>
+<dt>static.&lt;static data id&gt;.source=&lt;data source&gt;</dt>
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable file within the path.
+If the file exists, <code class="docutils literal"><span class="pre">rpimonitord</span></code> will read its content. If the file
+is not existing, <code class="docutils literal"><span class="pre">rpimonitord</span></code> will try to execute it and will parse
+the output.</p>
+<div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p>In <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> it is possible to refer to another <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>
 with the prefix <code class="docutils literal"><span class="pre">data.</span></code> followed by <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>: <code class="docutils literal"><span class="pre">data.&lt;data</span> <span class="pre">name&gt;</span></code></p>
 <p><strong>Example</strong>: <code class="docutils literal"><span class="pre">data.kernel_version</span></code></p>
-<p class="last">This data could refer to <code class="docutils literal"><span class="pre">dynamic</span></code> or <code class="docutils literal"><span class="pre">static</span></code> KPI. The order of KPI
-extraction is important. Data used should already been extracted.</p>
+<p>This data could refer to <code class="docutils literal"><span class="pre">dynamic</span></code> or <code class="docutils literal"><span class="pre">static</span></code> KPI.</p>
+<div class="last admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The order of KPI extraction is important.
+Data used should already been extracted to be accessible.</p>
 </div>
-<dl class="docutils">
+</div>
+</dd>
 <dt>static.&lt;static data id&gt;.regexp=&lt;data regexp&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code> is the regular expression extracting information from
 data source. Regexp groups <code class="docutils literal"><span class="pre">()</span></code> has to be used to extract the data
@@ -277,9 +294,14 @@ with the keyword dynamic and an identifier <code class="docutils literal"><span 
 <p>Each dynamic KPI is defined by an id and with 9 parameters</p>
 <dl class="docutils">
 <dt>dynamic.&lt;dynamic data id&gt;.name=&lt;data name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
 separated by comma. Each name has to be unique.
-Only alpha numerical charter and underscore are accepted.</dd>
+Only alpha numerical charter and underscore are accepted.</p>
+<div class="last admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Do not use <code class="docutils literal"><span class="pre">-</span></code> in <code class="docutils literal"><span class="pre">data</span> <span class="pre">name</span></code>: This is a limitation of javascript.</p>
+</div>
+</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.source=&lt;data source&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable file within the path.
 If the file exists, rpimonitord will read its content. If the file
@@ -381,10 +403,10 @@ and activate pass_persist extension</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="13_web.html" class="btn btn-neutral float-right" title="Web interface configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="23_web.html" class="btn btn-neutral float-right" title="Web interface configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="11_daemon.html" class="btn btn-neutral" title="Daemon configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="21_daemon.html" class="btn btn-neutral" title="Daemon configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

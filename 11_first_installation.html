@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting startep &mdash; RPi-Monitor v2.13-r0</title>
+  <title>First installation &mdash; RPi-Monitor v2.13-r0</title>
   
 
   
@@ -33,8 +33,9 @@
 
   
     <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="next" title="First installation" href="11_first_installation.html"/>
-        <link rel="prev" title="Keys features of RPi-Monitor" href="01_features.html"/>
+        <link rel="up" title="Getting startep" href="10_index.html"/>
+        <link rel="next" title="Custom installation" href="12_custom_installation.html"/>
+        <link rel="prev" title="Getting startep" href="10_index.html"/>
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -114,8 +115,8 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting startep</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="11_first_installation.html">First installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Getting startep</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">First installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html">Custom installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html">Upgrade or uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="14_execution.html">Understanding program</a></li>
@@ -191,7 +192,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Getting startep</li>
+          <li><a href="10_index.html">Getting startep</a> &raquo;</li>
+        
+      <li>First installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -199,7 +202,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/00_index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/02_gettingstarted.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -213,54 +216,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-startep">
-<h1>Getting startep<a class="headerlink" href="#getting-startep" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="11_first_installation.html">First installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="11_first_installation.html#installation-from-repository">Installation from repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11_first_installation.html#first-step">First step</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="first-installation">
+<h1>First installation<a class="headerlink" href="#first-installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-from-repository">
+<h2>Installation from repository<a class="headerlink" href="#installation-from-repository" title="Permalink to this headline">¶</a></h2>
+<p><strong>RPi-Monitor</strong> is providing a debian repository. This repository makes
+installation and update accessible with the command <code class="docutils literal"><span class="pre">apt-get</span></code> or <code class="docutils literal"><span class="pre">aptitude</span></code>.</p>
+<p>To use this repository follow the instruction bellow:</p>
+<p>Install <strong>RPi-Monitor</strong>&#8216;s public key to trust <strong>RPi-Monitor</strong> repository:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">dirmngr</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span> <span class="mi">2</span><span class="n">C0D3C0F</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="12_custom_installation.html">Custom installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html#installation-from-debian-package">Installation from Debian package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html#installation-from-sources">Installation from sources</a></li>
-</ul>
-</li>
-</ul>
+<p>Execute the following command to add <strong>RPi-Monitor</strong> into your list of repository:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">goo</span><span class="o">.</span><span class="n">gl</span><span class="o">/</span><span class="n">vewCLL</span> <span class="o">-</span><span class="n">O</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">.</span><span class="n">list</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="13_upgrade_uninstall.html">Upgrade or uninstall</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html#upgrade-from-the-repository">Upgrade from the repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html#uninstallation">Uninstallation</a></li>
-</ul>
-</li>
-</ul>
+<p>To install <strong>RPi-Monitor</strong>, execute the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">rpimonitor</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="14_execution.html">Understanding program</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#startup-script">Startup script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#command-line">Command line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#configuration">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#snmp-agent">snmp-agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html#raw-data-access">Raw data access</a></li>
-</ul>
-</li>
-</ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last"><strong>RPi-Monitor</strong> is designed to start automatically and collect metrics.
+The web interface is available on address <a class="reference external" href="http://raspberrypi.local:8888">http://raspberrypi.local:8888</a>.</p>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="15_configuration_helper.html">Interactive Configuration Helper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="15_configuration_helper.html#uninstallation">Uninstallation</a></li>
-</ul>
-</li>
-</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may notice that <strong>RPiMonitor</strong> repository is hosted on
+<a class="reference external" href="http://giteduberger.fr/en">http://giteduberger.fr/</a></p>
+</div>
+</div>
+<div class="section" id="first-step">
+<h2>First step<a class="headerlink" href="#first-step" title="Permalink to this headline">¶</a></h2>
+<p>After first installation you will see the following message:</p>
+<div class="figure align-center">
+<img alt="_images/firststep001.png" src="_images/firststep001.png" />
+</div>
+<p>Execute the following command to update packages information</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="n">update</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -274,10 +271,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="11_first_installation.html" class="btn btn-neutral float-right" title="First installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="12_custom_installation.html" class="btn btn-neutral float-right" title="Custom installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="01_features.html" class="btn btn-neutral" title="Keys features of RPi-Monitor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="10_index.html" class="btn btn-neutral" title="Getting startep" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

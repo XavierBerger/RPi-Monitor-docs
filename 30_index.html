@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>To go further &mdash; RPi-Monitor v2.13-r0</title>
+  <title>Integration examples &mdash; RPi-Monitor v2.13-r0</title>
   
 
   
@@ -33,8 +33,8 @@
 
   
     <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="next" title="Frequently Asked Questions" href="31_faq.html"/>
-        <link rel="prev" title="Non standard configuration" href="26_external.html"/>
+        <link rel="next" title="Customisation" href="31_customisation.html"/>
+        <link rel="prev" title="Alert configuration" href="25_alert.html"/>
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -110,16 +110,28 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="00_index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_index.html">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_index.html">Integration examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">To go further</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="32_contributing.html">Contributing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33_license.html">Authors and Licenses</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="20_index.html">Configuration</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Integration examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="31_customisation.html">Customisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_examples.html">Configuration examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_autentication.html">Authentication and secure access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="34_sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="35_lcd.html">RPi-Monitor-LCD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="36_external.html">Non standard configuration</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="40_index.html">To go further</a></li>
 </ul>
 
             
@@ -180,7 +192,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>To go further</li>
+      <li>Integration examples</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,7 +200,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/30_index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/20_index.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -202,20 +214,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="to-go-further">
-<h1>To go further<a class="headerlink" href="#to-go-further" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="integration-examples">
+<h1>Integration examples<a class="headerlink" href="#integration-examples" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="31_faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="32_contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-documentation">Contribute to documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#contribute-to-software">Contribute to software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="32_contributing.html#packaging">Packaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="31_customisation.html">Customisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="31_customisation.html#friends">Friends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="31_customisation.html#multiple-pages">Multiple pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="31_customisation.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="31_customisation.html#customise-web-page-header">Customise WEB page header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="31_customisation.html#justgagebar">JustGageBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="31_customisation.html#visibility">Visibility</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="33_license.html">Authors and Licenses</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="33_license.html#authors">Authors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33_license.html#licenses">Licenses</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="32_examples.html">Configuration examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="32_examples.html#example-files">Example files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_examples.html#monitoring-a-wifi-network">Monitoring a WiFi network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_examples.html#monitor-external-disk">Monitor external disk</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="33_autentication.html">Authentication and secure access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="33_autentication.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_autentication.html#manage-authentication">Manage authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_autentication.html#manage-secured-connection">Manage secured connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_autentication.html#reverse-proxy-configuration">Reverse proxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_autentication.html#configure-the-firewall">Configure the firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_autentication.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="34_sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="34_sensors.html#dht11-temperature-and-humidity-sensor">DHT11 temperature and humidity sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="34_sensors.html#ds18b20-1wire-temperature-sensor">DS18B20 1wire temperature sensor</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="35_lcd.html">RPi-Monitor-LCD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="35_lcd.html#lcd-connection">LCD connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="35_lcd.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="35_lcd.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="35_lcd.html#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="36_external.html">Non standard configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="36_external.html#use-it-with-my-own-web-server">Use it with my own Web Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="36_external.html#rpi-monitor-on-sunxi">RPi-Monitor on sunxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="36_external.html#use-it-into-another-linux-distribution">Use it into another Linux distribution</a></li>
 </ul>
 </li>
 </ul>
@@ -232,10 +294,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="31_faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="31_customisation.html" class="btn btn-neutral float-right" title="Customisation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="26_external.html" class="btn btn-neutral" title="Non standard configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="25_alert.html" class="btn btn-neutral" title="Alert configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
