@@ -225,13 +225,11 @@
 <p>You will notice that metrics in <strong>RPi-Monitor</strong> are named <strong>KPI</strong> for Key Performance Indicator.</p>
 <div class="section" id="include">
 <h2>Include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
-<p>Specific <code class="docutils literal"><span class="pre">include</span></code> keyword is available to add a file to the list of
-configuration files to be loaded.</p>
+<p><code class="docutils literal"><span class="pre">include</span></code> keyword is available to add a file to the list of configuration files to be loaded.</p>
 <dl class="docutils">
 <dt>include=&lt;full path to configuration file&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;full</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code> is the full path to the
-configuration file to add at the end of the list of configuration
-files to be loaded.</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;full</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code> is the full path to the configuration
+file to add at the end of the list of configuration files to be loaded.</dd>
 </dl>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -285,16 +283,16 @@ In case of KPI list, each group will be affected to a KPI name.</dd>
 <dt>static.&lt;static data id&gt;.postprocess=&lt;data postprocess&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code> is an expression defining the postprocessing to
 be applied on result. KPI are idendified by <code class="docutils literal"><span class="pre">$1</span></code>. In case of list,
-other KPI are identified by <code class="docutils literal"><span class="pre">$2</span></code>, <code class="docutils literal"><span class="pre">$3</span></code> <code class="docutils literal"><span class="pre">.graph.</span></code>.
-This parameter will be evaluate by the command eval of perl.</dd>
+other KPI are identified by <code class="docutils literal"><span class="pre">$2</span></code>, <code class="docutils literal"><span class="pre">$3</span></code>, ...
+This parameter will be evaluate by the command eval of <code class="docutils literal"><span class="pre">perl</span></code>.</dd>
 </dl>
 </div>
 <div class="section" id="dynamic">
 <h2>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this headline">¶</a></h2>
-<p>Dynamic KPI are extracted periodically (defined by <code class="docutils literal"><span class="pre">daemon.delay</span></code>)
-Each statistic is identified into the conf file by a line stating
-with the keyword dynamic and an identifier <code class="docutils literal"><span class="pre">&lt;dynamic</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code></p>
-<p>Each dynamic KPI is defined by an id and with 9 parameters</p>
+<p>Dynamic KPI are extracted periodically (defined by <code class="docutils literal"><span class="pre">daemon.delay</span></code>).
+Each KPI is identified into the conf file by a line stating with the keyword
+dynamic and an identifier <code class="docutils literal"><span class="pre">&lt;dynamic</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code></p>
+<p>Each dynamic KPI is defined by a <code class="docutils literal"><span class="pre">dynamic</span> <span class="pre">data</span> <span class="pre">id</span></code> and with 9 parameters</p>
 <dl class="docutils">
 <dt>dynamic.&lt;dynamic data id&gt;.name=&lt;data name&gt;</dt>
 <dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
@@ -306,12 +304,10 @@ Only alpha numerical charter and underscore are accepted.</p>
 </div>
 </dd>
 <dt>dynamic.&lt;dynamic data id&gt;.source=&lt;data source&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable file within the path.
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable program within the path.
 If the file exists, rpimonitord will read its content. If the file
 is not existing, rpimonirotd will try to execute it and will parse
-the output.
-Warning: specifying an executable by its absolute name will tell
-rpimonitord to read the content of the executable.1.graph.</dd>
+the output.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.regexp=&lt;data regexp&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code> is the regular expression extracting information from
 data source. Regexp groups <code class="docutils literal"><span class="pre">()</span></code> has to be used to extract the data
@@ -336,19 +332,19 @@ Default value is <code class="docutils literal"><span class="pre">1</span></code
 <dd>If rpimonitor can&#8217;t extract information, it is now possible to define
 a <code class="docutils literal"><span class="pre">&lt;default&gt;</span></code> value which will be set for the KPI.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.rrd=&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</dt>
-<dd>The 5th parameter is defining if the KPI has to be stored into a RRD
+<dd>rrd parameter is defining if the KPI has to be stored into a RRD
 database and how <code class="docutils literal"><span class="pre">&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</span></code>. If the
 parameter is defined as empty, no RRD database will be created. If
 this parameter is defined, a RRD database will be created and data
 will be stored at every extraction.
-Ref <a class="reference external" href="http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html">RRDTool documentation</a> for RRD
-parameter description.</dd>
+Ref <a class="reference external" href="http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html">RRDTool documentation</a>
+for RRD parameter description.</dd>
 </dl>
 <p><strong>dynamic.&lt;dynamic data id&gt;.min=&lt;minimal value acceptable in RRD&gt;</strong></p>
 <dl class="docutils">
 <dt>dynamic.&lt;dynamic data id&gt;.max=&lt;maximal value acceptable in RRD&gt;</dt>
 <dd>If a value extracted by is less than minimal of greater than maximal
-value, it will be stored int RRD database as unknown.
+value, it will not be stored into RRD database as unknown.
 These limits are usefull to handle counter that fall down to 0 when
 they reach their limit (Ex: network graphs)</dd>
 </dl>
@@ -362,7 +358,7 @@ You can refer to swap data extraction to see an example.</p>
 <div class="section" id="snmp-oid">
 <h2>SNMP OID<a class="headerlink" href="#snmp-oid" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><strong>RPi-Monitor</strong> is able to act as an snmp agent. Snmp configuration is based
+<div><p><strong>RPi-Monitor</strong> is able to act as an snmp-agent. Snmp configuration is based
 on KPI name. KPI could be <code class="docutils literal"><span class="pre">static</span></code> or <code class="docutils literal"><span class="pre">dynamic</span></code>.</p>
 <dl class="docutils">
 <dt>snmp.&lt;kpi name&gt;.id=&lt;id&gt;</dt>
@@ -381,8 +377,7 @@ Ex: Convert float to interger by mutiplying by 100: <code class="docutils litera
 </div></blockquote>
 <div class="section" id="commands-to-use-to-get-mib-information">
 <h3>Commands to use to get MIB information:<a class="headerlink" href="#commands-to-use-to-get-mib-information" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><dl class="docutils">
+<dl class="docutils">
 <dt>Snmp Configuration</dt>
 <dd>See configuration file example in <code class="docutils literal"><span class="pre">/etc/snmp/snmpd.conf.rpimonitor</span></code>
 and activate pass_persist extension</dd>
@@ -391,7 +386,6 @@ and activate pass_persist extension</dd>
 <dt>Get data from SNMP</dt>
 <dd><code class="docutils literal"><span class="pre">snmpwalk</span> <span class="pre">-v</span> <span class="pre">2c</span> <span class="pre">-m</span> <span class="pre">~/mib.txt</span> <span class="pre">-c</span> <span class="pre">public</span> <span class="pre">127.0.0.1</span> <span class="pre">1.3.6.1.4.1.54321.42</span></code></dd>
 </dl>
-</div></blockquote>
 </div>
 </div>
 </div>

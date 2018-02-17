@@ -236,11 +236,12 @@ into the friend machine.</dd>
 </dl>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">Example of implementation in <a class="reference external" href="21_customisation.html#friends">Friends customisation example</a></p>
+<p class="last">Example of implementation in <a class="reference external" href="31_customisation.html#friends">Friends customisation example</a></p>
 </div>
 </div>
-<div class="section" id="multi-pages">
-<h2>Multi-pages<a class="headerlink" href="#multi-pages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="top-bar-customisation">
+<h2>Top bar customisation<a class="headerlink" href="#top-bar-customisation" title="Permalink to this headline">¶</a></h2>
+<p>Top is displaying on top of web page can be customized with the following parameters:</p>
 <dl class="docutils">
 <dt>web.page.icon=&lt;icon location relative to webroot&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;icon</span> <span class="pre">location</span> <span class="pre">relative</span> <span class="pre">to</span> <span class="pre">webroot&gt;</span></code> is the path and filename of
@@ -254,24 +255,31 @@ the keyword <code class="docutils literal"><span class="pre">data</span></code> 
 tab and window title bar. This code can use status information with
 the keyword <code class="docutils literal"><span class="pre">data</span></code> including the <code class="docutils literal"><span class="pre">data.hostname</span></code> available natively</dd>
 </dl>
-<p>The status page is fully configurable.
-It is possible to define multiple pages. Each page is identified by
-its <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code>.</p>
 </div>
 <div class="section" id="status">
 <h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
+<p>The status page is fully configurable. It is possible to define multiple pages.
+Each page is identified by its <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Example of implementation in <a class="reference external" href="31_customisation.html#multiple-pages">Multi-pages customisation example</a></p>
+</div>
 <dl class="docutils">
 <dt>web.status.&lt;page id&gt;.name=&lt;page name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">name&gt;</span></code> name of the page displayed into the drop down menu in
-case of multiple pages.</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">name&gt;</span></code> name of the page displayed into the drop down menu in case of multiple pages.</dd>
 </dl>
-<p>Status page is split in strips displaying information. Each status
-strip is identified by a unique <code class="docutils literal"><span class="pre">&lt;status</span> <span class="pre">id&gt;</span></code>. Each status strip is
-defined by a name, an icon and a serie of lines described as follow:</p>
+<p>Status page is split in strips displaying information. Each status strip is
+identified by a unique <code class="docutils literal"><span class="pre">&lt;status</span> <span class="pre">id&gt;</span></code>. Each status strip is defined by a name,
+an icon and a serie of parameters described as follow:</p>
 <dl class="docutils">
-<dt>web.status.&lt;page id&gt;.visibility=&lt;visibility formula&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;visibility</span> <span class="pre">formula&gt;</span></code> should be a valid javascript formula returning
-<code class="docutils literal"><span class="pre">0</span></code>: to hide the row anything else but <code class="docutils literal"><span class="pre">0</span></code>: show the row</dd>
+<dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.visibility=&lt;visibility formula&gt;</dt>
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;visibility</span> <span class="pre">formula&gt;</span></code> should be a valid javascript formula returning
+<code class="docutils literal"><span class="pre">0</span></code>: to hide the row anything else but <code class="docutils literal"><span class="pre">0</span></code>: show the row</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Example of implementation in <a class="reference external" href="#">TO BE COMPLETED</a></p>
+</div>
+</dd>
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.name=&lt;display name&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;display</span> <span class="pre">name&gt;</span></code> Name displayed as title of the strip</dd>
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.icon=&lt;display icon&gt;</dt>
@@ -283,10 +291,10 @@ This number has to be unique within the strip.
 will be evaluated by the javascript command with the function
 <code class="docutils literal"><span class="pre">eval()</span></code> theirfore parameter should be valid javacript.
 To have  clean rendering, <strong>RPi-Monitor</strong> web interface provides some
-functions that could be used inside the parameter. The object data
-is also available and contains the result of dynamic and static
-extracted as described in the KPI extraction section.</p>
-<p>Functions provided by RPi-Monitor are the following:</p>
+functions that could be used inside the parameter. The object <code class="docutils literal"><span class="pre">data</span></code>
+is also available and contains the result of <code class="docutils literal"><span class="pre">dynamic</span></code> and <code class="docutils literal"><span class="pre">static</span></code>
+extracted as described in the KPI extraction section (Ex: <code class="docutils literal"><span class="pre">data.version</span></code>).</p>
+<p>Functions provided by <strong>RPi-Monitor</strong> are the following:</p>
 <blockquote class="last">
 <div><dl class="docutils">
 <dt>Uptime(uptime in sec)</dt>
@@ -324,7 +332,7 @@ if the percentage is lower than danger value</dd>
 <li>critical    : Critical  level (in %) used to define color (default: 66)</li>
 </ul>
 </dd>
-<dt>Plural (value)</dt>
+<dt>Plural(value)</dt>
 <dd>Print &#8216;s &#8216; if value &gt; 1 or &#8216; &#8216; if not.</dd>
 <dt>Clock(data.localtime)</dt>
 <dd>This function is a little bit particular and should be written
@@ -355,19 +363,19 @@ a page. (Ref Top3 example showing top most process cpu usage)</dd>
 </div></blockquote>
 </dd>
 </dl>
+</div>
+<div class="section" id="statistics">
+<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
 <p>The statistic page is fully configurable.
 It is possible to define multiple pages. Each page is identified by
 its <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code>.</p>
 <dl class="docutils">
-<dt>web.status.&lt;page id&gt;.name=&lt;page name&gt;</dt>
+<dt>web.statistic.&lt;page id&gt;.name=&lt;page name&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">name&gt;</span></code> name of the page displayed into the drop down menu in
 case of multiple pages.</dd>
 </dl>
-</div>
-<div class="section" id="statistics">
-<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
 <p>The statistic page displays statistics graphs. The graphs are
-identified an unique &lt;statistic id&gt; and by the following parameters.</p>
+identified an unique <code class="docutils literal"><span class="pre">&lt;statistic</span> <span class="pre">id&gt;</span></code> and by the following parameters.</p>
 <dl class="docutils">
 <dt>web.statistics.&lt;page id&gt;.content.&lt;statistic id&gt;.name=&lt;statistic name&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;statistic</span> <span class="pre">name&gt;</span></code> is the name of the statistics displayed in the
