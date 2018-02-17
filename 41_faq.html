@@ -203,7 +203,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/31_faq.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/41_faq.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -219,61 +219,110 @@
             
   <div class="section" id="frequently-asked-questions">
 <h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
-<p>RPi-Monitor is displaying NaN instead of value in my distro <code class="docutils literal"><span class="pre">lambda</span></code>. Can you
-fixe this issue?</p>
-<blockquote>
-<div>There are a lot of GNU/Linux distribution available, I can&#8217;t support all of them.
-I dicided since the beginning to Raspbian as target OS. The version v2.13 has been
+<dl class="docutils">
+<dt>RPi-Monitor is displaying <code class="docutils literal"><span class="pre">NaN</span></code> instead of value in my &#8220;unsupported&#8221; distro. Can you fixe this issue?</dt>
+<dd>There are a lot of GNU/Linux distribution available, I can&#8217;t support all of them.
+I decided since the beginning use to Raspbian as target OS. The version v2.13 has been
 tested on <code class="docutils literal"><span class="pre">2017-11-29-raspbian-stretch-lite.img</span></code>.
 Remember, in <strong>RPi-Monitor</strong>, everything is configurable. It should then be possible
-to update configuration files to match the specificities of your distro.</div></blockquote>
-<p>RPi-Monitor&#8217;s graphs are not clean and frequently drop down to zero as in
-screenshot bellow. How can I have a clean curve?</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="_images/faq001.png"><img alt="_images/faq001.png" class="align-center" src="_images/faq001.png" style="width: 400px;" /></a>
-<p><strong>RPi-Monitor</strong> is periodically getting data from program of files.
+to update configuration files to match the specificities of your distro.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>RPi-Monitor&#8217;s graphs are not clean and frequently drop down to zero as in screenshot bellow. How can I have a clean curve?</dt>
+<dd><a class="first reference internal image-reference" href="_images/faq001.png"><img alt="_images/faq001.png" class="align-center" src="_images/faq001.png" style="width: 400px;" /></a>
+<p class="last"><strong>RPi-Monitor</strong> is periodically getting data from program of files.
 If the program is not answering or if the file is empty, the value is unknown.
 This unknown value will be drawn as a zero in graphs. If, as in the upper
 example, the program reading the sensor is giving reliable values, it is
 advised to create a script writing the temperature result into a file and to
 configure <strong>RPi-Monitor</strong> to read this file. In this case, if the file is not
 updated, the previous value will be read and drawn in graphs.</p>
-</div></blockquote>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <dl class="docutils">
 <dt>RPi-Monitor&#8217;s web interface is not working, I&#8217;ve only white pages?</dt>
 <dd><strong>RPi-Monitor</strong> requires HTML5 local storage and cookies to work properly.
 You should check that these both functionalities are activated into your browser and check that no plug-ins is blocking them.</dd>
-<dt>Is RPi-Monitor supporting distribution XXX?</dt>
-<dd>Can you make <strong>RPi-Monitor</strong> compatible with distribution XXX?</dd>
-<dt>RPi-Monitor was developed on Raspbian. This distribution is then fully supported.</dt>
-<dd>I will not officially support any other distribution but you will find in
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>Is RPi-Monitor supporting distribution XXX? Can you make <strong>RPi-Monitor</strong> compatible with distribution XXX?</dt>
+<dd>RPi-Monitor was developed on Raspbian. This distribution is then fully supported.
+I will not officially support any other distribution but you will find in
 github repository some configuration files that may help you to configure
 <strong>RPi-Monitor</strong> on your system.
 Remember, <strong>RPi-Monitor</strong> is highly configurable and should be able to run on
 every system able to run perl. Have a look to <strong>RPi-Monitor</strong> articles for examples.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I have a problems running rpimonitord:  failed &#8220;Can&#8217;t locate _______.pm  in &#64;INC ...</dt>
 <dd>The installation is not done properly. You should read again the installation
 procedure and pay attention to the dependencies.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I would like to use my favorite web server instead of the one embedded into RPi-Monitor. Is it possible?</dt>
 <dd>Yes, this is possible but not recommended. <strong>RPi-Monitor</strong> embedded web server is
 optimized to reduce the usage of the SDCard, reduce the resources used into
 the system. The Web interface is requiring some specific feature that can only
 be delivered by <strong>RPi-Monitor</strong> embedded web server (like empty.rrd file generation
 ensuring a clean display of graphs).</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>Can you add login/password and authentication to RPI-Monitor web interface?</dt>
 <dd>No. I&#8217;ll never add such a feature to <strong>RPi-Monitor</strong>. Why? Just because it is
 something complex to do in a clean and fully secured way. Some software are
 already design to do the job and they do it well. Refer to this article if
 you need such a feature.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>How can I do customize RPi-Monitor, change data extracted, add images, change texts...</dt>
 <dd>In <strong>RPi-Monitor</strong> almost everything is configurable. This can be done by
 configuration file. Have a look to <strong>RPi-Monitor</strong> articles for examples.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I tried to install RPi-Monitor into an OS not officially supported and some data are missing. How can I fix it?</dt>
 <dd>As I said previously, in <strong>RPi-Monitor</strong> almost everything is configurable. You
 should find the command to execute or the file to read to get the missing
 value directly in the shell. Once the command is found you will need to
 update the configuration file. Have a look to <strong>RPi-Monitor</strong> articles for
 examples (have a look to the command rpimonitord -i).</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I would like to monitor a cluster of raspberries with your tool. Is there a way to gather the whole data in one node?</dt>
 <dd>It could have any answer to such a question. One possibility would be to use
 ssh and configure <strong>RPi-Monitor</strong> to execute commands on ech remote nodes of
@@ -284,13 +333,37 @@ You can use the main page to display some consolidate data in addition to one
 page per cluster.
 This question is interresting and I&#8217;ll think about writing one article about
 this subjet.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I found a bug into RPi-Monitor. How can I share my discovery?</dt>
 <dd>You should open an issue in github and describe you problem and how to reproduce it.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>Download bandwidth is shown as negative values. It&#8217;s bug or feature?</dt>
 <dd>This is a feature :-). But, remember, everything is customizable in <strong>RPI-Monitor</strong>...</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I want to create a package for my favorite distribution which is not supported by defalut. How can I contribute to this project?</dt>
 <dd><strong>RPi-Monitor</strong> source code is hosted in github. The file PACKAGING.md should
 catch your interest.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I&#8217;ve some issue with my installation or customization of RPi-Monitor and I want to reinstall it from scratch. How can I do it?</dt>
 <dd><p class="first">Here is the instruction to reinstall <strong>RPi-Monitor</strong> from scratch:
 First, uninstall <strong>RPi-Monitor</strong> with the following command:</p>
@@ -301,6 +374,12 @@ First, uninstall <strong>RPi-Monitor</strong> with the following command:</p>
 </div>
 <p class="last">Then reinstall by following the instruction gathered in this page.</p>
 </dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>Some data are not extracting correctly at boot but when I restart rpimonotird everything becomes OK until I reboot. How can I fix thi issue?</dt>
 <dd>If you reach such situation, you certainly configure your source using a
 command whitout the full path. For example <code class="docutils literal"><span class="pre">gettemp.sh</span></code> instead of
@@ -309,10 +388,22 @@ variable $PATH is set and the executable is reachable (that why it work when
 you restart rpimonitord).
 When you start your computer, the $PATH variable is not set so <code class="docutils literal"><span class="pre">gettemp.sh</span></code>
 will not work. The solution is to use the full path command <code class="docutils literal"><span class="pre">/usr/bin/gettemp.sh</span></code></dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I just update my distribution and RPi-Monitor is still saying that packages required to be updated. Why?</dt>
 <dd>Every night at 3h10, a script is executed to update the package update
 information displayed in <strong>RPi-Monitor</strong>. If you want to update this information
 immediately, you can execute this script manually:  <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/scripts/updatePackagesStatus.pl</span></code></dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
 <dt>I required better resolutions of the reading provided by the RPI monitor. Can we increase the frequency with which the RPI monitor collects the data?</dt>
 <dd>Yes, since version 2.11, it is possible to define the RRD structure per data
 extracted. Refer to documentation and man page to know how use this
