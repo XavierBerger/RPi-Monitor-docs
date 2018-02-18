@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuration examples &mdash; RPi-Monitor v2.13-r0</title>
+  <title>RPi-Monitor in real world &mdash; RPi-Monitor v2.13-r0</title>
   
 
   
@@ -35,9 +35,9 @@
 
   
     <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="up" title="Integration examples" href="30_index.html"/>
-        <link rel="next" title="Authentication and secure access" href="33_autentication.html"/>
-        <link rel="prev" title="Customisation" href="31_customisation.html"/>
+        <link rel="up" title="Usages" href="30_index.html"/>
+        <link rel="next" title="RPi-Monitor with sensors" href="32_sensors.html"/>
+        <link rel="prev" title="Usages" href="30_index.html"/>
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -123,13 +123,12 @@
 <li class="toctree-l1"><a class="reference internal" href="20_index.html">Configuration</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="30_index.html">Integration examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="31_customisation.html">Customisation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuration examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33_autentication.html">Authentication and secure access</a></li>
-<li class="toctree-l2"><a class="reference internal" href="34_sensors.html">Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="35_lcd.html">RPi-Monitor-LCD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="36_external.html">Non standard configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="30_index.html">Usages</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>RPi-Monitor</strong> in real world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32_sensors.html"><strong>RPi-Monitor</strong> with sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33_lcd.html"><strong>RPi-Monitor-LCD</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="34_autentication.html">Authentication and secure access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="35_external.html">Non standard configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -195,9 +194,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="30_index.html">Integration examples</a> &raquo;</li>
+          <li><a href="30_index.html">Usages</a> &raquo;</li>
         
-      <li>Configuration examples</li>
+      <li><strong>RPi-Monitor</strong> in real world</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,53 +218,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="configuration-examples">
-<h1>Configuration examples<a class="headerlink" href="#configuration-examples" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="example-files">
-<h2>Example files<a class="headerlink" href="#example-files" title="Permalink to this headline">¶</a></h2>
-<p><strong>RPi-Monitor</strong> comes with example files showing the capabilities of some features
-and functions available in status page.
-These files are installed into <code class="docutils literal"><span class="pre">/etc/rpimonotor/templates/</span></code>
-To see how a specific file is behaving, you can include this file into your
-configuration file using the <code class="docutils literal"><span class="pre">include</span></code>. By default, files are included and
-commented out into <code class="docutils literal"><span class="pre">data.conf</span></code>. To activate them, you can simply uncomment
-them and restart <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
-<div class="section" id="the-following-files-are-available">
-<h3>The following files are available<a class="headerlink" href="#the-following-files-are-available" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="example-badge-and-label-conf">
-<h4>example.badge_and_label.conf<a class="headerlink" href="#example-badge-and-label-conf" title="Permalink to this headline">¶</a></h4>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="_images/examples002.png"><img alt="_images/examples002.png" src="_images/examples002.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Show colors of labels and badges</span></p>
-</div>
-</div>
-<div class="section" id="example-progressbar-conf">
-<h4>example.progressbar.conf<a class="headerlink" href="#example-progressbar-conf" title="Permalink to this headline">¶</a></h4>
-<div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="_images/examples003.png"><img alt="_images/examples003.png" src="_images/examples003.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Show warning and critical and colors</span></p>
-</div>
-</div>
-<div class="section" id="example-justgage-conf">
-<h4>example.justgage.conf<a class="headerlink" href="#example-justgage-conf" title="Permalink to this headline">¶</a></h4>
-<div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="_images/examples004.png"><img alt="_images/examples004.png" src="_images/examples004.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Show justgage and customisation</span></p>
-</div>
-</div>
-<div class="section" id="example-visibility-conf">
-<h4>example.visibility.conf<a class="headerlink" href="#example-visibility-conf" title="Permalink to this headline">¶</a></h4>
-<div class="figure align-center" id="id4">
-<a class="reference internal image-reference" href="_images/examples005.png"><img alt="_images/examples005.png" src="_images/examples005.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Show visibility feature</span></p>
-</div>
-<p>Remember to restart RPi-Monitor to apply the configuration change:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="n">restart</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+  <div class="section" id="rpi-monitor-in-real-world">
+<h1><strong>RPi-Monitor</strong> in real world<a class="headerlink" href="#rpi-monitor-in-real-world" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="monitoring-a-wifi-network">
 <h2>Monitoring a WiFi network<a class="headerlink" href="#monitoring-a-wifi-network" title="Permalink to this headline">¶</a></h2>
 <p>The following configuration is showing how to configure the monitoring of e WiFi
@@ -414,10 +368,10 @@ Restart rpimonitor to activate the new graph.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="33_autentication.html" class="btn btn-neutral float-right" title="Authentication and secure access" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="32_sensors.html" class="btn btn-neutral float-right" title="RPi-Monitor with sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="31_customisation.html" class="btn btn-neutral" title="Customisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="30_index.html" class="btn btn-neutral" title="Usages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -427,7 +381,7 @@ Restart rpimonitor to activate the new graph.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 17, 2018.
+      Last updated on Feb 18, 2018.
 
     </p>
   </div>

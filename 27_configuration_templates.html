@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration templates &mdash; RPi-Monitor v2.13-r0</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
+        <link rel="up" title="Configuration" href="20_index.html"/>
+        <link rel="next" title="Usages" href="30_index.html"/>
+        <link rel="prev" title="Interactive Configuration Helper" href="26_configuration_helper.html"/>
+
+
+<script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6853682829194266",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114314379-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114314379-1');
+</script>
+
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RPi-Monitor
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.13
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="20_index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="21_daemon.html">Daemon configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_extraction.html">Metrics extraction configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_web.html">Web interface configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_addons.html">Addons configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25_alert.html">Alert configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_configuration_helper.html">Interactive Configuration Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuration templates</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="30_index.html">Usages</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="40_index.html">To go further</a></li>
+</ul>
+
+            
+          
+
+<hr />
+<div style="padding: 0;">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-6853682829194266"
+         data-ad-slot="2876944524"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RPi-Monitor</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="20_index.html">Configuration</a> &raquo;</li>
+        
+      <li>Configuration templates</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/XavierBerger/RPi-Monitor/blob/feature/docs/docs/source/31_customisation.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration-templates">
+<h1>Configuration templates<a class="headerlink" href="#configuration-templates" title="Permalink to this headline">¶</a></h1>
+<p><strong>RPi-Monitor</strong> comes with example files showing the capabilities of some features
+and functions available in status page.
+These files are installed into <code class="docutils literal"><span class="pre">/etc/rpimonotor/templates/</span></code>
+To see how a specific file is behaving, you can include this file into your
+configuration file using the <code class="docutils literal"><span class="pre">include</span></code>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">By default, files are included and commented out into <code class="docutils literal"><span class="pre">data.conf</span></code>.
+To activate them, you can simply uncomment them and restart <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Remember to restart RPi-Monitor to apply the configuration change:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="n">restart</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="page-header">
+<h2>Page header<a class="headerlink" href="#page-header" title="Permalink to this headline">¶</a></h2>
+<p>This function allow to define a custom logo, custom title.</p>
+<p>Here is and example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.header.conf</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">icon</span><span class="o">=</span><span class="s1">&#39;img/avatar.png&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">menutitle</span><span class="o">=</span><span class="s1">&#39;XB-Monitor  &lt;sub&gt;(&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">hostname</span><span class="o">+</span><span class="s1">&#39;)&lt;/sub&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">pagetitle</span><span class="o">=</span><span class="s1">&#39;XB-Monitor (&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">hostname</span><span class="o">+</span><span class="s1">&#39;)&#39;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">data.hostname</span></code> is a value automatically extracted by <strong>RPi-Monitor</strong>. It is not
+needed to add a configuration.</p>
+<p>The file <code class="docutils literal"><span class="pre">avatar.png</span></code> has been added into <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/img/</span></code>.</p>
+<p>Here is the result:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/header001.png"><img alt="_images/header001.png" src="_images/header001.png" style="width: 500px;" /></a>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See defails in <a class="reference external" href="13_web.html#header-customisation">Header customisation</a></p>
+</div>
+</div>
+<div class="section" id="friends">
+<h2>Friends<a class="headerlink" href="#friends" title="Permalink to this headline">¶</a></h2>
+<p>Add &#8220;friends&#8221; links <strong>RPi-Monitor</strong> running on different platform together.</p>
+<p>A friend is simply another computer running <strong>RPi-Monitor</strong>. Configuring friends
+will add a drop down list on the right of the top menu with a links to
+<strong>RPi-Monitor</strong> sitting on the other computer.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/friends001.png"><img alt="_images/friends001.png" src="_images/friends001.png" style="width: 500px;" /></a>
+</div>
+<p>Each friend is identified by an <code class="docutils literal"><span class="pre">id</span></code> and is described by 2 parameters: <code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;link&gt;</span></code>.</p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.friends.conf</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Raspberry</span> <span class="n">Pi</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.123</span><span class="o">/</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">Shuttle</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">Netbook</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.38</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/friends002.png" src="_images/friends002.png" />
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See details in <a class="reference external" href="23_web.html#friends">Friends definition</a></p>
+</div>
+</div>
+<div class="section" id="badges-and-labels">
+<h2>Badges and labels<a class="headerlink" href="#badges-and-labels" title="Permalink to this headline">¶</a></h2>
+<p>The functions <code class="docutils literal"><span class="pre">Label</span></code> and <code class="docutils literal"><span class="pre">Badge</span></code> are designed to write a text highligted by a color base on condition.</p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.badge_and_label.conf</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ssh</span> 
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">22</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">rpimonitor</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">8888</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">http</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">80</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">name</span><span class="o">=</span><span class="n">https</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">443</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Servers</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">daemons</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;ssh&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ssh</span><span class="p">,</span><span class="s2">&quot;==22&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ssh</span><span class="p">,</span><span class="s2">&quot;!=22&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;rpimonitor&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rpimonitor</span><span class="p">,</span><span class="s2">&quot;==8888&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rpimonitor</span><span class="p">,</span><span class="s2">&quot;!=8888&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;nginx http&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">http</span><span class="p">,</span><span class="s2">&quot;==80&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">http</span><span class="p">,</span><span class="s2">&quot;!=80&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">4</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;nginx https&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">https</span><span class="p">,</span><span class="s2">&quot;==443&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">https</span><span class="p">,</span><span class="s2">&quot;!=443&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-important&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we monitor if the service <code class="docutils literal"><span class="pre">ssh</span></code> is listening on port <code class="docutils literal"><span class="pre">22</span></code> and display a
+label <code class="docutils literal"><span class="pre">OK</span></code> if yes or a label <code class="docutils literal"><span class="pre">KO</span></code> if not.</p>
+<p>We do the same for <strong>RPi-Monitor</strong> on port <code class="docutils literal"><span class="pre">8888</span></code> and for <code class="docutils literal"><span class="pre">nginx</span></code> on port <code class="docutils literal"><span class="pre">80</span></code> and <code class="docutils literal"><span class="pre">443</span></code>.</p>
+<p>Information is extracted from the command <code class="docutils literal"><span class="pre">netstat</span></code>.</p>
+<p>The regular expression will return the port number if a service is listening
+on this port or nothing if no service is listenning on this port.</p>
+<p>The results are accessible into javascript from the variable data. This
+variable is passed to the Label function as value.</p>
+<p>For ssh, the condition is <code class="docutils literal"><span class="pre">&quot;==22&quot;</span></code> to check if the value is equal to
+<code class="docutils literal"><span class="pre">22</span></code> or <code class="docutils literal"><span class="pre">&quot;!=22&quot;</span></code> to check if the value is different form <code class="docutils literal"><span class="pre">22</span></code>. As only one of
+the condition will be <code class="docutils literal"><span class="pre">true</span></code>, only one label will be displayed.</p>
+<p>Other ports checking are using the same technic.</p>
+<p>Here is the result:</p>
+<img alt="_images/label001.png" class="align-center" src="_images/label001.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line">WORK IN PROGRESS</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="multiple-pages">
+<h2>Multiple pages<a class="headerlink" href="#multiple-pages" title="Permalink to this headline">¶</a></h2>
+<p>This version of RPi-Monitor introduce the notion of pages. Adding a new page
+can be done in configuration file by setting the parameter named <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code>.
+RPi-Monitor will automatically interpret this new id and create the associated
+page. The new page will be accessible by a drop down menu as shown in the
+screenshot bellow.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/multipages001.png"><img alt="_images/multipages001.png" src="_images/multipages001.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">RPi-Monitor showing multiple status pages</span></p>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/multipages002.png"><img alt="_images/multipages002.png" src="_images/multipages002.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">RPi-Monitor showing multiple graph pages</span></p>
+</div>
+</div>
+<div class="section" id="example-progressbar-conf">
+<h2>example.progressbar.conf<a class="headerlink" href="#example-progressbar-conf" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/examples003.png"><img alt="_images/examples003.png" src="_images/examples003.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show warning and critical and colors</span></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line">WORK IN PROGRESS</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="example-justgage-conf">
+<h2>example.justgage.conf<a class="headerlink" href="#example-justgage-conf" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/examples004.png"><img alt="_images/examples004.png" src="_images/examples004.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show justgage and customisation</span></p>
+</div>
+</div>
+<div class="section" id="example-visibility-conf">
+<h2>example.visibility.conf<a class="headerlink" href="#example-visibility-conf" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/examples005.png"><img alt="_images/examples005.png" src="_images/examples005.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show visibility feature</span></p>
+</div>
+</div>
+<div class="section" id="justgagebar">
+<h2>JustGageBar<a class="headerlink" href="#justgagebar" title="Permalink to this headline">¶</a></h2>
+<p>A new widget is now available to display information in status page. Justgage is a handy JavaScript plugin for generating and animating nice &amp; clean gauges. It is based on Raphaël library for vector drawing, so it’s completely resolution independent and self-adjusting.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">JustGageBar</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">levelColors</span><span class="p">,</span> <span class="n">warning</span><span class="p">,</span> <span class="n">critical</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>To see how justgage behave, you can activate the configuration file <code class="docutils literal"><span class="pre">example.justgage.conf</span></code></dt>
+<dd>(Ref example explaination and screenshot upper).</dd>
+</dl>
+</div>
+<div class="section" id="visibility">
+<h2>Visibility<a class="headerlink" href="#visibility" title="Permalink to this headline">¶</a></h2>
+<p>A new parameter can be used in configuration file defining a visibility of a row:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.&lt;</span><span class="n">page</span> <span class="nb">id</span><span class="o">&gt;.</span><span class="n">content</span><span class="o">.&lt;</span><span class="n">row</span> <span class="nb">id</span><span class="o">&gt;.</span><span class="n">visibility</span><span class="o">=&lt;</span><span class="n">visibility</span> <span class="n">formula</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">&lt;visibility</span> <span class="pre">formula&gt;</span></code> should be a valid javascript formula returning <code class="docutils literal"><span class="pre">0</span></code> to
+hide the row anything else but <code class="docutils literal"><span class="pre">0</span></code> show the row</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="30_index.html" class="btn btn-neutral float-right" title="Usages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="26_configuration_helper.html" class="btn btn-neutral" title="Interactive Configuration Helper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Xavier Berger.
+      Last updated on Feb 18, 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6853682829194266"
+     data-ad-slot="2876944524"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -127,11 +127,12 @@
 <li class="toctree-l2"><a class="reference internal" href="24_addons.html">Addons configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="25_alert.html">Alert configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="26_configuration_helper.html">Interactive Configuration Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="27_configuration_templates.html">Configuration templates</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="30_index.html">Integration examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_index.html">Usages</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="40_index.html">To go further</a></li>
@@ -239,9 +240,9 @@ into the friend machine.</dd>
 <p class="last">Example of implementation in <a class="reference external" href="31_customisation.html#friends">Friends customisation example</a></p>
 </div>
 </div>
-<div class="section" id="top-bar-customisation">
-<h2>Top bar customisation<a class="headerlink" href="#top-bar-customisation" title="Permalink to this headline">¶</a></h2>
-<p>Top is displaying on top of web page can be customized with the following parameters:</p>
+<div class="section" id="header-customisation">
+<h2>Header customisation<a class="headerlink" href="#header-customisation" title="Permalink to this headline">¶</a></h2>
+<p>Header of web page can be customized with the following parameters:</p>
 <dl class="docutils">
 <dt>web.page.icon=&lt;icon location relative to webroot&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;icon</span> <span class="pre">location</span> <span class="pre">relative</span> <span class="pre">to</span> <span class="pre">webroot&gt;</span></code> is the path and filename of
@@ -339,23 +340,18 @@ if the percentage is lower than danger value</dd>
 and should be written exactly as in the upper line. It will
 display on screen the current time and will simulate the
 seconds by incrementing them periodically.</dd>
-</dl>
-<p>Label(data,formula, text, level)
-Badge(data,formula, text, level)</p>
-<blockquote>
-<div><p>This function will write a label/badge with a defined
-background color if the formula return TRUE.
-data    : data to use with the formula
-formula : formula evaluated in regards to data to determine</p>
-<blockquote>
-<div>if label/badge has to be printed</div></blockquote>
-<p>text    : text to be displayed
-level   : &#8216;default&#8217; (grey), &#8216;primary&#8217; (blue label/grey badge),</p>
-<blockquote>
-<div>&#8216;success&#8217; (green), &#8216;info&#8217; (cyan), &#8216;warning&#8217; (orange)
-or &#8216;danger&#8217; (red)</div></blockquote>
-</div></blockquote>
-<dl class="docutils">
+<dt>Label(data,formula, text, level) Badge(data,formula, text, level)</dt>
+<dd><blockquote class="first">
+<div>This function will write a label/badge with a defined</div></blockquote>
+<ul class="simple">
+<li>background color if the formula return TRUE.</li>
+<li>data    : data to use with the formula</li>
+<li>formula : formula evaluated in regards to data to determine if label/badge has to be printed</li>
+<li>text    : text to be displayed</li>
+<li>level   : &#8216;default&#8217; (grey), &#8216;primary&#8217; (blue label/grey badge), &#8216;success&#8217; (green), &#8216;info&#8217; (cyan), &#8216;warning&#8217; (orange) or &#8216;danger&#8217; (red)</li>
+</ul>
+<img alt="_static/example002.png" class="last align-center" src="_static/example002.png" />
+</dd>
 <dt>InsertHTML(url)</dt>
 <dd>This function is used to insert an HTML information inside
 a page. (Ref Top3 example showing top most process cpu usage)</dd>
@@ -425,7 +421,7 @@ When configuration files change, it is required to restart <code class="docutils
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 17, 2018.
+      Last updated on Feb 18, 2018.
 
     </p>
   </div>
