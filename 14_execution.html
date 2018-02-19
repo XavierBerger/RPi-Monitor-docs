@@ -35,7 +35,7 @@
 
   
     <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="up" title="Getting startep" href="10_index.html"/>
+        <link rel="up" title="Getting started" href="10_index.html"/>
         <link rel="next" title="Configuration" href="20_index.html"/>
         <link rel="prev" title="Upgrade or uninstall" href="13_upgrade_uninstall.html"/>
 
@@ -117,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Getting startep</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Getting started</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="11_first_installation.html">First installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html">Custom installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html">Upgrade or uninstall</a></li>
@@ -193,7 +193,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="10_index.html">Getting startep</a> &raquo;</li>
+          <li><a href="10_index.html">Getting started</a> &raquo;</li>
         
       <li>Understanding program execution</li>
     
@@ -222,8 +222,8 @@
 <div class="section" id="startup-script">
 <h2>Startup script<a class="headerlink" href="#startup-script" title="Permalink to this headline">¶</a></h2>
 <p><strong>RPi-Monitor</strong> is configured to start automatically. <code class="docutils literal"><span class="pre">/etc/init.d/rpimonitor</span></code>
-and link in runlevel startup directory do the job. This script can be executed
-with the following parameters:</p>
+and link in runlevel startup directory (<code class="docutils literal"><span class="pre">/etc/rc?.d/</span></code>) do the job.
+This script can be executed with the following parameters:</p>
 <dl class="docutils">
 <dt>start</dt>
 <dd>Start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
@@ -234,7 +234,7 @@ with the following parameters:</p>
 <dt>status</dt>
 <dd>Show <code class="docutils literal"><span class="pre">rpimonitord</span></code> status</dd>
 <dt>update</dt>
-<dd>Update packages to be installed list. This information is displayed in default
+<dd>Update &#8216;packages to be installed&#8217; list. This information is displayed in default
 configuration of Web interface</dd>
 <dt>install_auto_package_status_update</dt>
 <dd>Add a script to automatically call package update script when <code class="docutils literal"><span class="pre">apt</span></code> commands are executed</dd>
@@ -268,7 +268,7 @@ configuration of Web interface</dd>
 <td rowspan="2">pid file</td>
 <td>Define the pid file when run in background</td>
 </tr>
-<tr class="row-even"><td>Default: not set</td>
+<tr class="row-even"><td>Default: not set, application run in foreground</td>
 </tr>
 <tr class="row-odd"><td rowspan="2">-c, &#8211;conf</td>
 <td rowspan="2">conf file</td>
@@ -286,7 +286,7 @@ configuration of Web interface</dd>
 <td rowspan="2">log file</td>
 <td>Logfile directory and prefix (ex: <code class="docutils literal"><span class="pre">/var/log/rpimonitor</span></code>)</td>
 </tr>
-<tr class="row-even"><td>Default:</td>
+<tr class="row-even"><td>Default: <code class="docutils literal"><span class="pre">/dev/null</span></code></td>
 </tr>
 <tr class="row-odd"><td rowspan="2">-p, &#8211;port</td>
 <td rowspan="2">port</td>
@@ -352,22 +352,28 @@ In <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/*.c
 how to customize <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Configuration defined inside a configuration file always overwrite default values.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Configuration given as option of the command line always overwrite the one defined into a file.</p>
+<ul class="last simple">
+<li>Configuration defined inside a configuration file always overwrite default values.</li>
+<li>Configuration given as command line option always overwrite values defined in files.</li>
+</ul>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Be sure to use Linux filefeed format with line ending with LF (and not CR/LF like in Windows)</p>
 </div>
-<p>See <a class="reference external" href="10_index.html">configuration</a> chapter for details and examples.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See <a class="reference external" href="20_index.html">configuration</a> chapter for details or <a class="reference external" href="30_index.html">usage</a> chapter for examples.</p>
+</div>
 </div>
 <div class="section" id="snmp-agent">
 <h2>snmp-agent<a class="headerlink" href="#snmp-agent" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">rpimonotord-snmp</span></code> is the snmp agent provided by <strong>RPi-Monitor</strong>. This agent
 allow <code class="docutils literal"><span class="pre">snmpd</span></code> to access to data exctracted by <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See <a class="reference external" href="20_index.html">configuration</a> chapter for details or <a class="reference external" href="30_index.html">usage</a> chapter for examples.</p>
+</div>
 </div>
 <div class="section" id="raw-data-access">
 <h2>Raw data access<a class="headerlink" href="#raw-data-access" title="Permalink to this headline">¶</a></h2>
@@ -413,7 +419,7 @@ available in json format and can be downloaded from the root of the web interfac
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 18, 2018.
+      Last updated on Feb 19, 2018.
 
     </p>
   </div>

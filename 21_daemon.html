@@ -117,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting started</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="20_index.html">Configuration</a><ul class="current">
@@ -224,12 +224,12 @@
 <h1>Daemon configuration<a class="headerlink" href="#daemon-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="global-configuration">
 <h2>Global configuration<a class="headerlink" href="#global-configuration" title="Permalink to this headline">¶</a></h2>
-<p>Section <code class="docutils literal"><span class="pre">daemon</span></code> is defining the behavior of <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">daemon</span></code> is defining the behavior of <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
 <dl class="docutils">
 <dt>daemon.sharedmemkey=20130906</dt>
 <dd>Define the share memory key (Default: 20130906)</dd>
 <dt>daemon.delay=10</dt>
-<dd>Define the delay between 2 KPIs pooling (Default: 10)</dd>
+<dd>Define the delay in seconds between 2 KPIs extraction (Default: 10)</dd>
 </dl>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -238,10 +238,10 @@ have to be deleted <code class="docutils literal"><span class="pre">rpimonitord<
 </div>
 <dl class="docutils">
 <dt>daemon.timeout=5</dt>
-<dd>Define the maximum duration of KPI extraction. If this timeout is triggered, KPI
+<dd>Define the maximum duration in seconds of KPI extraction. If this timeout is triggered, KPI
 value will depends on default value configured for this KPI. (Default: 5)</dd>
 <dt>daemon.noserver=0</dt>
-<dd>Define that rpimonitord shouldn&#8217;t start web server (Default: 0)</dd>
+<dd>Tell <code class="docutils literal"><span class="pre">rpimonitord</span></code> to not start web server (Default: 0)</dd>
 <dt>daemon.readonly=1</dt>
 <dd>Tell <code class="docutils literal"><span class="pre">rpimonitord</span></code> to not write data on disk. (Default: 0)</dd>
 <dt>daemon.addr=0.0.0.0</dt>
@@ -271,9 +271,14 @@ value will depends on default value configured for this KPI. (Default: 5)</dd>
 <dt>daemon.webroot=/usr/share/rpimonitor/web</dt>
 <dd>Define the root directory of the web server (Default: <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web</span></code>)</dd>
 <dt>daemon.datastore=/var/lib/rpimonitor</dt>
-<dd>Define the data storage directory (Default: <code class="docutils literal"><span class="pre">/var/lib/rpimonitor</span></code>)</dd>
-<dt>daemon.logfile=/var/log/rpimonitor</dt>
-<dd>Define directory where logs are stored (Default: <code class="docutils literal"><span class="pre">/var/log/rpimonitor</span></code>)</dd>
+<dd>Define the data storage directory (Default: <code class="docutils literal"><span class="pre">/var/lib/rpimonitor</span></code>).</dd>
+<dt>daemon.logfile=/var/log/rpimonitor.log</dt>
+<dd><p class="first">Define directory where logs are stored when <code class="docutils literal"><span class="pre">rpimonitor</span></code> starts un background (Default: <code class="docutils literal"><span class="pre">/dev/null</span></code>)</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">when <code class="docutils literal"><span class="pre">rpimonitord</span></code> is started in foreground, information a written in <code class="docutils literal"><span class="pre">/dev/stderr</span></code></p>
+</div>
+</dd>
 <dt>daemon.shellinabox=https://0.0.0.0:4200/</dt>
 <dd>Define shellinabox address (Default: calculated automatically based on http request)</dd>
 </dl>
@@ -281,7 +286,7 @@ value will depends on default value configured for this KPI. (Default: 5)</dd>
 <div class="section" id="snmp-configuration">
 <h2>SNMP configuration<a class="headerlink" href="#snmp-configuration" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Section <code class="docutils literal"><span class="pre">snmpagent</span></code> is defining SNMP behavior of <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
+<div><p><code class="docutils literal"><span class="pre">snmpagent</span></code> is defining SNMP behavior of <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
 <dl class="docutils">
 <dt>snmpagent.rootoid=.1.3.6.1.4.1</dt>
 <dd>Define root OID for snmp-agent (Default: .1.3.6.1.4.1)</dd>
@@ -331,7 +336,7 @@ value will depends on default value configured for this KPI. (Default: 5)</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 18, 2018.
+      Last updated on Feb 19, 2018.
 
     </p>
   </div>

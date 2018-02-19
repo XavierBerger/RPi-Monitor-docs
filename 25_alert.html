@@ -117,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting started</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="20_index.html">Configuration</a><ul class="current">
@@ -222,8 +222,7 @@
             
   <div class="section" id="alert-configuration">
 <h1>Alert configuration<a class="headerlink" href="#alert-configuration" title="Permalink to this headline">¶</a></h1>
-<p><strong>RPi-Monitor</strong> is able to detect if value exceed a defined value or come back
-to the normal.</p>
+<p><strong>RPi-Monitor</strong> is able to detect if value exceed a defined value or come back to the normal.</p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Alert/Cancel are sent only when the state is stable to avoid messages
@@ -255,14 +254,14 @@ ____|
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>Each alert is identified by its &lt;alert name&gt;.</p>
+<p>Each alert is identified by its <code class="docutils literal"><span class="pre">&lt;alert</span> <span class="pre">name&gt;</span></code>.</p>
 <dl class="docutils">
 <dt>alert.&lt;alert name&gt;.active=&lt;activation condition&gt;</dt>
 <dd>&lt;activation condition&gt; defines the alert pre-condition. If this formula
 returns false, the trigger will not be checked. Default value is 1.
 This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.kpi=&lt;trigger&gt;</dt>
-<dd>&lt;trigger&gt; is defining the formula to evaluate. If formula returns true, the
+<dd><code class="docutils literal"><span class="pre">&lt;trigger&gt;</span></code> is defining the formula to evaluate. If formula returns true, the
 alert is detected. This command should refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.maxalertduration=&lt;duration before raise&gt;</dt>
 <dd>The alert will be dectected immediatly but alert raised commande will
@@ -307,7 +306,7 @@ This command could refer to KPI using keyword <code class="docutils literal"><sp
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 18, 2018.
+      Last updated on Feb 19, 2018.
 
     </p>
   </div>

@@ -117,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting started</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="20_index.html">Configuration</a><ul class="current">
@@ -286,76 +286,105 @@ an icon and a serie of parameters described as follow:</p>
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.icon=&lt;display icon&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;display</span> <span class="pre">icon&gt;</span></code> Icon of the strip</dd>
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.line.&lt;line number&gt;=&lt;parameter&gt;</dt>
-<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;line</span> <span class="pre">number&gt;</span></code> represent the position of the line within the strip.
-This number has to be unique within the strip.
-<code class="docutils literal"><span class="pre">&lt;parameter&gt;</span></code> is describing the content of the line. This parameter
-will be evaluated by the javascript command with the function
-<code class="docutils literal"><span class="pre">eval()</span></code> theirfore parameter should be valid javacript.
-To have  clean rendering, <strong>RPi-Monitor</strong> web interface provides some
-functions that could be used inside the parameter. The object <code class="docutils literal"><span class="pre">data</span></code>
-is also available and contains the result of <code class="docutils literal"><span class="pre">dynamic</span></code> and <code class="docutils literal"><span class="pre">static</span></code>
-extracted as described in the KPI extraction section (Ex: <code class="docutils literal"><span class="pre">data.version</span></code>).</p>
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;line</span> <span class="pre">number&gt;</span></code> represent the position of the line within the strip.</p>
+<p>This number has to be unique within the strip.</p>
+<p><code class="docutils literal"><span class="pre">&lt;parameter&gt;</span></code> is describing the content of the line. This parameter will be evaluated by the
+javascript command with the function <code class="docutils literal"><span class="pre">eval()</span></code> theirfore parameter should be valid javacript.</p>
+<p>To have  clean rendering, <strong>RPi-Monitor</strong> web interface provides some functions
+that could be used inside the parameter. The object <code class="docutils literal"><span class="pre">data</span></code> is also available
+and contains the result of <code class="docutils literal"><span class="pre">dynamic</span></code> and <code class="docutils literal"><span class="pre">static</span></code> extracted as described in
+the KPI extraction section (Ex: <code class="docutils literal"><span class="pre">data.version</span></code>).</p>
 <p>Functions provided by <strong>RPi-Monitor</strong> are the following:</p>
 <blockquote class="last">
-<div><dl class="docutils">
-<dt>Uptime(uptime in sec)</dt>
-<dd>Print the uptime from seconds to the following format:
-XX year XX days XX hours XX minutes XX seconds</dd>
-<dt>Pad(value)</dt>
-<dd>Add a prefixed 0 for number smaller than 10</dd>
-<dt>KMG(value, pre)</dt>
-<dd>Print value in kilo, Mega, Giga, Peta.
-pre can be &#8216;k&#8217;, &#8216;M&#8217;, &#8216;G&#8217; or &#8216;P&#8217; depending on the value.</dd>
-<dt>Percent(value,total)</dt>
-<dd>Print percentage of value compared to total</dd>
-<dt>ProgressBar(value,total,warning, danger)</dt>
-<dd>Draw a progressbar representing the value compared to total.
-[=========&#8212;&#8212;&#8212;&#8212;]
-The default color of pregressbar is blue.
-If warning value is lower than critical, progressbar color will
-be orange if percentage is higher than warning value and red
-if the percentage is higher than danger value
-If warning value is higher than critical, progressbar color will
-be orange if percentage is lower than warning value and red
-if the percentage is lower than danger value</dd>
-<dt>JustGageBar(title, label,min, value, max, width, height, levelColors, warning, critical)</dt>
-<dd><blockquote class="first">
-<div>Draw a half-circular gauge</div></blockquote>
-<ul class="last simple">
-<li>title       : Title of the gauge (located on to of the gauge)</li>
-<li>label       : Label of the gauge (located under the value)</li>
-<li>min         : min value of the gauge</li>
-<li>value       : value to be drawn</li>
-<li>max         : max value of the gauge</li>
-<li>width, height : size of the gauge</li>
-<li>levelColors : Array defining colors of each level [normal,warning,critical] (in Hex format), default: green, orange and red. Default colors are available into the array <code class="docutils literal"><span class="pre">percentColors</span></code>.</li>
-<li>warning     : Warning level (in %) used to define color (default: 33)</li>
-<li>critical    : Critical  level (in %) used to define color (default: 66)</li>
-</ul>
+<div><ul>
+<li><dl class="first docutils">
+<dt><strong>Uptime(uptime in sec)</strong></dt>
+<dd><p class="first last">Print the uptime from seconds to the following format: XX year XX days XX hours XX minutes XX seconds</p>
 </dd>
-<dt>Plural(value)</dt>
-<dd>Print &#8216;s &#8216; if value &gt; 1 or &#8216; &#8216; if not.</dd>
-<dt>Clock(data.localtime)</dt>
-<dd>This function is a little bit particular and should be written
-and should be written exactly as in the upper line. It will
-display on screen the current time and will simulate the
-seconds by incrementing them periodically.</dd>
-<dt>Label(data,formula, text, level) Badge(data,formula, text, level)</dt>
-<dd><blockquote class="first">
-<div>This function will write a label/badge with a defined</div></blockquote>
-<ul class="simple">
-<li>background color if the formula return TRUE.</li>
-<li>data    : data to use with the formula</li>
-<li>formula : formula evaluated in regards to data to determine if label/badge has to be printed</li>
-<li>text    : text to be displayed</li>
-<li>level   : &#8216;default&#8217; (grey), &#8216;primary&#8217; (blue label/grey badge), &#8216;success&#8217; (green), &#8216;info&#8217; (cyan), &#8216;warning&#8217; (orange) or &#8216;danger&#8217; (red)</li>
-</ul>
-<img alt="_static/example002.png" class="last align-center" src="_static/example002.png" />
-</dd>
-<dt>InsertHTML(url)</dt>
-<dd>This function is used to insert an HTML information inside
-a page. (Ref Top3 example showing top most process cpu usage)</dd>
 </dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Pad(value)</strong></dt>
+<dd><p class="first last">Add a prefixed 0 for number smaller than 10</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>KMG(value, prefix)</strong></dt>
+<dd><p class="first last">Print value in kilo, Mega, Giga, Peta.
+prefix can be &#8216;k&#8217;, &#8216;M&#8217;, &#8216;G&#8217; or &#8216;P&#8217; depending on the value.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Percent(value,total)</strong></dt>
+<dd><p class="first last">Print percentage of value compared to total</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>ProgressBar(value,total,warning, danger)</strong></dt>
+<dd><p class="first">Draw a progressbar representing the value compared to total.</p>
+<p>The default color of pregressbar is blue.</p>
+<p>If warning value is lower than critical, progressbar color will be orange if percentage is higher than warning value and red
+if the percentage is higher than danger value.</p>
+<p class="last">If warning value is higher than critical, progressbar color will be orange if percentage is lower than warning value and red if the percentage is lower than danger value.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>JustGageBar(title, label,min, value, max, width, height, levelColors, warning, critical)</strong></dt>
+<dd><p class="first">Draw a half-circular gauge</p>
+<ul class="last simple">
+<li><strong>title</strong>       : Title of the gauge (located on to of the gauge)</li>
+<li><strong>label</strong>       : Label of the gauge (located under the value)</li>
+<li><strong>min</strong>         : min value of the gauge</li>
+<li><strong>value</strong>       : value to be drawn</li>
+<li><strong>max</strong>         : max value of the gauge</li>
+<li><strong>width</strong>, <strong>height</strong> : size of the gauge</li>
+<li><strong>levelColors</strong> : Array defining colors of each level [normal,warning,critical] (in Hex format), default: green, orange and red. Default colors are available into the array <code class="docutils literal"><span class="pre">percentColors</span></code>.</li>
+<li><strong>warning</strong>     : Warning level (in %) used to define color (default: 33)</li>
+<li><strong>critical</strong>    : Critical level (in %) used to define color (default: 66)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Plural(value)</strong></dt>
+<dd><p class="first last">Print &#8216;s &#8216; if value &gt; 1 or &#8216; &#8216; if not.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Clock(data.localtime)</strong></dt>
+<dd><p class="first last">This function is a little bit particular and should be written  and should be
+written exactly as in the upper line. It will display on screen the current time and
+will simulate the seconds by incrementing them periodically.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Label(data,formula, text, level)</strong></p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Badge(data,formula, text, level)</strong></dt>
+<dd><p class="first">This function write a label/badge with a defined background color if the formula return TRUE.</p>
+<ul class="simple">
+<li><strong>data</strong>    : data to use with the formula</li>
+<li><strong>formula</strong> : formula evaluated in regards to data to determine if label/badge has to be printed</li>
+<li><strong>text</strong>    : text to be displayed</li>
+<li><strong>level</strong>   : &#8216;default&#8217; (grey), &#8216;primary&#8217; (blue label/grey badge), &#8216;success&#8217; (green), &#8216;info&#8217; (cyan), &#8216;warning&#8217; (orange), &#8216;danger&#8217; (red)</li>
+</ul>
+<img alt="_images/examples002.png" class="last align-center" src="_images/examples002.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>InsertHTML(url)</strong></dt>
+<dd><p class="first last">This function is used to insert an HTML information inside a page. (Ref Top3 example showing top most process cpu usage)</p>
+</dd>
+</dl>
+</li>
+</ul>
 </div></blockquote>
 </dd>
 </dl>
@@ -389,12 +418,6 @@ of ds_graph_options. Refer to the following web page for details:
 <dd><code class="docutils literal"><span class="pre">&lt;parameter&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;value&gt;</span></code> can be find into the same web page as previous
 parameter. This allow to customize the graph and axis.</dd>
 </dl>
-<p>Example file are available in the template directory (prefixed by <code class="docutils literal"><span class="pre">example</span></code>).
-To understand how a feature is behaving, you can include this example file
-using the <code class="docutils literal"><span class="pre">include</span></code> directive.
-These include directive are already written (commented) into the default
-configuration file: <code class="docutils literal"><span class="pre">data.conf</span></code>
-When configuration files change, it is required to restart <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
 </div>
 </div>
 
@@ -421,7 +444,7 @@ When configuration files change, it is required to restart <code class="docutils
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 18, 2018.
+      Last updated on Feb 19, 2018.
 
     </p>
   </div>

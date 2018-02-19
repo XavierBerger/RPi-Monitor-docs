@@ -117,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting started</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="20_index.html">Configuration</a><ul class="current">
@@ -222,33 +222,31 @@
             
   <div class="section" id="metrics-extraction-configuration">
 <h1>Metrics extraction configuration<a class="headerlink" href="#metrics-extraction-configuration" title="Permalink to this headline">¶</a></h1>
-<p>This chapter is defining which data to extract how to extract them and when.</p>
-<p>You will notice that metrics in <strong>RPi-Monitor</strong> are named <strong>KPI</strong> for Key Performance Indicator.</p>
 <div class="section" id="include">
 <h2>Include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">include</span></code> keyword is available to add a file to the list of configuration files to be loaded.</p>
 <dl class="docutils">
 <dt>include=&lt;full path to configuration file&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;full</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code> is the full path to the configuration
-file to add at the end of the list of configuration files to be loaded.</dd>
-</dl>
-<div class="admonition hint">
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;full</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">configuration</span> <span class="pre">file&gt;</span></code> is the full path to the configuration
+file to add at the end of the list of configuration files to be loaded.</p>
+<div class="last admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last">The initial order of information displayed in status page depends on the
 order of file inclusion.</p>
 </div>
+</dd>
+</dl>
 </div>
 <div class="section" id="static">
 <h2>Static<a class="headerlink" href="#static" title="Permalink to this headline">¶</a></h2>
-<p>KPI representing a metric limit or anything else which do not change over the time
-is extracted once at <code class="docutils literal"><span class="pre">rpimonitord</span></code> startup (example: memory size, disk size, ...).
-Each KPI is identified into the configuration file by a line starting with the
-keyword <code class="docutils literal"><span class="pre">static</span></code> and an identifier <code class="docutils literal"><span class="pre">&lt;static</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">static</span></code> is definign KPI which is not changing over the time. KPI are extracted
+once at <code class="docutils literal"><span class="pre">rpimonitord</span></code> startup (example: memory size, disk size, network bandwidth limit...).</p>
+<p>Each static KPI is identified into the configuration file by a line starting with the
+keyword <code class="docutils literal"><span class="pre">static</span></code>, an identifier <code class="docutils literal"><span class="pre">&lt;static</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code> and the following parameters.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">Inside a configuration file <code class="docutils literal"><span class="pre">&lt;static</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code> should be unique per KPI.</p>
 </div>
-<p>Each static KPI is defined by an id and with 4 parameters</p>
 <dl class="docutils">
 <dt>static.&lt;static data id&gt;.name=&lt;data name&gt;</dt>
 <dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
@@ -292,8 +290,7 @@ This parameter will be evaluate by the command eval of <code class="docutils lit
 <h2>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this headline">¶</a></h2>
 <p>Dynamic KPI are extracted periodically (defined by <code class="docutils literal"><span class="pre">daemon.delay</span></code>).
 Each KPI is identified into the conf file by a line stating with the keyword
-dynamic and an identifier <code class="docutils literal"><span class="pre">&lt;dynamic</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code></p>
-<p>Each dynamic KPI is defined by a <code class="docutils literal"><span class="pre">dynamic</span> <span class="pre">data</span> <span class="pre">id</span></code> and with 9 parameters</p>
+<code class="docutils literal"><span class="pre">dynamic</span></code>, an identifier <code class="docutils literal"><span class="pre">&lt;dynamic</span> <span class="pre">data</span> <span class="pre">id&gt;</span></code> and the following parameters:</p>
 <dl class="docutils">
 <dt>dynamic.&lt;dynamic data id&gt;.name=&lt;data name&gt;</dt>
 <dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> is a string representing the KPI or the list of KPI
@@ -306,25 +303,24 @@ Only alpha numerical charter and underscore are accepted.</p>
 </dd>
 <dt>dynamic.&lt;dynamic data id&gt;.source=&lt;data source&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is a file or an executable program within the path.
-If the file exists, rpimonitord will read its content. If the file
-is not existing, rpimonirotd will try to execute it and will parse
+If the file exists, <code class="docutils literal"><span class="pre">rpimonitord</span></code> will read its content. If the file
+is not existing, <code class="docutils literal"><span class="pre">rpimonirotd</span></code> will try to execute it and will parse
 the output.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.regexp=&lt;data regexp&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code> is the regular expression extracting information from
 data source. Regexp groups <code class="docutils literal"><span class="pre">()</span></code> has to be used to extract the data
 In case of KPI list, each group will be affected to a KPI name.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.postprocess=&lt;data postprocess&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code>
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code>
 This 4 first parameters have the same signification as for static
-parameters.</dd>
-</dl>
-<div class="admonition note">
+parameters.</p>
+<div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Static values are accessible for the post processing using the
 variable <code class="docutils literal"><span class="pre">$this-&gt;{'static'}-&gt;{'static_data_name'}</span></code> and can be used.
 You can refer to swap data extraction to see an example (cf. <code class="docutils literal"><span class="pre">swap.conf</span></code>).</p>
 </div>
-<dl class="docutils">
+</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.interval=&lt;interval&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">rpimonitord</span></code> extracts data every <code class="docutils literal"><span class="pre">daemon.delay</span></code> seconds. <code class="docutils literal"><span class="pre">&lt;interval&gt;</span></code>
 define how many loop have to be waited before extracting this data.
@@ -344,17 +340,18 @@ for RRD parameter description.</dd>
 <p><strong>dynamic.&lt;dynamic data id&gt;.min=&lt;minimal value acceptable in RRD&gt;</strong></p>
 <dl class="docutils">
 <dt>dynamic.&lt;dynamic data id&gt;.max=&lt;maximal value acceptable in RRD&gt;</dt>
-<dd>If a value extracted by is less than minimal of greater than maximal
+<dd><p class="first">If a value extracted by is less than minimal of greater than maximal
 value, it will not be stored into RRD database as unknown.
 These limits are usefull to handle counter that fall down to 0 when
-they reach their limit (Ex: network graphs)</dd>
-</dl>
-<div class="admonition note">
+they reach their limit (Ex: network graphs)</p>
+<div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Static values are accessible for the post processing using the
 variable <code class="docutils literal"><span class="pre">$this-&gt;{'static'}-&gt;{'static_data_name'}</span></code> and can be used.
 You can refer to swap data extraction to see an example.</p>
 </div>
+</dd>
+</dl>
 </div>
 <div class="section" id="snmp-oid">
 <h2>SNMP OID<a class="headerlink" href="#snmp-oid" title="Permalink to this headline">¶</a></h2>
@@ -414,7 +411,7 @@ and activate pass_persist extension</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 18, 2018.
+      Last updated on Feb 19, 2018.
 
     </p>
   </div>

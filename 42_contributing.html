@@ -117,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_features.html">Keys features of RPi-Monitor</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting startep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_index.html">Getting started</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="20_index.html">Configuration</a></li>
@@ -221,15 +221,23 @@
 <h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="contribute-to-documentation">
 <h2>Contribute to documentation<a class="headerlink" href="#contribute-to-documentation" title="Permalink to this headline">¶</a></h2>
+<p><strong>RPi-Monitor</strong> documentation is written in reStructured Text using
+<a class="reference external" href="http://www.sphinx-doc.org/en/master/">sphinx</a> document generator and
+<a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/latest/index.html">Read the docs theme</a></p>
 <div class="section" id="install-sphinx">
 <h3>Install sphinx<a class="headerlink" href="#install-sphinx" title="Permalink to this headline">¶</a></h3>
+<p>The following command install sphinx and rtd theme:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span> <span class="n">sphinx_rtd_theme</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="propose-a-merge-request">
 <h3>Propose a merge request<a class="headerlink" href="#propose-a-merge-request" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="generate-documentation">
 <h3>Generate documentation<a class="headerlink" href="#generate-documentation" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">html</span> <span class="o">&amp;&amp;</span> <span class="n">firefox</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docs</span>
+<span class="n">make</span> <span class="n">clean</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">html</span> <span class="o">&amp;&amp;</span> <span class="n">firefox</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
 </pre></div>
 </div>
 </div>
@@ -361,7 +369,7 @@ For supported distribution, the post installation script of package creates a li
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 18, 2018.
+      Last updated on Feb 19, 2018.
 
     </p>
   </div>
