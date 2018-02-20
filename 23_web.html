@@ -328,14 +328,17 @@ prefix can be &#8216;k&#8217;, &#8216;M&#8217;, &#8216;G&#8217; or &#8216;P&#821
 <p>The default color of pregressbar is blue.</p>
 <p>If warning value is lower than critical, progressbar color will be orange if percentage is higher than warning value and red
 if the percentage is higher than danger value.</p>
-<p class="last">If warning value is higher than critical, progressbar color will be orange if percentage is lower than warning value and red if the percentage is lower than danger value.</p>
+<p>If warning value is higher than critical, progressbar color will be orange if percentage is lower than warning value and red if the percentage is lower than danger value.</p>
+<div class="last figure align-center">
+<a class="reference internal image-reference" href="_images/web001.png"><img alt="_images/web001.png" src="_images/web001.png" style="width: 500px;" /></a>
+</div>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt><strong>JustGageBar(title, label,min, value, max, width, height, levelColors, warning, critical)</strong></dt>
 <dd><p class="first">Draw a half-circular gauge</p>
-<ul class="last simple">
+<ul class="simple">
 <li><strong>title</strong>       : Title of the gauge (located on to of the gauge)</li>
 <li><strong>label</strong>       : Label of the gauge (located under the value)</li>
 <li><strong>min</strong>         : min value of the gauge</li>
@@ -346,6 +349,9 @@ if the percentage is higher than danger value.</p>
 <li><strong>warning</strong>     : Warning level (in %) used to define color (default: 33)</li>
 <li><strong>critical</strong>    : Critical level (in %) used to define color (default: 66)</li>
 </ul>
+<div class="last figure align-center">
+<a class="reference internal image-reference" href="_images/web002.png"><img alt="_images/web002.png" src="_images/web002.png" style="width: 500px;" /></a>
+</div>
 </dd>
 </dl>
 </li>
@@ -374,7 +380,7 @@ will simulate the seconds by incrementing them periodically.</p>
 <li><strong>text</strong>    : text to be displayed</li>
 <li><strong>level</strong>   : &#8216;default&#8217; (grey), &#8216;primary&#8217; (blue label/grey badge), &#8216;success&#8217; (green), &#8216;info&#8217; (cyan), &#8216;warning&#8217; (orange), &#8216;danger&#8217; (red)</li>
 </ul>
-<img alt="_images/examples002.png" class="last align-center" src="_images/examples002.png" />
+<img alt="_images/web003.png" class="last align-center" src="_images/web003.png" />
 </dd>
 </dl>
 </li>
@@ -419,6 +425,32 @@ of ds_graph_options. Refer to the following web page for details:
 parameter. This allow to customize the graph and axis.</dd>
 </dl>
 </div>
+<div class="section" id="addons">
+<h2>Addons<a class="headerlink" href="#addons" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>RPi-Monitor</strong> features can be extended by addons. Addons are html, javascript
+and css code installed in <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/addons/</span></code>.</p>
+<p>Each addons is idendifier by an <code class="docutils literal"><span class="pre">id</span></code> and the following parameters:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
+</div>
+<dl class="docutils">
+<dt>web.addons.&lt;id&gt;.name=&lt;name to be display&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;name</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">display&gt;</span></code> defines the text display in RPi-Monitor web interface</dd>
+<dt>web.addons.&lt;id&gt;.addons=&lt;addon name&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;addon</span> <span class="pre">name&gt;</span></code> defines the addon to activate</dd>
+<dt>web.addons.&lt;id&gt;.showTitle=&lt;0|1&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;0|1&gt;</span></code> defines it the title of addon has to be shown in addon page</dd>
+<dt>web.addons.&lt;id&gt;.&lt;parameter&gt;=&lt;value&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;parameter&gt;=&lt;value&gt;</span></code> are optional parameter to configure addon</dd>
+</dl>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Example of addons in <a class="reference external" href="24_addons.html">addons configuration</a></p>
+</div>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -444,7 +476,7 @@ parameter. This allow to customize the graph and axis.</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 19, 2018.
+      Last updated on Feb 20, 2018.
 
     </p>
   </div>

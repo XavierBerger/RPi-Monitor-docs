@@ -226,15 +226,23 @@
 you the possibility to free your imagination and cutomise <strong>RPi-Monitor</strong> to your needs.</p>
 <p>Addons are <code class="docutils literal"><span class="pre">html</span></code> pages, <code class="docutils literal"><span class="pre">javascript</span></code> and <code class="docutils literal"><span class="pre">css</span></code> directly integrated into <strong>RPi-Monitor</strong>.
 The activation of an addon is done into <strong>RPi-Monitor</strong> configuration file.</p>
-<p>The following line is showing how to activate the default addons explaing addons feature:</p>
+<div class="section" id="about-addon">
+<h2>About Addon<a class="headerlink" href="#about-addon" title="Permalink to this headline">¶</a></h2>
+<p>The following line is showing how to activate the default addons explaining addons feature:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Addons</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">about</span>
 </pre></div>
 </div>
+<p>To remove this addons, simply comment out or delete these lines.</p>
 <p>It is possible to use an addon many time into a same configuration file
 (using different parameters if the addon support them).</p>
 <p>The next part of this chapter shows some examples of addons and highlight
 the possibilities of this feature.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
+</div>
+</div>
 <div class="section" id="top3-addon">
 <h2>Top3 Addon<a class="headerlink" href="#top3-addon" title="Permalink to this headline">¶</a></h2>
 <p>Top3 is showing how to use addons to add additionnal information into status
@@ -243,8 +251,8 @@ content can be accessible from the addons menu (if addon is configured in
 <code class="docutils literal"><span class="pre">rpimonotord</span></code> configuration file) and/or can be inserted into status page
 using the function <code class="docutils literal"><span class="pre">InsertHTML()</span></code>.</p>
 <p>To activate this addon, add the following lines to your configuration file</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">Top3</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">2.</span><span class="n">addons</span><span class="o">=</span><span class="n">top3</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Top3</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">top3</span>
 </pre></div>
 </div>
 <p>and configure the <code class="docutils literal"><span class="pre">cron</span></code> of your Raspberry Pi to update the HTML content
@@ -252,7 +260,10 @@ periodically. This can be done with the following lines:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">root</span> <span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">web</span><span class="o">/</span><span class="n">addons</span><span class="o">/</span><span class="n">top3</span><span class="p">;</span> <span class="o">./</span><span class="n">top3</span> <span class="o">&gt;</span> <span class="n">top3</span><span class="o">.</span><span class="n">html</span>
 </pre></div>
 </div>
-<p>For deeper details, refer to rpimonitor manpage and to comments available into the script top3.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
+</div>
 </div>
 <div class="section" id="example-addon">
 <h2>Example Addon<a class="headerlink" href="#example-addon" title="Permalink to this headline">¶</a></h2>
@@ -261,42 +272,67 @@ see how to implement such a feature.
 Example addon is providing a <code class="docutils literal"><span class="pre">html</span></code> page, a <code class="docutils literal"><span class="pre">javacript</span></code> and a <code class="docutils literal"><span class="pre">css</span></code> showing
 how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
 <p>Example addon can activate by adding the following lines into the configuration file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">Addon</span> <span class="n">example</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">addons</span><span class="o">=</span><span class="n">example</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">parameter</span><span class="o">=</span><span class="n">parameter_example</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Addon</span> <span class="n">example</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">example</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">parameter</span><span class="o">=</span><span class="n">parameter_example</span>
 </pre></div>
 </div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
 </div>
-<div class="section" id="shellinabox-addon">
-<h2>Shellinabox Addon<a class="headerlink" href="#shellinabox-addon" title="Permalink to this headline">¶</a></h2>
-<p>Activating Shellinabox addon allow to have and access to shell inside browser.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">4.</span><span class="n">name</span><span class="o">=</span><span class="n">ShelleInABox</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">4.</span><span class="n">addons</span><span class="o">=</span><span class="n">shellinabox</span>
-</pre></div>
-</div>
-<p>The behavior of this addon remain the same as previously embedded feature.</p>
 </div>
 <div class="section" id="custom-addon">
 <h2>Custom Addon<a class="headerlink" href="#custom-addon" title="Permalink to this headline">¶</a></h2>
 <p>If you are not confortable with html, javascript and css, the addon custom may
 help you to customise RPi-Monitor to your wishes. This addons implement an
 iframe that can display any other web pages.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">5.</span><span class="n">name</span><span class="o">=</span><span class="n">Custom</span> <span class="n">addons</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">5.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">5.</span><span class="n">url</span><span class="o">=/</span><span class="n">addons</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">custominfo</span><span class="o">.</span><span class="n">html</span>
+<blockquote>
+<div><dl class="docutils">
+<dt>web.addons.&lt;id&gt;.name=&lt;name&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code></dd>
+<dt>web.addons.&lt;id&gt;.addons=custom</dt>
+<dd><code class="docutils literal"><span class="pre">custom</span></code></dd>
+<dt>web.addons.&lt;id&gt;.url=&lt;url&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">url</span></code> is defining the page to be displayed into the iframe. It can be a file
+reachable from <strong>RPi-Monitor</strong> internal server or a site available into the Internet.</dd>
+<dt>web.addons.&lt;id&gt;.allowupdate=&lt;allow update&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;allow</span> <span class="pre">update&gt;</span></code></dd>
+</dl>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
+</div>
+<div class="section" id="shellinabox">
+<h3>Shellinabox<a class="headerlink" href="#shellinabox" title="Permalink to this headline">¶</a></h3>
+<p>Shellinabox allow you to access to the shell of your Raspberry Pi through a web interface.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">shellinabox</span>
 </pre></div>
 </div>
-<p>url is defining the page to be displayed into the iframe. It can be a file
-reachable from <strong>RPi-Monitor</strong> internal server or a site available into the Internet.</p>
+<p>By default shellinabox listening on <a class="reference external" href="http://raspberrypi.local:4200/">http://raspberrypi.local:4200/</a>.
+You can modify this address to point to your shellinabox address.</p>
+<p>This addons is simply perform shellinabox integration in <strong>RPI-Monitor</strong> Interface using <code class="docutils literal"><span class="pre">iframe</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ShelleInABox</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">url</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raspberrypi</span><span class="o">.</span><span class="n">local</span><span class="p">:</span><span class="mi">4200</span><span class="o">/</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">allowupdate</span><span class="o">=</span><span class="n">false</span>
+</pre></div>
 </div>
-<div class="section" id="webcam-addon">
-<h2>Webcam Addon<a class="headerlink" href="#webcam-addon" title="Permalink to this headline">¶</a></h2>
+<p>The behavior of this addon remain the same as previously embedded feature.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
+</div>
+</div>
+<div class="section" id="webcam">
+<h3>Webcam<a class="headerlink" href="#webcam" title="Permalink to this headline">¶</a></h3>
 <p>If you want to see the image of your webcam in your brower, you can use hawkeye.
 Once hawkeye installed, it is very easy to add it into <strong>RPi-Monitor</strong> interface
 using the custom addon. The configuration will then be the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">Webcam</span> <span class="o">-</span> <span class="n">Hawkeye</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">3.</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">raspberry_adress</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Webcam</span> <span class="o">-</span> <span class="n">Hawkeye</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
+<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">raspberrypi</span><span class="o">.</span><span class="n">local</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>url parameter point to hawkeye web interface. If you are doing such a
@@ -304,6 +340,11 @@ configuration, keep in mind about the security of your images. You should
 use the capacity of hawkeye to restrict the access to the image using a
 login and a password. You can also have a look to my article showing how
 to secure the access to <strong>RPi-monitor</strong>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -330,7 +371,7 @@ to secure the access to <strong>RPi-monitor</strong>.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 19, 2018.
+      Last updated on Feb 20, 2018.
 
     </p>
   </div>
