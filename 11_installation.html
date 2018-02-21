@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>First installation &mdash; RPi-Monitor v2.13-r0</title>
+  <title>Installation and ugrade &mdash; RPi-Monitor v2.13-r0</title>
   
 
   
@@ -118,10 +118,9 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Getting started</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">First installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation and ugrade</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html">Custom installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="13_upgrade_uninstall.html">Upgrade or uninstall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="14_execution.html">Understanding program execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_execution.html">Understanding program execution</a></li>
 </ul>
 </li>
 </ul>
@@ -195,7 +194,7 @@
         
           <li><a href="10_index.html">Getting started</a> &raquo;</li>
         
-      <li>First installation</li>
+      <li>Installation and ugrade</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,8 +216,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="first-installation">
-<h1>First installation<a class="headerlink" href="#first-installation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="installation-and-ugrade">
+<h1>Installation and ugrade<a class="headerlink" href="#installation-and-ugrade" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="installation-from-repository">
 <h2>Installation from repository<a class="headerlink" href="#installation-from-repository" title="Permalink to this headline">¶</a></h2>
 <p><strong>RPi-Monitor</strong> is providing a debian repository. This repository makes
@@ -260,6 +259,20 @@ The web interface is available on address <a class="reference external" href="ht
 </pre></div>
 </div>
 </div>
+<div class="section" id="upgrade">
+<h2>Upgrade<a class="headerlink" href="#upgrade" title="Permalink to this headline">¶</a></h2>
+<p>If you have performed an <a class="reference external" href="11_first_installation.html#installation-from-repository">installation from repository</a>
+you can upgrade <strong>RPi-Monitor</strong> with the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>
+</pre></div>
+</div>
+<p>After installation you should excute the following command to update information
+about upgradable packages:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="n">update</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -285,7 +298,7 @@ The web interface is available on address <a class="reference external" href="ht
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 20, 2018.
+      Last updated on Feb 21, 2018.
 
     </p>
   </div>

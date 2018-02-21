@@ -408,6 +408,17 @@ immediately, you can execute this script manually:  <code class="docutils litera
 <dd>Yes, since version 2.11, it is possible to define the RRD structure per data
 extracted. Refer to documentation and man page to know how use this
 advanced feature.</dd>
+<dt>I want to uninstall <strong>RPi-Monitor</strong>, How can I do it?</dt>
+<dd><p class="first">To uninstall <strong>RPi-Monitor</strong>, you can execute the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">remove</span> <span class="n">rpimonitor</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">rpimontor</span>
+</pre></div>
+</div>
+<p class="last">Finally delete the directory <code class="docutils literal"><span class="pre">/var/lib/rpimonitor</span></code></p>
+</dd>
 </dl>
 </div>
 
@@ -434,7 +445,7 @@ advanced feature.</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 20, 2018.
+      Last updated on Feb 21, 2018.
 
     </p>
   </div>

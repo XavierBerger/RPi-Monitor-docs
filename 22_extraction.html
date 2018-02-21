@@ -265,13 +265,13 @@ the output.</p>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p>In <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> it is possible to refer to another <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>
-with the prefix <code class="docutils literal"><span class="pre">data.</span></code> followed by <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>: <code class="docutils literal"><span class="pre">data.&lt;data</span> <span class="pre">name&gt;</span></code></p>
+with the prefix <code class="docutils literal"><span class="pre">data.</span></code> followed by <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>. This data could
+refer to <code class="docutils literal"><span class="pre">dynamic</span></code> or <code class="docutils literal"><span class="pre">static</span></code> KPI.</p>
 <p><strong>Example</strong>: <code class="docutils literal"><span class="pre">data.kernel_version</span></code></p>
-<p>This data could refer to <code class="docutils literal"><span class="pre">dynamic</span></code> or <code class="docutils literal"><span class="pre">static</span></code> KPI.</p>
 <div class="last admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">The order of KPI extraction is important.
-Data used should already been extracted to be accessible.</p>
+<p>The order of KPI extraction is important.</p>
+<p class="last">Data used should already been extracted to be accessible.</p>
 </div>
 </div>
 </dd>
@@ -326,10 +326,10 @@ You can refer to swap data extraction to see an example (cf. <code class="docuti
 define how many loop have to be waited before extracting this data.
 Default value is <code class="docutils literal"><span class="pre">1</span></code>. This means that data is extracted at every loop.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.default=&lt;default&gt;</dt>
-<dd>If rpimonitor can&#8217;t extract information, it is now possible to define
+<dd>If <code class="docutils literal"><span class="pre">rpimonitord</span></code> can&#8217;t extract information, it is now possible to define
 a <code class="docutils literal"><span class="pre">&lt;default&gt;</span></code> value which will be set for the KPI.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.rrd=&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</dt>
-<dd>rrd parameter is defining if the KPI has to be stored into a RRD
+<dd><code class="docutils literal"><span class="pre">rrd</span></code> parameter is defining if the KPI has to be stored into a RRD
 database and how <code class="docutils literal"><span class="pre">&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</span></code>. If the
 parameter is defined as empty, no RRD database will be created. If
 this parameter is defined, a RRD database will be created and data
@@ -411,7 +411,7 @@ and activate pass_persist extension</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 20, 2018.
+      Last updated on Feb 21, 2018.
 
     </p>
   </div>

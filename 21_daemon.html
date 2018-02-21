@@ -233,8 +233,8 @@
 </dl>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">If you want to change the default delay, the rrd file will
-have to be deleted <code class="docutils literal"><span class="pre">rpimonitord</span></code> will recreate them at next startup</p>
+<p class="last">If you want to change the default delay, the rrd files in <code class="docutils literal"><span class="pre">/var/lib/rpimonitor/stat</span></code>
+have to be deleted. <code class="docutils literal"><span class="pre">rpimonitord</span></code> will recreate these files at next startup.</p>
 </div>
 <dl class="docutils">
 <dt>daemon.timeout=5</dt>
@@ -249,25 +249,23 @@ value will depends on default value configured for this KPI. (Default: 5)</dd>
 <dt>daemon.port=8888</dt>
 <dd>Define port of the embedded web server (Default: 8888)</dd>
 <dt>daemon.user=pi</dt>
-<dd>Define user used to run embedded web server process (Default: pi)</dd>
-</dl>
-<div class="admonition note">
+<dd><p class="first">Define user used to run embedded web server process (Default: pi)</p>
+<div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If user is not existing, process will run with <code class="docutils literal"><span class="pre">uid=1000</span></code></p>
 </div>
-<dl class="docutils">
+</dd>
 <dt>daemon.group=pi</dt>
-<dd>Define group used to run embedded web server process (Default: pi)</dd>
-</dl>
+<dd><p class="first">Define group used to run embedded web server process (Default: pi)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If group is not existing, process will run with <code class="docutils literal"><span class="pre">gid=1000</span></code></p>
 </div>
-<div class="admonition important">
+<div class="last admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">Extraction daemon of <strong>RPi-Monitor</strong> running as root.</p>
 </div>
-<dl class="docutils">
+</dd>
 <dt>daemon.webroot=/usr/share/rpimonitor/web</dt>
 <dd>Define the root directory of the web server (Default: <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web</span></code>)</dd>
 <dt>daemon.datastore=/var/lib/rpimonitor</dt>
@@ -279,8 +277,6 @@ value will depends on default value configured for this KPI. (Default: 5)</dd>
 <p class="last">when <code class="docutils literal"><span class="pre">rpimonitord</span></code> is started in foreground, information a written in <code class="docutils literal"><span class="pre">/dev/stderr</span></code></p>
 </div>
 </dd>
-<dt>daemon.shellinabox=https://0.0.0.0:4200/</dt>
-<dd>Define shellinabox address (Default: calculated automatically based on http request)</dd>
 </dl>
 </div>
 <div class="section" id="snmp-configuration">
@@ -336,7 +332,7 @@ value will depends on default value configured for this KPI. (Default: 5)</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 20, 2018.
+      Last updated on Feb 21, 2018.
 
     </p>
   </div>

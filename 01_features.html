@@ -251,11 +251,11 @@ This ensure a fixed size for the data storage and keep by default data over 1 ye
 <h2>Presenting collected metrics<a class="headerlink" href="#presenting-collected-metrics" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>RPi-Monitor</strong> embed a web server designed to present collected metrics.
-Instantaneous data are presented in the status page. Metrics stored into the RRD
-are presented as statistics pages. The web interface allow user to reoganise
-statistics by drag&#8217;n drop. Statistics page allow to zoom over graph to see
-details of the mertics.</p>
-<p>Embedded web server can be disable and page can be served by an external web server.</p>
+Instantaneous data are presented in the status page. Metrics stored in RRD
+are presented in statistics pages.</p>
+<p>The web interface allow user to reorganise status information by drag&#8217;n drop.</p>
+<p>Statistics page allow to zoom over graph to see details of the mertics.</p>
+<p>Embedded web server can be disable and pages can be served by an external web server.</p>
 </div></blockquote>
 </div>
 <div class="section" id="configurable">
@@ -278,17 +278,20 @@ details of the mertics.</p>
 <div class="section" id="processing-metrics-and-raising-alerts">
 <h2>Processing metrics and raising alerts<a class="headerlink" href="#processing-metrics-and-raising-alerts" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><strong>RPi-Monitor</strong> embed an alert engine fully configurable and able to determine
-if metrics are out of expected range and raise alerts.
-Definition of critera of alert detection as well as action to perform when alert
-is detected are fully configurable.</div></blockquote>
+<div><p><strong>RPi-Monitor</strong> embed an alert engine fully configurable and able to determine
+if metrics are out of expected range and raise alerts.</p>
+<p>When an alert is detected, <strong>RPi-Monitor</strong> can execute an action. For example, sending email or SMS.</p>
+<p>Definition of critera of alert detection as well as action to perform when alert
+is detected are fully configurable.</p>
+</div></blockquote>
 </div>
 <div class="section" id="read-only-mode">
 <h2>Read only mode<a class="headerlink" href="#read-only-mode" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>If writing data on disk/eMMC/SSD/SDCard/... is not possible, <strong>RPi-Monitor</strong>
-can be executed in read only mode. Metrics can be retrived either by web
-interface in json format or through SNMP.</div></blockquote>
+<div><p>If writing data on disk/eMMC/SSD/SDCard/... is not possible, <strong>RPi-Monitor</strong>
+can be executed in <strong>read-only</strong> mode.</p>
+<p>Metrics can be retrived either by web interface in json format or through SNMP.</p>
+</div></blockquote>
 </div>
 <div class="section" id="sharing-metrics">
 <h2>Sharing metrics<a class="headerlink" href="#sharing-metrics" title="Permalink to this headline">¶</a></h2>
@@ -331,7 +334,7 @@ with <a class="reference external" href="https://www.yoctoproject.org/">Yocto Pr
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 20, 2018.
+      Last updated on Feb 21, 2018.
 
     </p>
   </div>
