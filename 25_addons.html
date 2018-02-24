@@ -229,6 +229,9 @@ The activation of an addon is done into <strong>RPi-Monitor</strong> configurati
 <p>It is possible to use an addon many time into a same configuration file using
 different parameters if the addon support them as show with <a class="reference external" href="24_addons.html#id3">custom addon</a>.</p>
 <p>The next part of this chapter shows some examples of addons and highlight the possibilities of this feature.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/addons001.png"><img alt="_images/addons001.png" src="_images/addons001.png" style="width: 500px;" /></a>
+</div>
 <div class="section" id="about-addon">
 <h2>About Addon<a class="headerlink" href="#about-addon" title="Permalink to this headline">¶</a></h2>
 <p>About addons is activated by default and present addons feature.</p>
@@ -241,6 +244,9 @@ different parameters if the addon support them as show with <a class="reference 
 <div class="section" id="top3-addon">
 <h2>Top3 Addon<a class="headerlink" href="#top3-addon" title="Permalink to this headline">¶</a></h2>
 <p>Top3 is showing how to use addons to add additionnal information into status page.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/addons002.png"><img alt="_images/addons002.png" src="_images/addons002.png" style="width: 400px;" /></a>
+</div>
 <p>This addons is designed to periodically generate HTML content. This content can be
 accessible from the addons menu and/or can be inserted into status page
 using the function <code class="docutils literal"><span class="pre">InsertHTML()</span></code>.</p>
@@ -262,25 +268,9 @@ cunsumption of <code class="docutils literal"><span class="pre">rpimonitord</spa
 <p>If you are not confortable with html, javascript and css, the addon custom may
 help you to customise <strong>RPi-Monitor</strong> to your wishes. This addons implement an
 iframe that can display any other web pages.</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>web.addons.&lt;id&gt;.name=&lt;name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> represent the name displayed in addon menu or addon title</dd>
-<dt>web.addons.&lt;id&gt;.addons=custom</dt>
-<dd><code class="docutils literal"><span class="pre">custom</span></code> is the addon activated</dd>
-<dt>web.addons.&lt;id&gt;.showtitle=&lt;title visibility&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;title</span> <span class="pre">visibility&gt;</span></code> define if title should be displayed or not</dd>
-<dt>web.addons.&lt;id&gt;.url=&lt;url&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">url</span></code> is defining the page to be displayed into the iframe. It can be a file
-reachable from <strong>RPi-Monitor</strong> internal server or a site available into the Internet.</dd>
-<dt>web.addons.&lt;id&gt;.allowupdate=&lt;allow update&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;allow</span> <span class="pre">update&gt;</span></code> define is <code class="docutils literal"><span class="pre">url</span></code> can be updated in option</dd>
-</dl>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
+<div class="figure">
+<img alt="_static/addons003.png:align:center:width:500px" src="_static/addons003.png:align:center:width:500px" />
 </div>
-</div></blockquote>
 <div class="section" id="shellinabox">
 <h3>Shellinabox<a class="headerlink" href="#shellinabox" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/shellinabox/shellinabox">Shellinabox</a> allow you to access to the shell of your
@@ -327,6 +317,9 @@ restrict the access to the image using a login and a password.</p>
 <h2>Example Addon<a class="headerlink" href="#example-addon" title="Permalink to this headline">¶</a></h2>
 <p>If you want to develop your own addon, you can refer to the example addons to
 see how to implement such a feature.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/addons006.png"><img alt="_images/addons006.png" src="_images/addons006.png" style="width: 500px;" /></a>
+</div>
 <p>Example addon is providing a <code class="docutils literal"><span class="pre">html</span></code> page, a <code class="docutils literal"><span class="pre">javacript</span></code> and a <code class="docutils literal"><span class="pre">css</span></code> showing
 how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
 <p>Example addon can activate by adding the following lines into the configuration file:</p>
@@ -362,7 +355,7 @@ how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 21, 2018.
+      Last updated on Feb 24, 2018.
 
     </p>
   </div>
