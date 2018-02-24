@@ -329,6 +329,55 @@ the condition will be <code class="docutils literal"><span class="pre">true</spa
 <p>Other ports checking are using the same technic.</p>
 <p>Here is the result:</p>
 <img alt="_images/label001.png" class="align-center" src="_images/label001.png" />
+</div>
+<div class="section" id="multiple-pages">
+<h2>Multiple pages<a class="headerlink" href="#multiple-pages" title="Permalink to this headline">¶</a></h2>
+<p>Status and statistics can be sorted in pages. The parameter <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code> of
+<code class="docutils literal"><span class="pre">web</span></code> configuration is defining in which page data is displayed.</p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.multipage.conf</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>web.status.1.name=Status 1
+web.statistics.1.name=Statistics 1
+web.status.2.name=Status 2
+web.statistics.2.name=Statistics 2
+
+dynamic.1.name=data1
+dynamic.1.source=od -vAn -N2 -tu2 &lt; /dev/urandom
+dynamic.1.regexp=(\d+)
+dynamic.1.postprocess=$1%100
+dynamic.1.rrd=GAUGE
+
+dynamic.2.name=data2
+dynamic.2.source=od -vAn -N2 -tu2 &lt; /dev/random
+dynamic.2.regexp=(\d+)
+dynamic.2.postprocess=$1%100
+dynamic.2.rrd=GAUGE
+
+web.status.1.content.1.name=Data1
+web.status.1.content.1.icon=cpu_temp.png
+web.status.1.content.1.line.1=&quot;data1: &lt;b&gt;&quot;+data.data1+&quot;&lt;/b&gt;&quot;
+
+web.statistics.1.content.1.name=Data 1
+web.statistics.1.content.1.graph.1=data1
+web.statistics.1.content.1.ds_graph_options.living_room_temp.label=Data 1
+
+web.status.2.content.1.name=Data2
+web.status.2.content.1.icon=cpu_temp.png
+web.status.2.content.1.line.1=&quot;data1: &lt;b&gt;&quot;+data.data2+&quot;&lt;/b&gt;&quot;
+
+web.statistics.2.content.1.name=Data 2
+web.statistics.2.content.1.graph.1=data2
+web.statistics.2.content.1.ds_graph_options.living_room_temp.label=Data 2
+</pre></div>
+</div>
+<p>The new page will be accessible by a drop down menu as shown in the screenshot bellow.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/multipages001.png"><img alt="_images/multipages001.png" src="_images/multipages001.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text"><strong>RPi-Monitor</strong> showing multiple status pages</span></p>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/multipages002.png"><img alt="_images/multipages002.png" src="_images/multipages002.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text"><strong>RPi-Monitor</strong> showing multiple graph pages</span></p>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -348,22 +397,6 @@ the condition will be <code class="docutils literal"><span class="pre">true</spa
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 <div class="line"><br /></div>
-</div>
-</div>
-<div class="section" id="multiple-pages">
-<h2>Multiple pages<a class="headerlink" href="#multiple-pages" title="Permalink to this headline">¶</a></h2>
-<p>This version of RPi-Monitor introduce the notion of pages. Adding a new page
-can be done in configuration file by setting the parameter named <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code>.
-RPi-Monitor will automatically interpret this new id and create the associated
-page. The new page will be accessible by a drop down menu as shown in the
-screenshot bellow.</p>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="_images/multipages001.png"><img alt="_images/multipages001.png" src="_images/multipages001.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">RPi-Monitor showing multiple status pages</span></p>
-</div>
-<div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="_images/multipages002.png"><img alt="_images/multipages002.png" src="_images/multipages002.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text"><strong>RPi-Monitor</strong> showing multiple graph pages</span></p>
 </div>
 </div>
 <div class="section" id="example-progressbar-conf">
