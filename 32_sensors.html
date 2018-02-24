@@ -69,7 +69,9 @@
 <body class="wy-body-for-nav" role="document">
 
   
+ 
 <img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
+
 
   <div class="wy-grid-for-nav">
 
@@ -228,9 +230,12 @@
 <h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
 <p>In this chapter we will see how to connect a DHT11 or DHT22 Temperature and
 Humidity sensor and configure <strong>RPi-Monitor</strong> to present and draw the outputs.</p>
-<p>This article will also explain dual-axis feature.</p>
-<p>Adafruit created a very good tutorial explaining how to use DHT11 or DHT22 .
+<p>We will also see how to steup dual-axis.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Adafruit created a very good tutorial explaining how to use DHT11 or DHT22.
 This tutorial is available at this <a class="reference external" href="http://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/wiring">here</a>.</p>
+</div>
 </div>
 <div class="section" id="electronic-assembly">
 <h3>Electronic assembly<a class="headerlink" href="#electronic-assembly" title="Permalink to this headline">¶</a></h3>
@@ -270,26 +275,21 @@ are not getting data, be sure to wait few seconds before trying again.</p>
 </div>
 <div class="section" id="rpi-monitor-configuration">
 <h3>RPi-Monitor configuration<a class="headerlink" href="#rpi-monitor-configuration" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Be sure to use Linux linefeed format with line ending with LF
-(and not CR/LF like in Windows).</p>
-</div>
 <p>Let&#8217;s now use this information and add humidity graphs on existing temperature graph.</p>
 <p>We first have to extract the data. This is done like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">name</span><span class="o">=</span><span class="n">humidity</span>
-<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">source</span><span class="o">=</span><span class="n">Adafruit_DHT</span> <span class="mi">11</span> <span class="mi">27</span>
-<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">regexp</span><span class="o">=</span><span class="n">Hum</span> <span class="o">=</span> <span class="p">(</span>\<span class="n">S</span><span class="o">+</span><span class="p">)</span>
-<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">postprocess</span><span class="o">=</span>
-<span class="n">dynamic</span><span class="o">.</span><span class="mf">17.</span><span class="n">rrd</span><span class="o">=</span><span class="n">GAUGE</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">humidity</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">source</span><span class="o">=</span><span class="n">Adafruit_DHT</span> <span class="mi">11</span> <span class="mi">27</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">regexp</span><span class="o">=</span><span class="n">Hum</span> <span class="o">=</span> <span class="p">(</span>\<span class="n">S</span><span class="o">+</span><span class="p">)</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">postprocess</span><span class="o">=</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">rrd</span><span class="o">=</span><span class="n">GAUGE</span>
 </pre></div>
 </div>
 <p>We will now add the humidity curve into the graph of temperature.
 This can be done with the configuration bellow:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">name</span><span class="o">=</span><span class="n">humidity</span>
-<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Humidity</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
-<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">yaxis</span><span class="o">=</span><span class="mi">2</span>
-<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">8.</span><span class="n">graph_options</span><span class="o">.</span><span class="n">y2axis</span><span class="o">=</span><span class="p">{</span> <span class="n">position</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">:</span> <span class="mi">100</span> <span class="p">}</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">humidity</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Humidity</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">yaxis</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph_options</span><span class="o">.</span><span class="n">y2axis</span><span class="o">=</span><span class="p">{</span> <span class="n">position</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">:</span> <span class="mi">100</span> <span class="p">}</span>
 </pre></div>
 </div>
 <p>As the unit are different than the one existing on the initial axis,
@@ -306,7 +306,7 @@ documentation of <a class="reference external" href="http://javascriptrrd.source
 </div>
 <p>You will see a new curve in Temperature graph as shown in the screenshot bellow:</p>
 <div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="_images/sensor001.png"><img alt="_images/sensor001.png" src="_images/sensor001.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/sensor002.png"><img alt="_images/sensor002.png" src="_images/sensor002.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Graph with 2 Y axis: °C in left axis and % humidity (fixed from 0% to 100%)
 on right axis</span></p>
 </div>

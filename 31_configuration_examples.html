@@ -69,7 +69,9 @@
 <body class="wy-body-for-nav" role="document">
 
   
+ 
 <img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
+
 
   <div class="wy-grid-for-nav">
 
@@ -224,13 +226,13 @@
 <h1>Configuration examples<a class="headerlink" href="#configuration-examples" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="monitoring-a-wifi-network">
 <h2>Monitoring a WiFi network<a class="headerlink" href="#monitoring-a-wifi-network" title="Permalink to this headline">¶</a></h2>
-<p>The following configuration is showing how to configure the monitoring of e WiFi
-interface visible in <code class="docutils literal"><span class="pre">wlan0</span></code></p>
+<p>The following configuration is showing how to configure the monitoring WiFi
+interface <code class="docutils literal"><span class="pre">wlan0</span></code></p>
 <p>To extract metrics representing the trafic on the interface we need to create
 a <code class="docutils literal"><span class="pre">dynamic</span></code> configuration to collect data in pseudo file system
 <code class="docutils literal"><span class="pre">/sys/class/net/wlan0/statistics/</span></code>.</p>
-<div class="section" id="collect-metrics">
-<h3>Collect metrics<a class="headerlink" href="#collect-metrics" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="collecting-metrics">
+<h3>Collecting metrics<a class="headerlink" href="#collecting-metrics" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default"><div class="highlight"><pre><span></span>dynamic.1.name=wifi_received
 dynamic.1.source=/sys/class/net/wlan0/statistics/rx_bytes
 dynamic.1.regexp=(.*)
@@ -254,9 +256,9 @@ performed by the postprocess command: <code class="docutils literal"><span class
 <h3>Add status<a class="headerlink" href="#add-status" title="Permalink to this headline">¶</a></h3>
 <p>The collected metrics will be displayed in <code class="docutils literal"><span class="pre">status</span></code> page as define in the
 configuration bellow:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">name</span><span class="o">=</span><span class="n">WiFi</span>
-<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">icon</span><span class="o">=</span><span class="n">wifi</span><span class="o">.</span><span class="n">png</span>
-<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">9.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;WiFi Sent: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">wifi_send</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;i class=&#39;icon-arrow-up&#39;&gt;&lt;/i&gt;&lt;/b&gt; Received: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">wifi_received</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;&lt;i class=&#39;icon-arrow-down&#39;&gt;&lt;/i&gt;&lt;/b&gt;&quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">WiFi</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">wifi</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;WiFi Sent: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">wifi_send</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;i class=&#39;icon-arrow-up&#39;&gt;&lt;/i&gt;&lt;/b&gt; Received: &lt;b&gt;&quot;</span><span class="o">+</span><span class="n">KMG</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">wifi_received</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;&lt;i class=&#39;icon-arrow-down&#39;&gt;&lt;/i&gt;&lt;/b&gt;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -277,10 +279,6 @@ representing upstream and downstream metrics:</p>
 </div>
 <p>In this configuration, we set color to green for downstream and red for upstream.
 The curves are filled.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Be sure to use Linux filefeed format with line ending with LF (and not CR/LF like in Windows).</p>
-</div>
 </div>
 </div>
 <div class="section" id="monitor-external-disk">
