@@ -68,7 +68,9 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
+  
+<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_static/wip.png">
+
   <div class="wy-grid-for-nav">
 
     
@@ -378,87 +380,102 @@ web.statistics.2.content.1.ds_graph_options.living_room_temp.label=Data 2
 <a class="reference internal image-reference" href="_images/multipages002.png"><img alt="_images/multipages002.png" src="_images/multipages002.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text"><strong>RPi-Monitor</strong> showing multiple graph pages</span></p>
 </div>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line">WORK IN PROGRESS</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
 </div>
+<div class="section" id="progress-bar">
+<h2>Progress bar<a class="headerlink" href="#progress-bar" title="Permalink to this headline">¶</a></h2>
+<p>The functions <code class="docutils literal"><span class="pre">ProgressBar</span></code> are designed to draw a progress bar. Default color is bleu.
+Color can change base on <strong>warning</strong> and <strong>danger</strong> thresholds.</p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.progressbar.conf</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">########################################################################</span>
+<span class="c1"># Example how to use progressbar in status page</span>
+<span class="c1">#  Page: 1</span>
+<span class="c1">#  Information               Status     Statistics</span>
+<span class="c1">#  - example static data     - yes      -no</span>
+<span class="c1">########################################################################</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ProgressBar</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;ProgressBar without warning or critical&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;ProgressBar with warning lower than critical (Example: disk usage)&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">4</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">66</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">5</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">66</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">6</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">66</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">7</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;ProgressBar with warning higher than critical (Example: ink cartridge)&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">8</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">9</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">10</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="example-progressbar-conf">
-<h2>example.progressbar.conf<a class="headerlink" href="#example-progressbar-conf" title="Permalink to this headline">¶</a></h2>
+<p>Here is the result:</p>
 <div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="_static/examples003.png"><img alt="_static/examples003.png" src="_static/examples003.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/web001.png"><img alt="_images/web001.png" src="_images/web001.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Show warning and critical and colors</span></p>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line">WORK IN PROGRESS</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</div>
-<div class="section" id="example-justgage-conf">
-<h2>example.justgage.conf<a class="headerlink" href="#example-justgage-conf" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id4">
-<a class="reference internal image-reference" href="_static/examples004.png"><img alt="_static/examples004.png" src="_static/examples004.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Show justgage and customisation</span></p>
-</div>
-</div>
-<div class="section" id="example-visibility-conf">
-<h2>example.visibility.conf<a class="headerlink" href="#example-visibility-conf" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="_images/examples005.png"><img alt="_images/examples005.png" src="_images/examples005.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Show visibility feature</span></p>
 </div>
 </div>
 <div class="section" id="justgagebar">
 <h2>JustGageBar<a class="headerlink" href="#justgagebar" title="Permalink to this headline">¶</a></h2>
-<p>A new widget is now available to display information in status page. Justgage is a handy JavaScript plugin for generating and animating nice &amp; clean gauges. It is based on Raphaël library for vector drawing, so it’s completely resolution independent and self-adjusting.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">JustGageBar</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">levelColors</span><span class="p">,</span> <span class="n">warning</span><span class="p">,</span> <span class="n">critical</span><span class="p">)</span>
+<p>Justgage is a handy JavaScript plugin for generating and animating nice &amp; clean gauges.
+It is based on Raphaël library for vector drawing, so it’s completely resolution independent and self-adjusting.</p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.justgage.conf</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">########################################################################</span>
+<span class="c1"># Example how to use JustGageBar in status page</span>
+<span class="c1">#</span>
+<span class="c1">#  Page: 1</span>
+<span class="c1">#  Information                   Status     Statistics</span>
+<span class="c1">#  - example with static data     - yes      -no</span>
+<span class="c1">#</span>
+<span class="c1">########################################################################</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">JustGageBar</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;JustGageBar default configuration&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="s2">&quot;No Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Warning&quot;</span><span class="p">,</span> <span class="s2">&quot;No Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Critical&quot;</span><span class="p">,</span> <span class="s2">&quot;No Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;JustGageBar custom colors&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">4</span><span class="o">=</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="s2">&quot;Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,[</span> <span class="s2">&quot;#0ba9d7&quot;</span><span class="p">,</span> <span class="s2">&quot;#02f9c8&quot;</span><span class="p">,</span> <span class="s2">&quot;#00ff00&quot;</span> <span class="p">])</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Warning&quot;</span><span class="p">,</span> <span class="s2">&quot;Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,[</span> <span class="s2">&quot;#0ba9d7&quot;</span><span class="p">,</span> <span class="s2">&quot;#02f9c8&quot;</span><span class="p">,</span> <span class="s2">&quot;#00ff00&quot;</span> <span class="p">])</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Critical&quot;</span><span class="p">,</span> <span class="s2">&quot;Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,[</span> <span class="s2">&quot;#0ba9d7&quot;</span><span class="p">,</span> <span class="s2">&quot;#02f9c8&quot;</span><span class="p">,</span> <span class="s2">&quot;#00ff00&quot;</span> <span class="p">])</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">5</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;JustGageBar custom level for warning and critical level&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">6</span><span class="o">=</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="s2">&quot;WarnCrit&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="n">percentColors</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Warning&quot;</span><span class="p">,</span> <span class="s2">&quot;WarnCrit&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="n">percentColors</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Critical&quot;</span><span class="p">,</span> <span class="s2">&quot;WarnCrit&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="n">percentColors</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>To see how justgage behave, you can activate the configuration file <code class="docutils literal"><span class="pre">example.justgage.conf</span></code></dt>
-<dd>(Ref example explaination and screenshot upper).</dd>
-</dl>
+<p>Here is the result:</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/web002.png"><img alt="_images/web002.png" src="_images/web002.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show warning and critical and colors</span></p>
+</div>
 </div>
 <div class="section" id="visibility">
 <h2>Visibility<a class="headerlink" href="#visibility" title="Permalink to this headline">¶</a></h2>
-<p>A new parameter can be used in configuration file defining a visibility of a row:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.&lt;</span><span class="n">page</span> <span class="nb">id</span><span class="o">&gt;.</span><span class="n">content</span><span class="o">.&lt;</span><span class="n">row</span> <span class="nb">id</span><span class="o">&gt;.</span><span class="n">visibility</span><span class="o">=&lt;</span><span class="n">visibility</span> <span class="n">formula</span><span class="o">&gt;</span>
+<p>Visibility parameter define if a row should be displayed or not. It could be usefull
+for monitoring of an external disk which could be disconnected.</p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.visibility.conf</span></code></p>
+<p>In this example, the row is alternativelly dosplayed and hide depending on minute parity.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>########################################################################
+# Example how to manage visibility of status information
+#  Page: 1
+#  Information               Status     Statistics
+#  - visibility              - yes      - no
+# This proof of concept is behaving has follow:
+#  If minute number is odd the row is visible
+#  If minute number is even the row is hidden
+# The parameter visibility should be a valid javascript formula returning
+#   - 0 to hide the row
+#   - anything else but 0 to show the row
+########################################################################
+dynamic.1.name=visibility
+dynamic.1.source=date +&quot;%M&quot;
+dynamic.1.regexp=(.*)
+dynamic.1.postprocess=$1%2
+dynamic.1.rrd=
+
+web.status.1.content.1.name=Visibility
+web.status.1.content.1.icon=version.png
+web.status.1.content.1.visibility=data.visibility
+web.status.1.content.1.line.1=&#39;Visibility: &lt;b&gt;Control row visibility&lt;/b&gt;&#39;
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">&lt;visibility</span> <span class="pre">formula&gt;</span></code> should be a valid javascript formula returning <code class="docutils literal"><span class="pre">0</span></code> to
-hide the row anything else but <code class="docutils literal"><span class="pre">0</span></code> show the row</p>
+<p>Here is the result:</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/visibility001.png"><img alt="_images/visibility001.png" src="_images/visibility001.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Show visibility feature</span></p>
+</div>
 </div>
 </div>
 
