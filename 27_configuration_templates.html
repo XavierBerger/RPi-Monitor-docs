@@ -531,6 +531,62 @@ extract data every 30sec.</p>
 <img alt="_images/interval001.png" src="_images/interval001.png" />
 </div>
 </div>
+<div class="section" id="alerts">
+<h2>Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">WORK IN PROGRESS</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<p><strong>RPi-Monitor</strong> is embedding a mechanism of alerts. The idea is to execute a
+script when a KPI reach a limit. To avoid executing this script to frequently,
+some timer have to be configured.
+The file <code class="docutils literal"><span class="pre">example.alert.conf</span></code> show how to configure alerts.  We will see here
+how to simulate a temperature monitoring and how this configuration can raise
+and clear alerts.</p>
+<p>To better understand the following explanation you should open the file.</p>
+<p>The first part defines dynamic data and how RPi-Monitor should do to extract
+information from the file <code class="docutils literal"><span class="pre">/tmp/alert_test</span></code>.</p>
+<p>These data are added in statistics page to graphs the temperature.</p>
+<p>Then we configure 2 alerts too_hot and too_cold. Here is the example for too_hot.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">active</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">uptime</span><span class="o">&gt;</span><span class="mi">120</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">trigger</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span><span class="o">&gt;</span><span class="mi">50</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">maxalertduration</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelvalidation</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">resendperiod</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">commandTooHot</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span><span class="n">CommandItIsOkNow</span>
+</pre></div>
+</div>
+<p>The alert will be evaluated only when it will become active, when active parameter will be evaluate to true. In my example 120 seconds after computer starts.</p>
+<p>When the alert is active, the trigger is evaluated. In my example, when test if the value of test_alert is greater than 50.</p>
+<p>When the trigger returns true during maxalertduration seconds (20 seconds), the command commandTooHot is executed.
+If the trigger is still true after resendperiod seconds after (60 seconds), the command commandTooHot is executed again.</p>
+<p>When the trigger become false during cancelvalidation seconds (20 seconds), the  command commandItIsOkNow is executed.</p>
+<p>Into the example file, you can see how these data are used to display label on status page. You will see that limit exceed is immediately detected and you will see alert send after the defined delay.</p>
+<p>You want to test this example. It is easy:</p>
+<blockquote>
+<div>Uncomment the example.alert.conf include line into /etc/rpimonitor/data.conf
+Execute the following command to generate data
+while ( true ); do echo $(( ( RANDOM % 100 ) - 20 )) &gt; /tmp/test_alert; sleep 90; done
+Execute the following command  to see alerts
+watch &#8216;cat /tmp/alert*&#8217;
+Open the status page and check the auto update option to see the example running in real time.</div></blockquote>
+<p>You know how Alerts are behaving so you can start RPi-Monitor customization.</p>
+</div>
 </div>
 
 
@@ -554,7 +610,7 @@ extract data every 30sec.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 25, 2018.
+      Last updated on Feb 26, 2018.
 
     </p>
   </div>
