@@ -27,17 +27,10 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="up" title="Configuration" href="20_index.html"/>
-        <link rel="next" title="Alert configuration" href="26_alert.html"/>
-        <link rel="prev" title="Web interface configuration" href="24_web.html"/>
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="Alert configuration" href="26_alert.html" />
+    <link rel="prev" title="Web interface configuration" href="24_web.html" />
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -66,7 +59,7 @@
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
   
  
@@ -165,7 +158,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">RPi-Monitor</a>
@@ -175,7 +168,9 @@
 
       
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -261,19 +256,36 @@ cunsumption of <code class="docutils literal"><span class="pre">rpimonitord</spa
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">top3</span>
 </pre></div>
 </div>
-<p>Copy <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/addons/top3/top3.cron</span></code> to <a href="#id1"><span class="problematic" id="id2">``</span></a>/etc/cron.d/top3` to activate periodical check.</p>
+<p>Copy <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/addons/top3/top3.cron</span></code> to <code class="docutils literal"><span class="pre">/etc/cron.d/top3</span></code> to activate periodical check.</p>
 <p>To add top3 information into status page, add the following line to configuration file.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">InsertHTML</span><span class="p">(</span><span class="s2">&quot;/addons/top3/top3.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>Custom Addon<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>Custom Addon<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>If you are not confortable with html, javascript and css, the addon custom may
 help you to customise <strong>RPi-Monitor</strong> to your wishes. This addons implement an
 iframe that can display any other web pages.</p>
-<div class="figure">
-<img alt="_static/addons003.png:align:center:width:500px" src="_static/addons003.png:align:center:width:500px" />
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/addons003.png"><img alt="_images/addons003.png" src="_images/addons003.png" style="width: 500px;" /></a>
+</div>
+<dl class="docutils">
+<dt>web.addons.&lt;id&gt;.name=&lt;name&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> represent the name displayed in addon menu or addon title</dd>
+<dt>web.addons.&lt;id&gt;.addons=custom</dt>
+<dd><code class="docutils literal"><span class="pre">custom</span></code> is the addon activated</dd>
+<dt>web.addons.&lt;id&gt;.showtitle=&lt;title visibility&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;title</span> <span class="pre">visibility&gt;</span></code> define if title should be displayed or not</dd>
+<dt>web.addons.&lt;id&gt;.url=&lt;url&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">url</span></code> is defining the page to be displayed into the iframe. It can be a file
+reachable from <strong>RPi-Monitor</strong> internal server or a site available into the Internet.</dd>
+<dt>web.addons.&lt;id&gt;.allowupdate=&lt;allow update&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;allow</span> <span class="pre">update&gt;</span></code> define is <code class="docutils literal"><span class="pre">url</span></code> can be updated in option</dd>
+</dl>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
 </div>
 <div class="section" id="shellinabox">
 <h3>Shellinabox<a class="headerlink" href="#shellinabox" title="Permalink to this headline">¶</a></h3>
@@ -338,9 +350,7 @@ how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -359,11 +369,11 @@ how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 24, 2018.
+      Last updated on Feb 25, 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 <ins class="adsbygoogle"
      style="display:block"
@@ -393,6 +403,7 @@ how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -410,14 +421,13 @@ how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

@@ -27,16 +27,9 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="up" title="To go further" href="40_index.html"/>
-        <link rel="prev" title="Authors and Licenses" href="43_license.html"/>
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="prev" title="Authors and Licenses" href="43_license.html" />
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -65,7 +58,7 @@
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
   
  
@@ -161,7 +154,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">RPi-Monitor</a>
@@ -171,7 +164,9 @@
 
       
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -231,10 +226,11 @@
 </div>
 <ul class="simple">
 <li>Implement sortable status items written by iaa (#166 #197)</li>
-<li>Create documentation and add link to documentation <a class="reference external" href="https://xavierberger.github.io/RPi-Monitor-docs/index.html">https://xavierberger.github.io/RPi-Monitor-docs/index.html</a></li>
-<li>Add snmp agent <code class="docutils literal"><span class="pre">pass_persist</span></code> extension</li>
+<li>Create documentation in <a class="reference external" href="https://xavierberger.github.io/RPi-Monitor-docs/index.html">https://xavierberger.github.io/RPi-Monitor-docs/index.html</a></li>
+<li>Add snmp agent &#8220;pass_persist&#8221; extension</li>
 <li>Add readonly option disabling disk write</li>
 <li>Fix service status template (#172)</li>
+<li>Various bug fixes and cleanup code</li>
 </ul>
 </div></blockquote>
 </div>
@@ -507,9 +503,7 @@ will have to be executed manually.</li>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -526,11 +520,11 @@ will have to be executed manually.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 24, 2018.
+      Last updated on Feb 25, 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 <ins class="adsbygoogle"
      style="display:block"
@@ -560,6 +554,7 @@ will have to be executed manually.</li>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -577,14 +572,13 @@ will have to be executed manually.</li>
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

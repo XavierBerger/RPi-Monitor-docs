@@ -27,17 +27,10 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="RPi-Monitor v2.13-r0" href="index.html"/>
-        <link rel="up" title="Configuration" href="20_index.html"/>
-        <link rel="next" title="Usages" href="30_index.html"/>
-        <link rel="prev" title="Alert configuration" href="26_alert.html"/>
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="Usages" href="30_index.html" />
+    <link rel="prev" title="Alert configuration" href="26_alert.html" />
 
 
 <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -66,7 +59,7 @@
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
   
  
@@ -165,7 +158,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">RPi-Monitor</a>
@@ -175,7 +168,9 @@
 
       
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -295,7 +290,16 @@ will add a drop down list on the right of the top menu with a links to
 <h2>Badges and labels<a class="headerlink" href="#badges-and-labels" title="Permalink to this headline">¶</a></h2>
 <p>The functions <code class="docutils literal"><span class="pre">Label</span></code> and <code class="docutils literal"><span class="pre">Badge</span></code> are designed to write a text highligted by a color base on condition.</p>
 <p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.badge_and_label.conf</span></code></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ssh</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">########################################################################</span>
+<span class="c1"># Example showing usage of labels (also applicable for badges)</span>
+<span class="c1"># Page 1:</span>
+<span class="c1">#  Information                   Status     Statistics</span>
+<span class="c1">#  - ssh service active          - yes      -no</span>
+<span class="c1">#  - rpimonitor service active   - yes      -no</span>
+<span class="c1">#  - http service active         - yes      -no</span>
+<span class="c1">#  - https service active        - yes      -no</span>
+<span class="c1">########################################################################</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ssh</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">22</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
 
@@ -339,7 +343,16 @@ the condition will be <code class="docutils literal"><span class="pre">true</spa
 <p>Status and statistics can be sorted in pages. The parameter <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code> of
 <code class="docutils literal"><span class="pre">web</span></code> configuration is defining in which page data is displayed.</p>
 <p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.multipage.conf</span></code></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>web.status.1.name=Status 1
+<div class="highlight-default"><div class="highlight"><pre><span></span>########################################################################
+# Example how to use JustGageBar in status page
+#  Page: 1
+#  Information                   Status     Statistics
+#  - random data                 - yes      -yes
+#  Page: 2
+#  Information                   Status     Statistics
+#  - random data                 - yes      -yes
+########################################################################
+web.status.1.name=Status 1
 web.statistics.1.name=Statistics 1
 web.status.2.name=Status 2
 web.statistics.2.name=Statistics 2
@@ -392,7 +405,7 @@ Color can change base on <strong>warning</strong> and <strong>danger</strong> th
 <span class="c1"># Example how to use progressbar in status page</span>
 <span class="c1">#  Page: 1</span>
 <span class="c1">#  Information               Status     Statistics</span>
-<span class="c1">#  - example static data     - yes      -no</span>
+<span class="c1">#  - static data             - yes      -no</span>
 <span class="c1">########################################################################</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ProgressBar</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
@@ -421,11 +434,9 @@ It is based on Raphaël library for vector drawing, so it’s completely resolut
 <p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.justgage.conf</span></code></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">########################################################################</span>
 <span class="c1"># Example how to use JustGageBar in status page</span>
-<span class="c1">#</span>
 <span class="c1">#  Page: 1</span>
 <span class="c1">#  Information                   Status     Statistics</span>
 <span class="c1">#  - example with static data     - yes      -no</span>
-<span class="c1">#</span>
 <span class="c1">########################################################################</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">JustGageBar</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
@@ -479,13 +490,52 @@ web.status.1.content.1.line.1=&#39;Visibility: &lt;b&gt;Control row visibility&l
 <p class="caption"><span class="caption-text">Show visibility feature</span></p>
 </div>
 </div>
+<div class="section" id="interval">
+<h2>Interval<a class="headerlink" href="#interval" title="Permalink to this headline">¶</a></h2>
+<p>Interval parameter define when data should be extracted. By defaut an interval is 10 sec.
+Sometime it is usefull to extract data less frequently. Setting <cite>interval</cite> to 3 will
+extract data every 30sec.</p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.interval.conf</span></code></p>
+<p>In this example is showing interval set tj 1, 3 and 7</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">########################################################################</span>
+<span class="c1"># Example how to use interval for data extraction</span>
+<span class="c1">#  Page: 1</span>
+<span class="c1">#  Information                   Status     Statistics</span>
+<span class="c1">#   - Show date with interval=1  -yes       -no</span>
+<span class="c1">#   - Show date with interval=3  -yes       -no</span>
+<span class="c1">#   - Show date with interval=7  -yes       -no</span>
+<span class="c1">########################################################################</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">interval1</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">source</span><span class="o">=</span><span class="n">date</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">regexp</span><span class="o">=</span><span class="p">(</span><span class="o">.*</span><span class="p">)</span>
+
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">interval3</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">source</span><span class="o">=</span><span class="n">date</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">regexp</span><span class="o">=</span><span class="p">(</span><span class="o">.*</span><span class="p">)</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">interval</span><span class="o">=</span><span class="mi">3</span>
+
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">interval7</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">source</span><span class="o">=</span><span class="n">date</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">regexp</span><span class="o">=</span><span class="p">(</span><span class="o">.*</span><span class="p">)</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">interval</span><span class="o">=</span><span class="mi">7</span>
+
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Interval</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s1">&#39;Interval=1 last update at &lt;b&gt;&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">interval1</span><span class="o">+</span><span class="s1">&#39;&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="s1">&#39;Interval=3 last update at &lt;b&gt;&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">interval3</span><span class="o">+</span><span class="s1">&#39;&lt;/b&gt;&#39;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="s1">&#39;Interval=7 last update at &lt;b&gt;&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">interval7</span><span class="o">+</span><span class="s1">&#39;&lt;/b&gt;&#39;</span>
+</pre></div>
+</div>
+<p>Here is the result:</p>
+<div class="figure align-center">
+<img alt="_images/interval001.png" src="_images/interval001.png" />
+</div>
+</div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -504,11 +554,11 @@ web.status.1.content.1.line.1=&#39;Visibility: &lt;b&gt;Control row visibility&l
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 24, 2018.
+      Last updated on Feb 25, 2018.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 <ins class="adsbygoogle"
      style="display:block"
@@ -538,6 +588,7 @@ web.status.1.content.1.line.1=&#39;Visibility: &lt;b&gt;Control row visibility&l
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -555,14 +606,13 @@ web.status.1.content.1.line.1=&#39;Visibility: &lt;b&gt;Control row visibility&l
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
