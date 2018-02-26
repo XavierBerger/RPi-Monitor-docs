@@ -457,6 +457,160 @@ Restart rpimonitor to activate the new graph.</p>
 <div class="section" id="use-mrtg-with-rpi-monitor-in-read-only-mode">
 <h2>Use MRTG with RPi-Monitor in read-only mode<a class="headerlink" href="#use-mrtg-with-rpi-monitor-in-read-only-mode" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="monitor-a-tor-relay">
+<h2>Monitor a TOR relay<a class="headerlink" href="#monitor-a-tor-relay" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of configuration proposed by Luiz Kill: on <a class="reference external" href="https://github.com/lzkill/tor-info">tor-info</a></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#  Tor relay information
+#  Page: 1
+#  Information               Status     Statistics
+#  - received                - yes      - yes
+#  - send                    - yes      - yes
+########################################################################
+
+static.100.name=tor_bw_rate1
+static.100.source=/usr/local/etc/tor/torrc
+static.100.regexp=RelayBandwidthRate\s+(\d+)
+static.100.postprocess=$1*-1
+
+static.101.name=tor_bw_burst1
+static.101.source=/usr/local/etc/tor/torrc
+static.101.regexp=RelayBandwidthBurst\s+(\d+)
+static.101.postprocess=$1*-1
+
+static.102.name=tor_bw_rate2
+static.102.source=/usr/local/etc/tor/torrc
+static.102.regexp=RelayBandwidthRate\s+(\d+)
+static.102.postprocess=$1*1
+
+static.103.name=tor_bw_burst2
+static.103.source=/usr/local/etc/tor/torrc
+static.103.regexp=RelayBandwidthBurst\s+(\d+)
+static.103.postprocess=$1*1
+
+static.104.name=tor_nickname
+static.104.source=/var/lib/rpimonitor/stat/tor_desc
+static.104.regexp=Nickname.(.*)
+static.104.postprocess=
+
+static.105.name=tor_fingerprint
+static.105.source=/var/lib/rpimonitor/stat/tor_desc
+static.105.regexp=Fingerprint.(.*)
+static.105.postprocess=
+
+static.106.name=tor_version
+static.106.source=/var/lib/rpimonitor/stat/tor_desc
+static.106.regexp=Version.(.*)
+static.106.postprocess=
+
+static.107.name=tor_address
+static.107.source=/var/lib/rpimonitor/stat/tor_desc
+static.107.regexp=Address.(.*)
+static.107.postprocess=
+
+dynamic.102.name=tor_read
+dynamic.102.source=/var/lib/rpimonitor/stat/tor_rx
+dynamic.102.regexp=(.*)
+dynamic.102.postprocess=$1*-1
+dynamic.102.rrd=DERIVE
+dynamic.102.max=0
+
+dynamic.103.name=tor_written
+dynamic.103.source=/var/lib/rpimonitor/stat/tor_tx
+dynamic.103.regexp=(.*)
+dynamic.103.postprocess=
+dynamic.103.rrd=DERIVE
+dynamic.103.min=0
+
+dynamic.104.name=tor_uptime
+dynamic.104.source=/var/lib/rpimonitor/stat/tor_desc
+dynamic.104.regexp=Uptime.(.*)
+dynamic.104.postprocess=$1
+dynamic.104.rrd=GAUGE
+
+dynamic.105.name=tor_published
+dynamic.105.source=/var/lib/rpimonitor/stat/tor_desc
+dynamic.105.regexp=Published.(.*)
+dynamic.105.postprocess=
+dynamic.105.rrd=
+
+dynamic.106.name=tor_hibernating
+dynamic.106.source=/var/lib/rpimonitor/stat/tor_desc
+dynamic.106.regexp=Hibernating.(.*)
+dynamic.106.postprocess=
+dynamic.106.rrd=
+
+dynamic.107.name=tor_observed_bw
+dynamic.107.source=/var/lib/rpimonitor/stat/tor_desc
+dynamic.107.regexp=Observed_Bandwidth.(.*)
+dynamic.107.postprocess=
+dynamic.107.rrd=
+
+dynamic.108.name=tor_average_bw
+dynamic.108.source=/var/lib/rpimonitor/stat/tor_desc
+dynamic.108.regexp=Average_Bandwidth.(.*)
+dynamic.108.postprocess=
+dynamic.108.rrd=
+
+dynamic.109.name=tor_burst_bw
+dynamic.109.source=/var/lib/rpimonitor/stat/tor_desc
+dynamic.109.regexp=Burst_Bandwidth.(.*)
+dynamic.109.postprocess=
+dynamic.109.rrd=
+
+web.statistics.1.content.102.name=Tor - Traffic
+web.statistics.1.content.102.graph.1=tor_written
+web.statistics.1.content.102.graph.2=tor_read
+web.statistics.1.content.102.graph.3=tor_bw_rate1
+web.statistics.1.content.102.graph.5=tor_bw_rate2
+web.statistics.1.content.102.graph.4=tor_bw_burst1
+web.statistics.1.content.102.graph.6=tor_bw_burst2
+
+web.statistics.1.content.102.ds_graph_options.tor_written.label=Written (bytes)
+web.statistics.1.content.102.ds_graph_options.tor_written.lines={ fill: true }
+web.statistics.1.content.102.ds_graph_options.tor_written.color=&quot;#66428A&quot;
+
+web.statistics.1.content.102.ds_graph_options.tor_read.label=Read (bytes)
+web.statistics.1.content.102.ds_graph_options.tor_read.lines={ fill: true }
+web.statistics.1.content.102.ds_graph_options.tor_read.color=&quot;#008937&quot;
+
+web.statistics.1.content.102.ds_graph_options.tor_bw_rate1.label=Read Rate Limit (bytes)
+web.statistics.1.content.102.ds_graph_options.tor_bw_rate1.lines={ fill: false }
+web.statistics.1.content.102.ds_graph_options.tor_bw_rate1.color=&quot;#ffff00&quot;
+
+web.statistics.1.content.102.ds_graph_options.tor_bw_burst1.label=Read Burst Limit (bytes)
+web.statistics.1.content.102.ds_graph_options.tor_bw_burst1.lines={ fill: false }
+web.statistics.1.content.102.ds_graph_options.tor_bw_burst1.color=&quot;#DF0101&quot;
+
+web.statistics.1.content.102.ds_graph_options.tor_bw_rate2.label=Write Rate Limit (bytes)
+web.statistics.1.content.102.ds_graph_options.tor_bw_rate2.lines={ fill: false }
+web.statistics.1.content.102.ds_graph_options.tor_bw_rate2.color=&quot;#ffff00&quot;
+
+web.statistics.1.content.102.ds_graph_options.tor_bw_burst2.label=Write Burst Limit (bytes)
+web.statistics.1.content.102.ds_graph_options.tor_bw_burst2.lines={ fill: false }
+web.statistics.1.content.102.ds_graph_options.tor_bw_burst2.color=&quot;#DF0101&quot;
+
+web.statistics.1.content.102.graph_options.yaxis={ tickFormatter: function (v) { if (Math.abs(v) &gt; 1048576) return (Math.round(v*10/1024/1024)/10) + &quot; MiB/s&quot; ; if (Math.abs(v) &gt; 1024) return (Math.round(v*10/1024)/10) + &quot; KiB/s&quot; ; else return v + &quot; B/s&quot; }, }
+
+web.status.1.content.101.name=Tor
+web.status.1.content.101.icon=tor.png
+web.status.1.content.101.line.1=&quot;Version: &lt;b&gt;&quot; + data.tor_version + &quot;&lt;/b&gt;&quot;
+web.status.1.content.101.line.2=&quot;Nickname: &lt;b&gt;&quot; + data.tor_nickname + &quot;&lt;/b&gt; Fingerprint: &lt;b&gt;&quot; + data.tor_fingerprint + &quot;&lt;/b&gt;&quot;
+web.status.1.content.101.line.3=&quot;Address: &lt;b&gt;&quot; + data.tor_address + &quot;&lt;/b&gt;&quot;
+web.status.1.content.101.line.4=&quot;Last published: &lt;b&gt;&quot; + data.tor_published + &quot;&lt;/b&gt;&quot;
+web.status.1.content.101.line.5=&quot;Uptime: &lt;b&gt;&quot; + Uptime(data.tor_uptime) + &quot;&lt;/b&gt;&quot;
+web.status.1.content.101.line.6=&quot;Hibernating: &lt;b&gt;&quot; + data.tor_hibernating + &quot;&lt;/b&gt;&quot;
+web.status.1.content.101.line.7=&quot;Average Bandwidth: &lt;b&gt;&quot; + KMG(data.tor_average_bw) + &quot;/s&lt;/b&gt; Burst: &lt;b&gt;&quot; + KMG(data.tor_burst_bw) + &quot;/s&lt;/b&gt; Observed: &lt;b&gt;&quot; + KMG(data.tor_observed_bw) + &quot;/s&lt;/b&gt;&quot;
+
+web.status.1.content.101.line.8=&quot;Written: &lt;b&gt;&quot;+KMG(data.tor_written)+&quot;&lt;i class=&#39;icon-arrow-up&#39;&gt;&lt;/i&gt;&lt;/b&gt; Read: &lt;b&gt;&quot;+KMG(Math.abs(data.tor_read)) + &quot;&lt;i class=&#39;icon-arrow-down&#39;&gt;&lt;/i&gt;&lt;/b&gt;&quot;
+web.status.1.content.101.line.9=&quot;Other: &lt;b&gt;&lt;a target=_blank href=&#39;https://atlas.torproject.org/#details/&quot; + data.tor_fingerprint + &quot;&#39;&gt;Atlas&lt;/a&gt; | &lt;a target=_blank href=&#39;https://globe.torproject.org/#/relay/&quot; + data.tor_fingerprint + &quot;&#39;&gt;Globe&lt;/a&gt;&lt;/b&gt;&quot;
+
+</pre></div>
+</div>
+<p>Here is the result:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/tor001.png"><img alt="_images/tor001.png" src="_images/tor001.png" style="width: 500px;" /></a>
+</div>
+</div>
 </div>
 
 
@@ -480,7 +634,7 @@ Restart rpimonitor to activate the new graph.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 26, 2018.
+      Last updated on Feb 27, 2018.
 
     </p>
   </div>
