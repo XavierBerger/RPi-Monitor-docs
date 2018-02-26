@@ -320,7 +320,9 @@ dynamic.2.rrd=GAUGE
 </div>
 <p>Dynamic stat will be stored into a RRD File as GAUGE. Ref to RRDTool help for detail about Data Source Types.</p>
 <p>Now we will add a status line for this disk whit the following icon:</p>
-<p>Disk icon has been found here</p>
+<div class="figure align-center">
+<img alt="_static/hdd001.pnd" src="_static/hdd001.pnd" />
+</div>
 <p>This icons has to be installed into the img directory of <strong>RPi-Monitor</strong> which is
 by default <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/img/</span></code>.</p>
 <p>The configuration to add a new status strip will then be the following:</p>
@@ -341,6 +343,9 @@ statistics page into our browser.</p>
 </pre></div>
 </div>
 <p>The result of the configuration is at the bottom of the following screenshot:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_static/hdd002.pnd"><img alt="_static/hdd002.pnd" src="_static/hdd002.pnd" style="width: 500px;" /></a>
+</div>
 <p>The status page is working, let&#8217;s now add a graphic of the disk usage.
 This is done with the following configuration:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Storage1</span>
@@ -357,6 +362,9 @@ light blue line filled. The parameters defining the curve are define by the keyw
 ds_graph_options. Details of this parameter can be found in javascriptrrd help page.
 Restart rpimonitor to activate the new graph.</p>
 <p>After waiting a little time to let the system extract data you will see this kind of graph.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_static/hdd003.pnd"><img alt="_static/hdd003.pnd" src="_static/hdd003.pnd" style="width: 500px;" /></a>
+</div>
 </div>
 <div class="section" id="advanced-service-monitoring-configuration">
 <h2>Advanced service monitoring configuration<a class="headerlink" href="#advanced-service-monitoring-configuration" title="Permalink to this headline">¶</a></h2>

@@ -228,10 +228,10 @@ create a fork from <a class="reference external" href="https://github.com/Xavier
 <div class="section" id="prepare-development-environment">
 <h3>Prepare development environment<a class="headerlink" href="#prepare-development-environment" title="Permalink to this headline">¶</a></h3>
 <p>Clone your fork and update theme with the following commands:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">MyGitHubAccount</span><span class="o">&gt;/</span><span class="n">RPi</span><span class="o">-</span><span class="n">Monitor</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">RPi</span><span class="o">-</span><span class="n">Monitor</span>
-<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span>git clone git@github.com:${GITHUB_ACCOUNT}/RPi-Monitor.git
+cd RPi-Monitor
+git submodule update --init --recursive
+pip install sphinx sphinx-autobuild
 </pre></div>
 </div>
 </div>

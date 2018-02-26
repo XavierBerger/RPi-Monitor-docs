@@ -533,59 +533,84 @@ extract data every 30sec.</p>
 </div>
 <div class="section" id="alerts">
 <h2>Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line-block">
-<div class="line">WORK IN PROGRESS</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</div>
 <p><strong>RPi-Monitor</strong> is embedding a mechanism of alerts. The idea is to execute a
 script when a KPI reach a limit. To avoid executing this script to frequently,
 some timer have to be configured.
-The file <code class="docutils literal"><span class="pre">example.alert.conf</span></code> show how to configure alerts.  We will see here
-how to simulate a temperature monitoring and how this configuration can raise
-and clear alerts.</p>
-<p>To better understand the following explanation you should open the file.</p>
-<p>The first part defines dynamic data and how RPi-Monitor should do to extract
-information from the file <code class="docutils literal"><span class="pre">/tmp/alert_test</span></code>.</p>
-<p>These data are added in statistics page to graphs the temperature.</p>
-<p>Then we configure 2 alerts too_hot and too_cold. Here is the example for too_hot.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">active</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">uptime</span><span class="o">&gt;</span><span class="mi">120</span>
+The file <code class="docutils literal"><span class="pre">example.alert.conf</span></code> show how to configure alerts.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">########################################################################</span>
+<span class="c1"># Example how to use Alerts</span>
+<span class="c1">#</span>
+<span class="c1">#  Page: 1</span>
+<span class="c1">#  Information               Status     Statistics</span>
+<span class="c1">#  - example static data     - yes      -yes</span>
+<span class="c1">#</span>
+<span class="c1">#  Alert too hot  if test_alert &gt; 50</span>
+<span class="c1">#  Alert too cold if test_alert &lt; 10</span>
+<span class="c1">################################################################################</span>
+
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">test_alert</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">source</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">test_alert</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">regexp</span><span class="o">=</span><span class="p">(</span>\<span class="n">S</span><span class="o">+</span><span class="p">)</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">default</span><span class="o">=</span><span class="mi">37</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">rrd</span><span class="o">=</span><span class="n">GAUGE</span>
+
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">test_alert</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">test_alert</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">soc_temp</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">test_alert</span>
+
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">active</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">uptime</span><span class="o">&gt;</span><span class="mi">120</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">trigger</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span><span class="o">&gt;</span><span class="mi">50</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">maxalertduration</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelvalidation</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">resendperiod</span><span class="o">=</span><span class="mi">60</span>
-<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">commandTooHot</span>
-<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span><span class="n">CommandItIsOkNow</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">echo</span> <span class="s1">&#39;Too hot alert raised data.test_alert&gt;50&#39;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">hot</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span><span class="n">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">hot</span>
+
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">active</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">uptime</span><span class="o">&gt;</span><span class="mi">120</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">trigger</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span><span class="o">&lt;</span><span class="mi">10</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">maxalertduration</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">cancelvalidation</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">resendperiod</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">echo</span> <span class="s1">&#39;Too cold alert raised raised data.test_alert&lt;10&#39;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">cold</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span> <span class="n">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">cold</span>
+
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Alerts</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">daemons</span><span class="o">.</span><span class="n">png</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;Test temperature: &quot;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="s2">&quot;Too hot: &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">alertstate</span><span class="p">,</span><span class="s2">&quot;==0&quot;</span><span class="p">,</span><span class="s2">&quot;Everything is OK&quot;</span><span class="p">,</span><span class="s2">&quot;success&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">alertstate</span><span class="p">,</span><span class="s2">&quot;==1&quot;</span><span class="p">,</span><span class="s2">&quot;Houston we have a problem: &quot;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span><span class="o">+</span><span class="s2">&quot;&gt;50&quot;</span><span class="p">,</span><span class="s2">&quot;warning&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">lastsendalertdate</span><span class="p">,</span><span class="s2">&quot;!=0&quot;</span><span class="p">,</span><span class="s2">&quot;Alert is on going&quot;</span><span class="p">,</span><span class="s2">&quot;danger&quot;</span><span class="p">)</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="s2">&quot;Too cold: &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">alertstate</span><span class="p">,</span><span class="s2">&quot;==0&quot;</span><span class="p">,</span><span class="s2">&quot;Everything is OK&quot;</span><span class="p">,</span><span class="s2">&quot;success&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">alertstate</span><span class="p">,</span><span class="s2">&quot;==1&quot;</span><span class="p">,</span><span class="s2">&quot;Houston we have a problem: &quot;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span><span class="o">+</span><span class="s2">&quot;&lt;10&quot;</span><span class="p">,</span><span class="s2">&quot;warning&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">lastsendalertdate</span><span class="p">,</span><span class="s2">&quot;!=0&quot;</span><span class="p">,</span><span class="s2">&quot;Alert is on going&quot;</span><span class="p">,</span><span class="s2">&quot;danger&quot;</span><span class="p">)</span>
+
 </pre></div>
 </div>
-<p>The alert will be evaluated only when it will become active, when active parameter will be evaluate to true. In my example 120 seconds after computer starts.</p>
-<p>When the alert is active, the trigger is evaluated. In my example, when test if the value of test_alert is greater than 50.</p>
-<p>When the trigger returns true during maxalertduration seconds (20 seconds), the command commandTooHot is executed.
-If the trigger is still true after resendperiod seconds after (60 seconds), the command commandTooHot is executed again.</p>
-<p>When the trigger become false during cancelvalidation seconds (20 seconds), the  command commandItIsOkNow is executed.</p>
-<p>Into the example file, you can see how these data are used to display label on status page. You will see that limit exceed is immediately detected and you will see alert send after the defined delay.</p>
-<p>You want to test this example. It is easy:</p>
-<blockquote>
-<div>Uncomment the example.alert.conf include line into /etc/rpimonitor/data.conf
-Execute the following command to generate data
-while ( true ); do echo $(( ( RANDOM % 100 ) - 20 )) &gt; /tmp/test_alert; sleep 90; done
-Execute the following command  to see alerts
-watch &#8216;cat /tmp/alert*&#8217;
-Open the status page and check the auto update option to see the example running in real time.</div></blockquote>
-<p>You know how Alerts are behaving so you can start RPi-Monitor customization.</p>
+<p>The first part defines dynamic data and how <strong>RPi-Monitor</strong> should do to extract
+information from the file <code class="docutils literal"><span class="pre">/tmp/alert_test</span></code>.</p>
+<p>These data are added in statistics page (<code class="docutils literal"><span class="pre">web.statistics.1.[...]</span></code>) to graphs the temperature.</p>
+<p>Then we configure 2 alerts <code class="docutils literal"><span class="pre">too_hot</span></code> and <code class="docutils literal"><span class="pre">too_cold</span></code>. Let&#8217;s see how <code class="docutils literal"><span class="pre">too_hot</span></code> is configured</p>
+<p>The alert will be evaluated only when it will become active, when <code class="docutils literal"><span class="pre">active</span></code> parameter will be evaluate to <code class="docutils literal"><span class="pre">true</span></code>.
+In this example 120 seconds after computer starts: <code class="docutils literal"><span class="pre">alert.too_hot.active=data.uptime&gt;120</span></code>.</p>
+<p>When the alert is active, the trigger is evaluated. In this example, when test
+if the value of <code class="docutils literal"><span class="pre">test_alert</span></code> is greater than 50: <code class="docutils literal"><span class="pre">alert.too_hot.trigger=data.test_alert&gt;50</span></code>.</p>
+<p>When the trigger returns <code class="docutils literal"><span class="pre">true</span></code> during <code class="docutils literal"><span class="pre">maxalertduration</span></code> seconds (20 seconds), the command
+<code class="docutils literal"><span class="pre">commandTooHot</span></code> is executed.
+If the trigger is still true after <code class="docutils literal"><span class="pre">resendperiod</span></code> seconds after (60 seconds), the command
+<code class="docutils literal"><span class="pre">raisecommand</span></code> is executed again.</p>
+<p>When the trigger become <code class="docutils literal"><span class="pre">false</span></code> during <code class="docutils literal"><span class="pre">cancelvalidation</span></code> seconds (20 seconds), the  command
+<code class="docutils literal"><span class="pre">cancelcommand</span></code> is executed.</p>
+<p>Into the example file, you can see how these data are used to display label on status page.
+You will see that limit exceed is immediately detected and see alert send after the defined delay.</p>
+<p>To simulate a temperature monitoring and see how this configuration can raise and clear alerts, execute
+the following commands to generate data:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>while ( true ); do echo $(( ( RANDOM % 100 ) - 20 )) &gt; /tmp/test_alert; sleep 90; done
+</pre></div>
+</div>
+<p>Execute the following command  to see alerts</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">watch</span> <span class="s1">&#39;cat /tmp/alert*</span>
+</pre></div>
+</div>
+<p>Open the status page and check the auto update option to see the example running in real time as shown bellow:</p>
+<div class="figure align-center">
+<img alt="_images/alertanimation001.gif" src="_images/alertanimation001.gif" />
+</div>
 </div>
 </div>
 
