@@ -393,6 +393,22 @@ available in json format and can be downloaded from the root of the web interfac
 </ul>
 <p>Statistic information are stored into RRD file available in the directory <code class="docutils literal"><span class="pre">/var/lib/rpimonitor/stat/</span></code></p>
 </div>
+<div class="section" id="web-interface">
+<h2>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h2>
+<p>The presentation of the information is performed by HTML5 pages. These pages dynamically download the
+information extracted from daemon and perform the rendering the in a nice looking format
+( using [bootstrap](<a class="reference external" href="http://twitter.github.io/bootstrap/">http://twitter.github.io/bootstrap/</a>), [jquery](<a class="reference external" href="http://jquery.com/">http://jquery.com/</a>),
+[jsqrencode](<a class="reference external" href="https://code.google.com/p/jsqrencode/">https://code.google.com/p/jsqrencode/</a>), [javascriptrrd](<a class="reference external" href="http://javascriptrrd.sourceforge.net/">http://javascriptrrd.sourceforge.net/</a>) and
+[flot](<a class="reference external" href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>) ).</p>
+<p>This architecture has the advantage in an embedded architecture to offload the server task and delegate
+processing and rendering to the client.</p>
+<p>Some sata are stored into client browser into <em>local storage</em>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Embedded server doesn&#8217;t provide access control or authentication. It is still possible
+to not start the embeded web server and use an external web server to deliver the pages.</p>
+</div>
+</div>
 </div>
 
 
