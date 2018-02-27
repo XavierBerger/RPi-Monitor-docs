@@ -223,13 +223,13 @@
 <h1>Web interface configuration<a class="headerlink" href="#web-interface-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="friends">
 <h2>Friends<a class="headerlink" href="#friends" title="Permalink to this headline">¶</a></h2>
-<p>Friends are defining a displayed name and a link reachable from a
+<p>Friends are defining a displayed title and a link reachable from a
 top left menu visible if at least one friends is configured. Each
 friend is identified by its <code class="docutils literal"><span class="pre">&lt;id&gt;</span></code> and is described by the 2 following
 parameters</p>
 <dl class="docutils">
-<dt>web.friends.&lt;id&gt;.name=&lt;display name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;display</span> <span class="pre">name&gt;</span></code> is the name printed into the drop down menu</dd>
+<dt>web.friends.&lt;id&gt;.title=&lt;display title&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;display</span> <span class="pre">title&gt;</span></code> is the title printed into the drop down menu</dd>
 <dt>web.friends.&lt;id&gt;.link=&lt;link to RPi-Monitor&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;link</span> <span class="pre">to</span> <span class="pre">RPi-Monitor&gt;</span></code> is the link to another RPi-Monitor running
 into the friend machine.</dd>
@@ -245,7 +245,7 @@ into the friend machine.</dd>
 <dl class="docutils">
 <dt>web.page.icon=&lt;icon location relative to webroot&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;icon</span> <span class="pre">location</span> <span class="pre">relative</span> <span class="pre">to</span> <span class="pre">webroot&gt;</span></code> is the path and filename of
-the icon to be displayed into RPi-Monitor title bar</dd>
+the icon to be displayed into <strong>RPi-Monitor</strong> title bar</dd>
 <dt>web.page.menutitle=&lt;menu title&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;menu</span> <span class="pre">title&gt;</span></code> javascript code defining the text displayed into
 RPi-Monotor title bar. This code can use status information with
@@ -265,11 +265,11 @@ Each page is identified by its <code class="docutils literal"><span class="pre">
 <p class="last">Example of implementation in <a class="reference external" href="31_customisation.html#multiple-pages">Multi-pages customisation example</a></p>
 </div>
 <dl class="docutils">
-<dt>web.status.&lt;page id&gt;.name=&lt;page name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">name&gt;</span></code> name of the page displayed into the drop down menu in case of multiple pages.</dd>
+<dt>web.status.&lt;page id&gt;.title=&lt;page title&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">title&gt;</span></code> title of the page displayed into the drop down menu in case of multiple pages.</dd>
 </dl>
 <p>Status page is split in strips displaying information. Each status strip is
-identified by a unique <code class="docutils literal"><span class="pre">&lt;status</span> <span class="pre">id&gt;</span></code>. Each status strip is defined by a name,
+identified by a unique <code class="docutils literal"><span class="pre">&lt;status</span> <span class="pre">id&gt;</span></code>. Each status strip is defined by a title,
 an icon and a serie of parameters described as follow:</p>
 <dl class="docutils">
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.visibility=&lt;visibility formula&gt;</dt>
@@ -280,8 +280,8 @@ an icon and a serie of parameters described as follow:</p>
 <p class="last">Example of implementation in <a class="reference external" href="#">TO BE COMPLETED</a></p>
 </div>
 </dd>
-<dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.name=&lt;display name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;display</span> <span class="pre">name&gt;</span></code> Name displayed as title of the strip</dd>
+<dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.title=&lt;display title&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;display</span> <span class="pre">title&gt;</span></code> title displayed as title of the strip</dd>
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.icon=&lt;display icon&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;display</span> <span class="pre">icon&gt;</span></code> Icon of the strip</dd>
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.line.&lt;line number&gt;=&lt;parameter&gt;</dt>
@@ -379,13 +379,25 @@ will simulate the seconds by incrementing them periodically.</p>
 <li><strong>text</strong>    : text to be displayed</li>
 <li><strong>level</strong>   : &#8216;default&#8217; (grey), &#8216;primary&#8217; (blue label/grey badge), &#8216;success&#8217; (green), &#8216;info&#8217; (cyan), &#8216;warning&#8217; (orange), &#8216;danger&#8217; (red)</li>
 </ul>
-<img alt="_images/web003.png" class="last align-center" src="_images/web003.png" />
+<a class="last reference internal image-reference" href="_images/web003.png"><img alt="_images/web003.png" class="align-center" src="_images/web003.png" style="width: 500px;" /></a>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt><strong>InsertHTML(url)</strong></dt>
 <dd><p class="first last">This function is used to insert an HTML information inside a page. (Ref Top3 example showing top most process cpu usage)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>LinkToGraph(page,graph,text)</strong></dt>
+<dd><p class="first">This function is used create a link to graph in specific page.</p>
+<ul class="simple">
+<li><strong>page</strong>  : page id (starting from 0)</li>
+<li><strong>graph</strong> : graph id (starting from 0)</li>
+<li><strong>text</strong>  : text of the link</li>
+</ul>
+<a class="last reference internal image-reference" href="_images/web004.png"><img alt="_images/web004.png" class="align-center" src="_images/web004.png" style="width: 500px;" /></a>
 </dd>
 </dl>
 </li>
@@ -400,15 +412,15 @@ will simulate the seconds by incrementing them periodically.</p>
 It is possible to define multiple pages. Each page is identified by
 its <code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">id&gt;</span></code>.</p>
 <dl class="docutils">
-<dt>web.statistic.&lt;page id&gt;.name=&lt;page name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">name&gt;</span></code> name of the page displayed into the drop down menu in
+<dt>web.statistic.&lt;page id&gt;.title=&lt;page title&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">title&gt;</span></code> title of the page displayed into the drop down menu in
 case of multiple pages.</dd>
 </dl>
 <p>The statistic page displays statistics graphs. The graphs are
 identified an unique <code class="docutils literal"><span class="pre">&lt;statistic</span> <span class="pre">id&gt;</span></code> and by the following parameters.</p>
 <dl class="docutils">
-<dt>web.statistics.&lt;page id&gt;.content.&lt;statistic id&gt;.name=&lt;statistic name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;statistic</span> <span class="pre">name&gt;</span></code> is the name of the statistics displayed in the
+<dt>web.statistics.&lt;page id&gt;.content.&lt;statistic id&gt;.title=&lt;statistic title&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;statistic</span> <span class="pre">title&gt;</span></code> is the title of the statistics displayed in the
 top left drop down list.</dd>
 <dt>web.statistics.&lt;page id&gt;.content.&lt;statistic id&gt;.graph.&lt;rrd id&gt;=&lt;data name&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;rrd</span> <span class="pre">id&gt;</span></code> is identifying the graph and is unique per <code class="docutils literal"><span class="pre">&lt;statistic</span> <span class="pre">id&gt;</span></code>
@@ -435,8 +447,8 @@ and css code installed in <code class="docutils literal"><span class="pre">/usr/
 <p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
 </div>
 <dl class="docutils">
-<dt>web.addons.&lt;id&gt;.name=&lt;name to be display&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;name</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">display&gt;</span></code> defines the text display in RPi-Monitor web interface</dd>
+<dt>web.addons.&lt;id&gt;.title=&lt;title to be display&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;title</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">display&gt;</span></code> defines the text display in RPi-Monitor web interface</dd>
 <dt>web.addons.&lt;id&gt;.addons=&lt;addon name&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;addon</span> <span class="pre">name&gt;</span></code> defines the addon to activate</dd>
 <dt>web.addons.&lt;id&gt;.showTitle=&lt;0|1&gt;</dt>
