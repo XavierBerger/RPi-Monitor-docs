@@ -270,12 +270,12 @@ will add a drop down list on the right of the top menu with a links to
 </div>
 <p>Each friend is identified by an <code class="docutils literal"><span class="pre">id</span></code> and is described by 2 parameters: <code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;link&gt;</span></code>.</p>
 <p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.friends.conf</span></code></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Raspberry</span> <span class="n">Pi</span>
-<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.123</span><span class="o">/</span>
-<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">Shuttle</span>
-<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span>
-<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">Netbook</span>
-<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.38</span><span class="o">/</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Raspberry Pi&quot;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">1.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.123</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Shuttle&quot;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">2.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.2</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Netbook&quot;</span>
+<span class="n">web</span><span class="o">.</span><span class="n">friends</span><span class="o">.</span><span class="mf">3.</span><span class="n">link</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.38</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span>
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -315,7 +315,7 @@ will add a drop down list on the right of the top menu with a links to
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">443</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
 
-<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Servers</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Servers&quot;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">daemons</span><span class="o">.</span><span class="n">png</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;ssh&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ssh</span><span class="p">,</span><span class="s2">&quot;==22&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ssh</span><span class="p">,</span><span class="s2">&quot;!=22&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-danger&quot;</span><span class="p">)</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;rpimonitor&lt;/b&gt; : &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rpimonitor</span><span class="p">,</span><span class="s2">&quot;==8888&quot;</span><span class="p">,</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="s2">&quot;label-success&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rpimonitor</span><span class="p">,</span><span class="s2">&quot;!=8888&quot;</span><span class="p">,</span><span class="s2">&quot;KO&quot;</span><span class="p">,</span><span class="s2">&quot;label-danger&quot;</span><span class="p">)</span>
@@ -352,10 +352,10 @@ the condition will be <code class="docutils literal"><span class="pre">true</spa
 #  Information                   Status     Statistics
 #  - random data                 - yes      -yes
 ########################################################################
-web.status.1.name=Status 1
-web.statistics.1.name=Statistics 1
-web.status.2.name=Status 2
-web.statistics.2.name=Statistics 2
+web.status.1.title=&quot;Status 1&quot;
+web.statistics.1.title=&quot;Statistics 1&quot;
+web.status.2.title=&quot;Status 2&quot;
+web.statistics.2.title=&quot;Statistics 2&quot;
 
 dynamic.1.name=data1
 dynamic.1.source=od -vAn -N2 -tu2 &lt; /dev/urandom
@@ -369,19 +369,19 @@ dynamic.2.regexp=(\d+)
 dynamic.2.postprocess=$1%100
 dynamic.2.rrd=GAUGE
 
-web.status.1.content.1.name=Data1
+web.status.1.content.1.title=&quot;Data 1&quot;
 web.status.1.content.1.icon=cpu_temp.png
 web.status.1.content.1.line.1=&quot;data1: &lt;b&gt;&quot;+data.data1+&quot;&lt;/b&gt;&quot;
 
-web.statistics.1.content.1.name=Data 1
+web.statistics.1.content.1.title=&quot;Data 1&quot;
 web.statistics.1.content.1.graph.1=data1
 web.statistics.1.content.1.ds_graph_options.living_room_temp.label=Data 1
 
-web.status.2.content.1.name=Data2
+web.status.2.content.1.title=LinkToGraph(1,0,&quot;Data 2&quot;)
 web.status.2.content.1.icon=cpu_temp.png
 web.status.2.content.1.line.1=&quot;data1: &lt;b&gt;&quot;+data.data2+&quot;&lt;/b&gt;&quot;
 
-web.statistics.2.content.1.name=Data 2
+web.statistics.2.content.1.title=&quot;Data 2&quot;
 web.statistics.2.content.1.graph.1=data2
 web.statistics.2.content.1.ds_graph_options.living_room_temp.label=Data 2
 </pre></div>
@@ -407,7 +407,7 @@ Color can change base on <strong>warning</strong> and <strong>danger</strong> th
 <span class="c1">#  Information               Status     Statistics</span>
 <span class="c1">#  - static data             - yes      -no</span>
 <span class="c1">########################################################################</span>
-<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ProgressBar</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;ProgressBar&quot;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;ProgressBar without warning or critical&lt;/b&gt;&#39;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">ProgressBar</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -438,7 +438,7 @@ It is based on Raphaël library for vector drawing, so it’s completely resolut
 <span class="c1">#  Information                   Status     Statistics</span>
 <span class="c1">#  - example with static data     - yes      -no</span>
 <span class="c1">########################################################################</span>
-<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">JustGageBar</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;JustGageBar&quot;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;JustGageBar default configuration&lt;/b&gt;&#39;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="s2">&quot;No Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Warning&quot;</span><span class="p">,</span> <span class="s2">&quot;No Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">JustGageBar</span><span class="p">(</span><span class="s2">&quot;Critical&quot;</span><span class="p">,</span> <span class="s2">&quot;No Colors&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -478,7 +478,7 @@ dynamic.1.regexp=(.*)
 dynamic.1.postprocess=$1%2
 dynamic.1.rrd=
 
-web.status.1.content.1.name=Visibility
+web.status.1.content.1.title=&quot;Visibility&quot;
 web.status.1.content.1.icon=version.png
 web.status.1.content.1.visibility=data.visibility
 web.status.1.content.1.line.1=&#39;Visibility: &lt;b&gt;Control row visibility&lt;/b&gt;&#39;
@@ -519,7 +519,7 @@ extract data every 30sec.</p>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">regexp</span><span class="o">=</span><span class="p">(</span><span class="o">.*</span><span class="p">)</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">interval</span><span class="o">=</span><span class="mi">7</span>
 
-<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Interval</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Interval&quot;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">version</span><span class="o">.</span><span class="n">png</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s1">&#39;Interval=1 last update at &lt;b&gt;&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">interval1</span><span class="o">+</span><span class="s1">&#39;&lt;/b&gt;&#39;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="s1">&#39;Interval=3 last update at &lt;b&gt;&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">interval3</span><span class="o">+</span><span class="s1">&#39;&lt;/b&gt;&#39;</span>
@@ -554,7 +554,7 @@ The file <code class="docutils literal"><span class="pre">example.alert.conf</sp
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">default</span><span class="o">=</span><span class="mi">37</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">rrd</span><span class="o">=</span><span class="n">GAUGE</span>
 
-<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">test_alert</span>
+<span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test alerts&quot;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">test_alert</span>
 <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">soc_temp</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">test_alert</span>
 
@@ -563,18 +563,18 @@ The file <code class="docutils literal"><span class="pre">example.alert.conf</sp
 <span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">maxalertduration</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelvalidation</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">resendperiod</span><span class="o">=</span><span class="mi">60</span>
-<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">echo</span> <span class="s1">&#39;Too hot alert raised data.test_alert&gt;50&#39;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">hot</span>
-<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span><span class="n">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">hot</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">echo</span> <span class="s1">&#39;Too hot alert raised data.test_alert&gt;50&#39;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">test_alert</span><span class="o">.</span><span class="n">hot</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span><span class="n">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">test_alert</span><span class="o">.</span><span class="n">hot</span>
 
 <span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">active</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">uptime</span><span class="o">&gt;</span><span class="mi">120</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">trigger</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span><span class="o">&lt;</span><span class="mi">10</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">maxalertduration</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">cancelvalidation</span><span class="o">=</span><span class="mi">20</span>
 <span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">resendperiod</span><span class="o">=</span><span class="mi">60</span>
-<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">echo</span> <span class="s1">&#39;Too cold alert raised raised data.test_alert&lt;10&#39;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">cold</span>
-<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span> <span class="n">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">alert</span><span class="o">.</span><span class="n">cold</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">raisecommand</span><span class="o">=</span><span class="n">echo</span> <span class="s1">&#39;Too cold alert raised raised data.test_alert&lt;10&#39;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">test_alert</span><span class="o">.</span><span class="n">cold</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">too_cold</span><span class="o">.</span><span class="n">cancelcommand</span><span class="o">=</span><span class="n">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">test_alert</span><span class="o">.</span><span class="n">cold</span>
 
-<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Alerts</span>
+<span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Alerts&quot;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">daemons</span><span class="o">.</span><span class="n">png</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="s2">&quot;Test temperature: &quot;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">line</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="s2">&quot;Too hot: &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">alertstate</span><span class="p">,</span><span class="s2">&quot;==0&quot;</span><span class="p">,</span><span class="s2">&quot;Everything is OK&quot;</span><span class="p">,</span><span class="s2">&quot;success&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">alertstate</span><span class="p">,</span><span class="s2">&quot;==1&quot;</span><span class="p">,</span><span class="s2">&quot;Houston we have a problem: &quot;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">test_alert</span><span class="o">+</span><span class="s2">&quot;&gt;50&quot;</span><span class="p">,</span><span class="s2">&quot;warning&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">Label</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">too_hot</span><span class="o">.</span><span class="n">lastsendalertdate</span><span class="p">,</span><span class="s2">&quot;!=0&quot;</span><span class="p">,</span><span class="s2">&quot;Alert is on going&quot;</span><span class="p">,</span><span class="s2">&quot;danger&quot;</span><span class="p">)</span>
@@ -604,7 +604,7 @@ the following commands to generate data:</p>
 </pre></div>
 </div>
 <p>Execute the following command  to see alerts</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">watch</span> <span class="s1">&#39;cat /tmp/alert*</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">watch</span> <span class="s1">&#39;grep &quot;.*&quot; /tmp/test_alert.*&#39;</span>
 </pre></div>
 </div>
 <p>Open the status page and check the auto update option to see the example running in real time as shown bellow:</p>
@@ -635,7 +635,7 @@ the following commands to generate data:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 27, 2018.
+      Last updated on Feb 28, 2018.
 
     </p>
   </div>
