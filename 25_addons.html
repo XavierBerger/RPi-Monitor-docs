@@ -166,7 +166,6 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
         
         <div class="rst-content">
@@ -235,7 +234,7 @@ different parameters if the addon support them as show with <a class="reference 
 <h2>About Addon<a class="headerlink" href="#about-addon" title="Permalink to this headline">¶</a></h2>
 <p>About addons is activated by default and present addons feature.</p>
 <p>To remove this addons, simply comment out or delete the following lines from <code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Addons</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">Addons</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">about</span>
 </pre></div>
 </div>
@@ -252,7 +251,7 @@ using the function <code class="docutils literal"><span class="pre">InsertHTML()
 <p>Top3 addons shows the 3 process consuming the CPU time of CPU in addition to
 cunsumption of <code class="docutils literal"><span class="pre">rpimonitord</span></code> process.</p>
 <p>To activate this addon, add the following lines to your configuration file</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Top3</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">Top3</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">top3</span>
 </pre></div>
 </div>
@@ -271,8 +270,8 @@ iframe that can display any other web pages.</p>
 <a class="reference internal image-reference" href="_images/addons003.png"><img alt="_images/addons003.png" src="_images/addons003.png" style="width: 500px;" /></a>
 </div>
 <dl class="docutils">
-<dt>web.addons.&lt;id&gt;.name=&lt;name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> represent the name displayed in addon menu or addon title</dd>
+<dt>web.addons.&lt;id&gt;.title=&lt;title&gt;</dt>
+<dd><code class="docutils literal"><span class="pre">&lt;title&gt;</span></code> represent the title displayed in addon menu or addon title</dd>
 <dt>web.addons.&lt;id&gt;.addons=custom</dt>
 <dd><code class="docutils literal"><span class="pre">custom</span></code> is the addon activated</dd>
 <dt>web.addons.&lt;id&gt;.showtitle=&lt;title visibility&gt;</dt>
@@ -297,7 +296,7 @@ Raspberry Pi through a web interface.</p>
 </div>
 <p>By default shellinabox listening on <a class="reference external" href="http://raspberrypi.local:4200/">http://raspberrypi.local:4200/</a>.</p>
 <p>Shellinabox can be integrated to <strong>RPi-Monitor</strong> with custom addon as follow:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ShelleInABox</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">ShelleInABox</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">showtitle</span><span class="o">=</span><span class="n">false</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">url</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raspberrypi</span><span class="o">.</span><span class="n">local</span><span class="p">:</span><span class="mi">4200</span><span class="o">/</span>
@@ -310,7 +309,7 @@ Raspberry Pi through a web interface.</p>
 <p>If you want to see the image of your webcam in your brower, you can use <a class="reference external" href="https://github.com/ipartola/hawkeye">hawkeye</a>.
 Once hawkeye installed, it is very easy to add it into <strong>RPi-Monitor</strong> interface
 using the custom addon. The configuration will then be the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Webcam</span> <span class="o">-</span> <span class="n">Hawkeye</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">Webcam</span> <span class="o">-</span> <span class="n">Hawkeye</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">raspberrypi</span><span class="o">.</span><span class="n">local</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">allowupdate</span><span class="o">=</span><span class="n">false</span>
@@ -339,7 +338,7 @@ see how to implement such a feature.</p>
 <p>Example addon is providing a <code class="docutils literal"><span class="pre">html</span></code> page, a <code class="docutils literal"><span class="pre">javacript</span></code> and a <code class="docutils literal"><span class="pre">css</span></code> showing
 how an addon page can interact with <strong>RPi-Monitor</strong>.</p>
 <p>Example addon can activate by adding the following lines into the configuration file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">Addon</span> <span class="n">example</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">Addon</span> <span class="n">example</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">example</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">showtitle</span><span class="o">=</span><span class="n">true</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">parameter</span><span class="o">=</span><span class="n">parameter_example</span>

@@ -166,7 +166,6 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
         
         <div class="rst-content">
@@ -267,11 +266,11 @@ The formula is then: <code class="docutils literal"><span class="pre">$1/1024</s
 <p><strong>RPi-Monitor</strong> gives you the template of configuration. You now have to copy it
 into an existing configuration file or add a new file in
 <code class="docutils literal"><span class="pre">/etc/rpimonitord.conf.d/</span></code> and update the text inside <code class="docutils literal"><span class="pre">&lt;&gt;</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>dynamic.20.name=storage2_available
-dynamic.20.source=df -t ntfs
-dynamic.20.regexp=sda1\s+\d+\s+\d+\s+(\d+)
-dynamic.20.postprocess=$1/1024
-dynamic.20.rrd=GAUGE
+<div class="highlight-default"><div class="highlight"><pre><span></span>dynamic.1.name=storage2_available
+dynamic.1.source=df -t ntfs
+dynamic.1.regexp=sda1\s+\d+\s+\d+\s+(\d+)
+dynamic.1.postprocess=$1/1024
+dynamic.1.rrd=GAUGE
 </pre></div>
 </div>
 <p>Once the configuration will be apply, restart <strong>RPi-Monitor</strong> with the command:</p>

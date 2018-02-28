@@ -164,7 +164,6 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
         
         <div class="rst-content">
@@ -281,7 +280,7 @@ are not getting data, be sure to wait few seconds before trying again.</p>
 </div>
 <p>We will now add the humidity curve into the graph of temperature.
 This can be done with the configuration bellow:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">humidity</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">humidity</span>
 <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">Humidity</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
 <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">ds_graph_options</span><span class="o">.</span><span class="n">humidity</span><span class="o">.</span><span class="n">yaxis</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">web</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">graph_options</span><span class="o">.</span><span class="n">y2axis</span><span class="o">=</span><span class="p">{</span> <span class="n">position</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">:</span> <span class="mi">100</span> <span class="p">}</span>
@@ -304,6 +303,17 @@ documentation of <a class="reference external" href="http://javascriptrrd.source
 <a class="reference internal image-reference" href="_images/sensor002.png"><img alt="_images/sensor002.png" src="_images/sensor002.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Graph with 2 Y axis: °C in left axis and % humidity (fixed from 0% to 100%)
 on right axis</span></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line">OLD CONF: TO BE REVIEWED</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </div>
 </div>
@@ -331,11 +341,18 @@ sudo modprobe w1-therm</dd>
 </dl>
 <p>It looks to work. So now we need to extract the the numbers ending the second line (21625). The regular expression will then be t.(d+)$. I&#8217;ll not do a course about what a regexp is there are many site on the internet explaining it.
 Note: In version 1.x of RPi-Monitor it is prohibited to use = in regular expression.</p>
-<dl class="docutils">
-<dt>To add a graph to RPi-Monitor statistic, we need to create a new section. Let&#8217;s call it [room_temperature]. Then we have to declare the new data name room_temp, its source /sys/bus/w1/devices/28-000004fe1847/w1_slave and the associated regular expression t.(d+)$. The line to append will look like that:</dt>
+<p>To add a graph to RPi-Monitor statistic, we need to create a new section. Let&#8217;s call it
+[room_temperature]. Then we have to declare the new data name room_temp, its source
+/sys/bus/w1/devices/28-000004fe1847/w1_slave and the associated regular expression t.(d+)$.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>The line to append will look like that:</dt>
 <dd># Room temperature
 [room_temperature]
 room_temp=/sys/bus/w1/devices/28-000004fe1847/w1_slave=t.(d+)$</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
 <dt>Restart RPi-Monitor with the following command and it is done:</dt>
 <dd>sudo  service rpimonitor restart</dd>
 </dl>
