@@ -343,22 +343,20 @@ sudo modprobe w1-therm</dd>
 Note: In version 1.x of RPi-Monitor it is prohibited to use = in regular expression.</p>
 <p>To add a graph to RPi-Monitor statistic, we need to create a new section. Let&#8217;s call it
 [room_temperature]. Then we have to declare the new data name room_temp, its source
-/sys/bus/w1/devices/28-000004fe1847/w1_slave and the associated regular expression t.(d+)$.</p>
+/sys/bus/w1/devices/28-000004fe1847/w1_slave and the associated regular expression t.(d+)$.
+The line to append will look like that:</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>The line to append will look like that:</dt>
-<dd># Room temperature
+<div># Room temperature
 [room_temperature]
-room_temp=/sys/bus/w1/devices/28-000004fe1847/w1_slave=t.(d+)$</dd>
-</dl>
-</div></blockquote>
+room_temp=/sys/bus/w1/devices/28-000004fe1847/w1_slave=t.(d+)$</div></blockquote>
 <dl class="docutils">
 <dt>Restart RPi-Monitor with the following command and it is done:</dt>
 <dd>sudo  service rpimonitor restart</dd>
 </dl>
 <p>A new graph is available in statistics (wait a little bit to have data and drawing):</p>
 <p>Use zoom feature to see the freshly added data.
-If you want to add a curve into the Temperature graph, it is possible by adding the KPI line into the section [temperature] as describe bellow:</p>
+If you want to add a curve into the Temperature graph, it is possible by adding
+the KPI line into the section [temperature] as describe bellow:</p>
 <blockquote>
 <div>[temperature]
 soc_temp=/sys/devices/virtual/thermal/thermal_zone0/temp=(.*)
@@ -393,7 +391,7 @@ home_temp=/sys/bus/w1/devices/28-000004fe1847/w1_slave=t.(d+)$</div></blockquote
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 28, 2018.
+      Last updated on Mar 01, 2018.
 
     </p>
   </div>

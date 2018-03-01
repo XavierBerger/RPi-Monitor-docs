@@ -297,19 +297,14 @@ as an excercise for the reader and a better job for
 </div>
 <div class="section" id="caveats">
 <h3>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>Most informations regarding the power management unit rely on the ability to</dt>
-<dd><p class="first">query the AXP209 via I2C/sysfs. A driver for kernel 3.4 provides internal
-PMU informations below <cite>/sys/devices/platform/sunxi-i2c.0/i2c-0/0-0034/</cite></p>
-<blockquote class="last">
-<div>but unfortunately this is still missing in mainline kernel.</div></blockquote>
-</dd>
-</dl>
+<p>Most informations regarding the power management unit rely on the ability to
+query the AXP209 via I2C/sysfs. A driver for kernel 3.4 provides internal
+PMU informations below <cite>/sys/devices/platform/sunxi-i2c.0/i2c-0/0-0034/</cite>
+but unfortunately this is still missing in mainline kernel.</p>
 <p>Informations regarding [cpufreq settings](<a class="reference external" href="http://linux-sunxi.org/Cpufreq">http://linux-sunxi.org/Cpufreq</a>)
 (CPU clock speed, governor) can only be queried if cpufreq support is built
-into the kernel. This should apply to all 3.4.x kernels used nowadays and</p>
-<blockquote>
-<div>with mainline kernel starting with 4.0 for A10/A13/A20 too.</div></blockquote>
+into the kernel. This should apply to all 3.4.x kernels used nowadays and
+with mainline kernel starting with 4.0 for A10/A13/A20 too.</p>
 <p>If you use mainline kernel 4.0 or above the SoC&#8217;s temperature will be read
 out using <cite>/sys/class/thermal/thermal_zone0/temp</cite>. If you&#8217;ve applied the
 patches at the bottom of [this page](<a class="reference external" href="http://sunxi.montjoie.ovh">http://sunxi.montjoie.ovh</a>) and installed
@@ -384,7 +379,7 @@ To fix these issues, you will have to update the configuration file
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Feb 28, 2018.
+      Last updated on Mar 01, 2018.
 
     </p>
   </div>
