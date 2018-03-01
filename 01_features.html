@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -223,18 +221,23 @@
 <p>At the beginning <strong>RPi-Monitor</strong> was designed to run on <strong>Raspberry Pi</strong>. This
 is explaining the name of this software. In reality <strong>RPi-Monitor</strong> can run
 on every computers running <cite>perl</cite>.</p>
+<div class="figure align-center">
+<img alt="_images/logo.png" src="_images/logo.png" />
+</div>
 <p>Since the beginning <strong>RPi-Monitor</strong> as been designed for embedded devices and
-performances is the core of development strategy. The software is divided into
-two main part:
-* A lightweight daemon running on the device and gathering data
-* A powerfull WEB application running in browser in charge of data rendering</p>
+performances is the core of development strategy.</p>
+<p>The software is divided into two main part:</p>
+<ul class="simple">
+<li>A lightweight daemon running on the device and gathering data</li>
+<li>A powerfull WEB application running in browser in charge of data rendering</li>
+</ul>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/features001.png"><img alt="_images/features001.png" src="_images/features001.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="collecting-metrics">
 <h2>Collecting metrics<a class="headerlink" href="#collecting-metrics" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><strong>rpimonitord</strong> is a daemon wich periodically gather, process and store metrics.
+<div><code class="docutils literal"><span class="pre">rpimonitord</span></code> is a daemon wich periodically gather, process and store metrics.
 In <strong>RPi-Monitor</strong> metrics are named <strong>KPI</strong> for <strong>K</strong>ey <strong>P</strong>erformance <strong>I</strong>ndicator.</div></blockquote>
 </div>
 <div class="section" id="storing-metrics">
@@ -265,10 +268,6 @@ are presented in statistics pages.</p>
 <li>Define how to detect an alert and what to do when alert appears or disappears</li>
 <li>Define ... what you want to do with <strong>RPi-Monitor</strong></li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">See <a class="reference external" href="10_index.html">configuration</a> chapter for details and examples.</p>
-</div>
 </div></blockquote>
 </div>
 <div class="section" id="processing-metrics-and-raising-alerts">
@@ -299,7 +298,8 @@ server), read on disk or remotely accessed through SNMP.</div></blockquote>
 <h2>Extending the capabilities<a class="headerlink" href="#extending-the-capabilities" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>RPi-Monitor</strong> is extensible. It provides addons allowing customisation of
-the interface <a class="reference external" href="https://github.com/shellinabox/shellinabox">Shellinabox</a>, <a class="reference external" href="https://github.com/ipartola/hawkeye">Hawkeye</a>, top3...</p>
+the interface. For example: <a class="reference external" href="https://github.com/shellinabox/shellinabox">Shellinabox</a> or
+<a class="reference external" href="https://github.com/ipartola/hawkeye">Hawkeye</a>.</p>
 <p><strong>RPi-Monitor-Peeble</strong> allows to see monitoring status on <a class="reference external" href="https://www.pebble.com/">Peeble</a> smart watch.</p>
 <p><strong>RPi-Monitor</strong> is also available for <a class="reference external" href="https://www.docker.com/">Docker</a> and for embedded devices created
 with <a class="reference external" href="https://www.yoctoproject.org/">Yocto Project</a></p>

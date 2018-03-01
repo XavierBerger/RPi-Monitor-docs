@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -115,7 +113,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="10_index.html">Getting started</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="11_installation.html">Installation and ugrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_installation.html">Installation and upgrade</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_custom_installation.html">Custom installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_execution.html">Understanding program execution</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Frequently Asked Questions</a></li>
@@ -217,14 +215,14 @@
             
   <div class="section" id="frequently-asked-questions">
 <h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt><strong>RPi-Monitor</strong> is displaying <code class="docutils literal"><span class="pre">NaN</span></code> instead of value in my &#8220;unsupported&#8221; distro. Can you fixe this issue?</dt>
-<dd>There are a lot of GNU/Linux distribution available, I can&#8217;t support all of them.
+<p><strong>RPi-Monitor</strong> is displaying <code class="docutils literal"><span class="pre">NaN</span></code> instead of value in my &#8220;unsupported&#8221; distro. Can you fixe this issue?</p>
+<blockquote>
+<div><p>There are a lot of GNU/Linux distribution available, I can&#8217;t support all of them.
 I decided since the beginning use to Raspbian as target OS. The version v2.13 has been
-tested on <code class="docutils literal"><span class="pre">2017-11-29-raspbian-stretch-lite.img</span></code>.
-Remember, in <strong>RPi-Monitor</strong>, everything is configurable. It should then be possible
-to update configuration files to match the specificities of your distro.</dd>
-</dl>
+tested on <code class="docutils literal"><span class="pre">2017-11-29-raspbian-stretch-lite.img</span></code>.</p>
+<p>Remember, in <strong>RPi-Monitor</strong>, everything is configurable. It should then be possible
+to update configuration files to match the specificities of your distro.</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -242,154 +240,148 @@ updated, the previous value will be read and drawn in graphs.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt><strong>RPi-Monitor</strong>&#8216;s web interface is not working, I&#8217;ve only white pages?</dt>
-<dd><strong>RPi-Monitor</strong> requires HTML5 local storage and cookies to work properly.
+<p><strong>RPi-Monitor</strong>&#8216;s web interface is not working, I&#8217;ve only white pages?</p>
+<blockquote>
+<div><strong>RPi-Monitor</strong> requires HTML5 local storage and cookies to work properly.
 You should check that these both functionalities are activated into your browser
-and check that no plug-ins is blocking them.</dd>
-</dl>
+and check that no plug-ins is blocking them.</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>Is <strong>RPi-Monitor</strong> supporting distribution XXX? Can you make <strong>RPi-Monitor</strong> compatible with distribution XXX?</dt>
-<dd><strong>RPi-Monitor</strong> was developed on Raspbian. This distribution is then fully supported.
+<p>Is <strong>RPi-Monitor</strong> supporting distribution XXX? Can you make <strong>RPi-Monitor</strong> compatible with distribution XXX?</p>
+<blockquote>
+<div><strong>RPi-Monitor</strong> was developed on Raspbian. This distribution is then fully supported.
 I will not officially support any other distribution but you will find in
-github repository as well as in thisdocumentation some configuration files that
+github repository as well as in this documentation some configuration files that
 may help you to configure <strong>RPi-Monitor</strong> on your system.
 Remember, <strong>RPi-Monitor</strong> is highly configurable and should be able to run on
-every system able to run perl. Have a look to examples in this documentation for details.</dd>
-</dl>
+every system able to run <code class="docutils literal"><span class="pre">perl</span></code>. Have a look to <a class="reference external" href="27_configuration_templates.html">examples</a>
+in this documentation for details.</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I have a problems running <code class="docutils literal"><span class="pre">rpimonitord</span></code>:  failed &#8220;Can&#8217;t locate _______.pm  in &#64;INC ...</dt>
-<dd>The installation is not done properly. You should read again the installation
-procedure and pay attention to the dependencies.</dd>
-</dl>
+<p>I have a problems running <code class="docutils literal"><span class="pre">rpimonitord</span></code>:  failed &#8220;Can&#8217;t locate _______.pm  in &#64;INC ...</p>
+<blockquote>
+<div>The installation is not done properly. You should read again the installation
+procedure and pay attention to the dependencies.</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I would like to use my favorite web server instead of the one embedded into <strong>RPi-Monitor</strong>. Is it possible?</dt>
-<dd><strong>Yes</strong>, this is possible but not recommended. <strong>RPi-Monitor</strong> embedded web server is
+<p>I would like to use my favorite web server instead of the one embedded into <strong>RPi-Monitor</strong>. Is it possible?</p>
+<blockquote>
+<div><strong>Yes</strong>, this is possible but not recommended. <strong>RPi-Monitor</strong> embedded web server is
 optimized to reduce the usage of the SDCard (using shared memory instead of writing data on disk),
 reduce the resources used into the system. The Web interface is requiring some specific feature that can only
 be delivered by <strong>RPi-Monitor</strong> embedded web server (like empty.rrd file generation
-ensuring a clean display of graphs).</dd>
-</dl>
+ensuring a clean display of graphs).</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>Can you add login/password and authentication to RPI-Monitor web interface?</dt>
-<dd><strong>No</strong>. I&#8217;ll never add such a feature to <strong>RPi-Monitor</strong>. Why? Just because it is
+<p>Can you add login/password and authentication to RPI-Monitor web interface?</p>
+<blockquote>
+<div><p><strong>No</strong>. I&#8217;ll never add such a feature to <strong>RPi-Monitor</strong>. Why? Just because it is
 something complex to do in a clean and fully secured way. Some software are
-already design to do the job and they do it well.
-A solution is proposed in this documentation using nginx frontend.</dd>
-</dl>
+already design to do the job and they do it well.</p>
+<p>A <a class="reference external" href="34_autentication.html#authentication-and-secure-access">solution is proposed in this documentation using nginx</a> frontend.</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>How can I do customize <strong>RPi-Monitor</strong>, change data extracted, add images, change texts...</dt>
-<dd><strong>Yes</strong>, in <strong>RPi-Monitor</strong> almost everything is configurable. This can be done by
-configuration file. Everything is explained in this documentation.</dd>
-</dl>
+<p>Can I do customize <strong>RPi-Monitor</strong>, change data extracted, add images, change texts...</p>
+<blockquote>
+<div><strong>Yes</strong>, in <strong>RPi-Monitor</strong> almost everything is configurable. This can be done by
+configuration file. Everything is explained in this documentation.</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I tried to install <strong>RPi-Monitor</strong> into an OS not officially supported and some data are missing. How can I fix it?</dt>
-<dd>As I said previously, in <strong>RPi-Monitor</strong> almost everything is configurable. You
+<p>I tried to install <strong>RPi-Monitor</strong> into an OS not officially supported and some data are missing. How can I fix it?</p>
+<blockquote>
+<div>As said previously, in <strong>RPi-Monitor</strong> almost everything is configurable. You
 should find the command to execute or the file to read to get the missing
 value directly in the shell. Once the command is found you will need to
 update the configuration file. Have a look to <strong>RPi-Monitor</strong> configuration chapter and to
-Interactive Configuration Helper (<code class="docutils literal"><span class="pre">rpimonitord</span> <span class="pre">-i</span></code>).</dd>
-</dl>
+Interactive Configuration Helper (<code class="docutils literal"><span class="pre">rpimonitord</span> <span class="pre">-i</span></code>).</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I would like to monitor a cluster of raspberries with your tool. Is there a way to gather the whole data in one node?</dt>
-<dd>It could have any answer to such a question. One possibility would be to use
-ssh and configure <strong>RPi-Monitor</strong> to execute commands on ech remote nodes of
-your cluster and process the data locally.
-To do so, you should create one configuration file per node to monitor and
+<p>I would like to monitor a cluster of raspberries with your tool. Is there a way to gather the whole data in one node?</p>
+<blockquote>
+<div><p>It could have any answer to such a question. One possibility would be to use
+ssh and configure <strong>RPi-Monitor</strong> to execute commands on each remote nodes of
+your cluster and process the data locally.</p>
+<p>To do so, you should create one configuration file per node to monitor and
 use all of them in <strong>RPi-Monitor</strong>. Using pages feature could be very usefull.
 You can use the main page to display some consolidate data in addition to one
-page per cluster.
-You can also use the snmp capabilities to share data from node to central point.</dd>
-</dl>
+page per cluster.</p>
+<p>You can also use the snmp capabilities to share data from node to central point.</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I found a bug into <strong>RPi-Monitor</strong>. How can I share my discovery?</dt>
-<dd>You should open an issue in github and describe you problem and how to reproduce it.</dd>
-</dl>
+<p>I found a bug into <strong>RPi-Monitor</strong>. How can I share my discovery?</p>
+<blockquote>
+<div>You should open an issue in <a class="reference external" href="https://github.com/XavierBerger/RPi-Monitor/issues">github</a>
+and describe you problem and how to reproduce it.</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>Download bandwidth is shown as negative values. It&#8217;s bug or feature?</dt>
-<dd>This is a feature :-). But, remember, everything is customizable in <strong>RPI-Monitor</strong>...</dd>
-</dl>
+<p>Download bandwidth is shown as negative values. It&#8217;s bug or feature?</p>
+<blockquote>
+<div>This is a feature :-). But, remember, everything is customizable in <strong>RPI-Monitor</strong>...</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I want to create a package for my favorite distribution which is not supported by defalut. How can I contribute to this project?</dt>
-<dd><strong>RPi-Monitor</strong> source code is hosted in github. Refer to contributing chapter of the doc and pay attention to
-packaging section.</dd>
-</dl>
+<p>I want to create a package for my favorite distribution which is not supported by defalut. How can I contribute to this project?</p>
+<blockquote>
+<div><strong>RPi-Monitor</strong> source code is hosted in github. Refer to
+<cite>Packaging section of contributing chapter &lt;41_contributing.html#packaging&gt;</cite> for details.</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I&#8217;ve some issue with my installation or customization of <strong>RPi-Monitor</strong> and I want to reinstall it from scratch. How can I do it?</dt>
-<dd><p class="first">Here is the instruction to reinstall <strong>RPi-Monitor</strong> from scratch:
+<p>I&#8217;ve some issue with my installation or customization of <strong>RPi-Monitor</strong> and I want to reinstall it from scratch. How can I do it?</p>
+<blockquote>
+<div><p>Here is the instruction to reinstall <strong>RPi-Monitor</strong> from scratch:
 First, uninstall <strong>RPi-Monitor</strong> with the following command:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">rpimonitor</span>
 <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rpimonitor</span>
 <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">rpimonitor</span>
 </pre></div>
 </div>
-<p class="last">Then reinstall by following the instruction gathered in the documentation.</p>
-</dd>
-</dl>
+<p>Then reinstall by following <a class="reference external" href="11_installation.html#installation-from-repository">installation instruction</a>
+of this documentation.</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>Some data are not extracting correctly at boot but when I restart <code class="docutils literal"><span class="pre">rpimonotord</span></code> everything becomes OK until I reboot. How can I fix thi issue?</dt>
-<dd>If you reach such situation, you certainly configure your source using a
+<p>Some data are not extracting correctly at boot but when I restart <code class="docutils literal"><span class="pre">rpimonotord</span></code> everything becomes OK until I reboot. How can I fix thi issue?</p>
+<blockquote>
+<div>If you reach such situation, you certainly configure your source using a
 command whitout the full path. For example <code class="docutils literal"><span class="pre">gettemp.sh</span></code> instead of
-<code class="docutils literal"><span class="pre">/usr/bin/gettemp.sh</span></code>.The first command is working in your shell because the
+<code class="docutils literal"><span class="pre">/usr/bin/gettemp.sh</span></code>. The first command is working in your shell because the
 variable $PATH is set and the executable is reachable (that why it work when
 you restart <code class="docutils literal"><span class="pre">rpimonitord</span></code>).
 When you start your computer, the $PATH variable is not set so <code class="docutils literal"><span class="pre">gettemp.sh</span></code>
-will not work. The solution is to use the full path command <code class="docutils literal"><span class="pre">/usr/bin/gettemp.sh</span></code></dd>
-</dl>
+will not work. The solution is to use the full path command <code class="docutils literal"><span class="pre">/usr/bin/gettemp.sh</span></code></div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I just update my distribution and <strong>RPi-Monitor</strong> is still saying that packages required to be updated. Why?</dt>
-<dd>If you want to update this information immediately, you can execute this script
+<p>I just update my distribution and <strong>RPi-Monitor</strong> is still saying that packages required to be updated. Why?</p>
+<blockquote>
+<div><p>If you want to update this information immediately, you can execute this script
 manually:  <code class="docutils literal"><span class="pre">/etc/init.d/rpimonitord</span> <span class="pre">update</span></code>.
-You can also install dpkg hook to execut this update automatically. Refer to startup section of this documentation.</dd>
-</dl>
+You can also install dpkg hook to execut this update automatically.</p>
+<p>Refer to <a class="reference external" href="13_execution.html#startup-script">startup section</a> of this documentation.</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<dl class="docutils">
-<dt>I required better resolutions of the reading provided by <strong>RPi-Monitor</strong>. Can we increase the frequency with which <strong>RPi-Monitor</strong> collects the data?</dt>
-<dd><strong>Yes</strong>, it is possible to define the RRD structure per data extracted.
-Refer to documentation and man page to know how use this advanced feature.</dd>
-<dt>I want to uninstall <strong>RPi-Monitor</strong>, How can I do it?</dt>
-<dd><p class="first">To uninstall <strong>RPi-Monitor</strong>, you can execute the following command:</p>
+<p>I required better resolutions of the reading provided by <strong>RPi-Monitor</strong>. Can we increase the frequency with which <strong>RPi-Monitor</strong> collects the data?</p>
+<blockquote>
+<div><strong>Yes</strong>, it is possible to define the RRD structure per data extracted.
+Refer to documentation and man page to know how use this advanced feature.</div></blockquote>
+<p>I want to uninstall <strong>RPi-Monitor</strong>, How can I do it?</p>
+<blockquote>
+<div><p>To uninstall <strong>RPi-Monitor</strong>, you can execute the following command:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">remove</span> <span class="n">rpimonitor</span>
 </pre></div>
 </div>
@@ -397,9 +389,8 @@ Refer to documentation and man page to know how use this advanced feature.</dd>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">rpimontor</span>
 </pre></div>
 </div>
-<p class="last">Finally delete the directory <code class="docutils literal"><span class="pre">/var/lib/rpimonitor</span></code></p>
-</dd>
-</dl>
+<p>Finally delete the directory <code class="docutils literal"><span class="pre">/var/lib/rpimonitor</span></code></p>
+</div></blockquote>
 </div>
 
 
