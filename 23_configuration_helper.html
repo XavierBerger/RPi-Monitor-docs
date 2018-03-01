@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -256,7 +254,7 @@ Enter then the following regulare expression: <code class="docutils literal"><sp
 <img alt="_images/helper008.png" src="_images/helper008.png" />
 <p>The result is now the one expected , enter <code class="docutils literal"><span class="pre">Yes</span></code> ( or <code class="docutils literal"><span class="pre">yes</span></code> or <code class="docutils literal"><span class="pre">Y</span></code> or <code class="docutils literal"><span class="pre">y</span></code> )</p>
 <img alt="_images/helper009.png" src="_images/helper009.png" />
-<p>We want the value in <code class="docutils literal"><span class="pre">MB</span></code> while is it given in <code class="docutils literal"><span class="pre">kB</span></code>. We then need to devide it by <code class="docutils literal"><span class="pre">1024</span></code>.
+<p>We want the value in <code class="docutils literal"><span class="pre">MB</span></code> while is it given in <code class="docutils literal"><span class="pre">kB</span></code>. We then need to divide it by <code class="docutils literal"><span class="pre">1024</span></code>.
 The formula is then: <code class="docutils literal"><span class="pre">$1/1024</span></code></p>
 <img alt="_images/helper010.png" src="_images/helper010.png" />
 <p>This is the expected value, enter <code class="docutils literal"><span class="pre">yes</span></code></p>
@@ -265,7 +263,8 @@ The formula is then: <code class="docutils literal"><span class="pre">$1/1024</s
 <img alt="_images/helper012.png" src="_images/helper012.png" />
 <p><strong>RPi-Monitor</strong> gives you the template of configuration. You now have to copy it
 into an existing configuration file or add a new file in
-<code class="docutils literal"><span class="pre">/etc/rpimonitord.conf.d/</span></code> and update the text inside <code class="docutils literal"><span class="pre">&lt;&gt;</span></code>.</p>
+<code class="docutils literal"><span class="pre">/etc/rpimonitord/</span></code> directory or subdirectory. Update the text inside <code class="docutils literal"><span class="pre">&lt;&gt;</span></code> to
+define how data should be stored. Include this file in <code class="docutils literal"><span class="pre">data.conf</span></code>.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>dynamic.1.name=storage2_available
 dynamic.1.source=df -t ntfs
 dynamic.1.regexp=sda1\s+\d+\s+\d+\s+(\d+)
@@ -275,8 +274,6 @@ dynamic.1.rrd=GAUGE
 </div>
 <p>Once the configuration will be apply, restart <strong>RPi-Monitor</strong> with the command:</p>
 <p><code class="docutils literal"><span class="pre">/etc/init.d/rpimonitor</span> <span class="pre">restart</span></code></p>
-<p>I hope this post is detailled enough to help you to configure <strong>RPi-Monitor</strong> to
-define the correct sources and regular expression.</p>
 </div>
 
 
