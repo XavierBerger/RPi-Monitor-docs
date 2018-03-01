@@ -219,24 +219,22 @@
 <h1>Custom installation<a class="headerlink" href="#custom-installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="installation-from-debian-package">
 <h2>Installation from Debian package<a class="headerlink" href="#installation-from-debian-package" title="Permalink to this headline">¶</a></h2>
-<p>Download the latest package from the official repository in <a class="reference external" href="https://github.com/XavierBerger/RPi-Monitor-deb/tree/master/packages">Github</a>
-with the following command (replace <code class="docutils literal"><span class="pre">latest_package_url</span></code> by the real url found on github):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">latest_package_url</span> <span class="o">-</span><span class="n">O</span> <span class="n">rpimonitor_latest_all</span><span class="o">.</span><span class="n">deb</span>
+<p>Download the latest package from the official repository in <a class="reference external" href="https://github.com/XavierBerger/RPi-Monitor-deb/tree/master/packages">Github</a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">goo</span><span class="o">.</span><span class="n">gl</span><span class="o">/</span><span class="n">yDYFhy</span> <span class="o">-</span><span class="n">O</span> <span class="n">rpimonitor_latest</span><span class="o">.</span><span class="n">deb</span>
 </pre></div>
 </div>
-<p>If you have issue with GnuTLS: A TLS warning alert coming from Github you
-can download it with the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="n">latest_package_url</span> <span class="o">-</span><span class="n">o</span> <span class="n">rpimonitor_latest_all</span><span class="o">.</span><span class="n">deb</span>
+<p>If you have issue with GnuTLS: A TLS warning alert coming from Github you can download it with the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">goo</span><span class="o">.</span><span class="n">gl</span><span class="o">/</span><span class="n">yDYFhy</span> <span class="o">-</span><span class="n">o</span> <span class="n">rpimonitor_latest</span><span class="o">.</span><span class="n">deb</span>
 </pre></div>
 </div>
 <p>Install the dependencies by executing the following command (use command
-<code class="docutils literal"><span class="pre">apt-get</span></code> if <code class="docutils literal"><span class="pre">aptitude</span></code> is not available on your target system):</p>
+<code class="docutils literal"><span class="pre">apt-get</span></code> or <code class="docutils literal"><span class="pre">apt</span></code> if <code class="docutils literal"><span class="pre">aptitude</span></code> is not available on your target system):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">librrds</span><span class="o">-</span><span class="n">perl</span> <span class="n">libhttp</span><span class="o">-</span><span class="n">daemon</span><span class="o">-</span><span class="n">perl</span> <span class="n">libjson</span><span class="o">-</span><span class="n">perl</span> \
 <span class="n">libipc</span><span class="o">-</span><span class="n">sharelite</span><span class="o">-</span><span class="n">perl</span> <span class="n">libfile</span><span class="o">-</span><span class="n">which</span><span class="o">-</span><span class="n">perl</span> <span class="n">libsnmp</span><span class="o">-</span><span class="n">extension</span><span class="o">-</span><span class="n">passpersist</span><span class="o">-</span><span class="n">perl</span>
 </pre></div>
 </div>
 <p>Installation or upgrade can be done with the command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">rpimonitor_latest_all</span><span class="o">.</span><span class="n">deb</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">rpimonitor_latest</span><span class="o">.</span><span class="n">deb</span>
 </pre></div>
 </div>
 <p>Complete the installation with the command:</p>
@@ -246,16 +244,31 @@ can download it with the following command:</p>
 </div>
 <div class="section" id="installing-on-gentoo">
 <h2>Installing on gentoo<a class="headerlink" href="#installing-on-gentoo" title="Permalink to this headline">¶</a></h2>
-<p><strong>Gentoo</strong> users can find the <strong>ebuild</strong> created by Stuart Shelton [here](<a class="reference external" href="https://github.com/srcshelton/gentoo-ebuilds/tree/master/www-apps/rpi-monitor">https://github.com/srcshelton/gentoo-ebuilds/tree/master/www-apps/rpi-monitor</a>).</p>
+<p><strong>Gentoo</strong> users can find the <a class="reference external" href="https://github.com/srcshelton/gentoo-ebuilds/tree/master/www-apps/rpi-monitor">ebuild</a> created by Stuart Shelton.</p>
 </div>
 <div class="section" id="installing-on-archlinux">
 <h2>Installing on archlinux<a class="headerlink" href="#installing-on-archlinux" title="Permalink to this headline">¶</a></h2>
-<p><strong>Arch Linux</strong> users can find the <strong>aur package</strong> created by ajs124 [here](<a class="reference external" href="https://aur.archlinux.org/packages/rpimonitor/">https://aur.archlinux.org/packages/rpimonitor/</a>). Developmental branch package is located [here](<a class="reference external" href="https://aur.archlinux.org/packages/rpimonitor-dev-git/">https://aur.archlinux.org/packages/rpimonitor-dev-git/</a>)</p>
+<p><strong>Arch Linux</strong> users can find the <a class="reference external" href="https://aur.archlinux.org/packages/rpimonitor/">aur package</a> created by ajs124.</p>
+<p>Development branch package is located <a class="reference external" href="https://aur.archlinux.org/packages/rpimonitor-dev-git/">here</a></p>
 </div>
 <div class="section" id="installation-from-sources">
 <h2>Installation from sources<a class="headerlink" href="#installation-from-sources" title="Permalink to this headline">¶</a></h2>
 <p>For manual installation, refer to <a class="reference external" href="32_contributing.html#packaging">Packaging</a>
 instruction which describes how and where install files.</p>
+</div>
+<div class="section" id="yocto">
+<h2>Yocto<a class="headerlink" href="#yocto" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Explain how to use meta-rpiexperiences.</p>
+</div>
+</div>
+<div class="section" id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Explain how to use docker.</p>
+</div>
 </div>
 </div>
 
