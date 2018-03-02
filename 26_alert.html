@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -225,27 +223,27 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Alert/Cancel are sent only when the state is stable to avoid messages
 flooding when limit is about to be exceeded as shown in schema bellow:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>                        send alert
+<div class="highlight-text"><div class="highlight"><pre><span></span>                        send alert
                             ^
- th      th <span class="p">&lt;</span><span class="nt">------dh------</span><span class="p">&gt;</span>|        th
+ th      th &lt;------dh------&gt;|        th
   _____   __________________|______   _______           send cancel
   |   |   |                       |   |     |              ^
   |   |   |                       |   |     |              |
 __|   |___|                       |___|     |______________|_____
-      tl                          tl        tl<span class="p">&lt;</span><span class="nt">-----dl-----</span><span class="p">&gt;</span>
+     tl                          tl        tl&lt;-----dl-----&gt;
                             |------------------------------|
                                     Alert is raised
 </pre></div>
 </div>
 <p>If alert is still active after resend period, alerte is sent again:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>                  send alert                                    resend alert
+<div class="highlight-text"><div class="highlight"><pre><span></span>                  send alert                                    resend alert
                       ^                                               ^
-    th <span class="p">&lt;</span><span class="nt">-----dh------</span><span class="p">&gt;</span>|<span class="p">&lt;</span><span class="nt">---------------------dr----------------------</span><span class="p">&gt;</span>|
+    th &lt;-----dh------&gt;|&lt;---------------------dr----------------------&gt;|
     __________________|_______________________________________________|_____
     |
     |
 ____|
-    tl                |-----------------------------------------------------&gt;
+   tl                 |-----------------------------------------------------&gt;
                                     Alert is raised
 </pre></div>
 </div>
@@ -257,10 +255,10 @@ ____|
 <dt>alert.&lt;alert name&gt;.active=&lt;activation condition&gt;</dt>
 <dd>&lt;activation condition&gt; defines the alert pre-condition. If this formula
 returns false, the trigger will not be checked. Default value is 1.
-This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
+This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi</span> <span class="pre">name&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.kpi=&lt;trigger&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;trigger&gt;</span></code> is defining the formula to evaluate. If formula returns true, the
-alert is detected. This command should refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
+alert is detected. This command should refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi</span> <span class="pre">name&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.maxalertduration=&lt;duration before raise&gt;</dt>
 <dd>The alert will be dectected immediatly but alert raised commande will
 be executed only afer a defined <code class="docutils literal"><span class="pre">&lt;duration</span> <span class="pre">before</span> <span class="pre">raise&gt;</span></code> in seconds
@@ -273,11 +271,15 @@ be executed only afer a defined <code class="docutils literal"><span class="pre"
 will be executed again (<code class="docutils literal"><span class="pre">dr</span></code> in the upper schema).</dd>
 <dt>alert.&lt;alert name&gt;.raisecommand=&lt;Raise Command&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;Raise</span> <span class="pre">Command&gt;</span></code> is the command to executed when an alert is raised.
-This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
+This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi</span> <span class="pre">name&gt;</span></code></dd>
 <dt>alert.&lt;alert name&gt;.cancelcommand=&lt;Cancel Command&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;Cancel</span> <span class="pre">Command&gt;</span></code> is the command to executed when an alert is canceled
-This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi&gt;</span></code></dd>
+This command could refer to KPI using keyword <code class="docutils literal"><span class="pre">data.&lt;kpi</span> <span class="pre">name&gt;</span></code></dd>
 </dl>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Example of implementation in <a class="reference external" href="27_configuration_templates.html#alerts">Alert example</a></p>
+</div>
 </div>
 </div>
 

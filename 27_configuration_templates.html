@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -222,7 +220,7 @@
 <h1>Configuration templates<a class="headerlink" href="#configuration-templates" title="Permalink to this headline">¶</a></h1>
 <p><strong>RPi-Monitor</strong> comes with example files showing the capabilities of some features
 and functions available in status page.
-These files are installed into <code class="docutils literal"><span class="pre">/etc/rpimonotor/templates/</span></code>
+These files are installed into <code class="docutils literal"><span class="pre">/etc/rpimonotor/templates/</span></code>.
 To see how a specific file is behaving, you can include this file into your
 configuration file using the <code class="docutils literal"><span class="pre">include</span></code>.</p>
 <div class="admonition hint">
@@ -232,7 +230,7 @@ To activate them, you can simply uncomment them and restart <code class="docutil
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Remember to restart RPi-Monitor to apply the configuration change:</p>
+<p>Remember to restart <strong>RPi-Monitor</strong> to apply the configuration change:</p>
 <div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rpimonitor</span> <span class="n">restart</span>
 </pre></div>
 </div>
@@ -240,14 +238,14 @@ To activate them, you can simply uncomment them and restart <code class="docutil
 <div class="section" id="page-header">
 <h2>Page header<a class="headerlink" href="#page-header" title="Permalink to this headline">¶</a></h2>
 <p>This function allow to define a custom logo, custom title.</p>
-<p>Here is and example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.header.conf</span></code></p>
+<p>Here is an example of configuration : <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/example.header.conf</span></code></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">icon</span><span class="o">=</span><span class="s1">&#39;img/avatar.png&#39;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">menutitle</span><span class="o">=</span><span class="s1">&#39;XB-Monitor  &lt;sub&gt;(&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">hostname</span><span class="o">+</span><span class="s1">&#39;)&lt;/sub&gt;&#39;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">pagetitle</span><span class="o">=</span><span class="s1">&#39;XB-Monitor (&#39;</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">hostname</span><span class="o">+</span><span class="s1">&#39;)&#39;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">data.hostname</span></code> is a value automatically extracted by <strong>RPi-Monitor</strong>. It is not
-needed to add a configuration.</p>
+<p><code class="docutils literal"><span class="pre">data.hostname</span></code> is a value automatically extracted by <strong>RPi-Monitor</strong>.
+It is not needed to add this extration in configuration file.</p>
 <p>The file <code class="docutils literal"><span class="pre">avatar.png</span></code> has been added into <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/img/</span></code>.</p>
 <p>Here is the result:</p>
 <div class="figure align-center">
@@ -255,7 +253,7 @@ needed to add a configuration.</p>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">See defails in <a class="reference external" href="13_web.html#header-customisation">Header customisation</a></p>
+<p class="last">See defails in <a class="reference external" href="24_web.html#header-customisation">Header definition</a></p>
 </div>
 </div>
 <div class="section" id="friends">
@@ -282,7 +280,7 @@ will add a drop down list on the right of the top menu with a links to
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">See details in <a class="reference external" href="23_web.html#friends">Friends definition</a></p>
+<p class="last">See details in <a class="reference external" href="24_web.html#friends">Friends definition</a></p>
 </div>
 </div>
 <div class="section" id="badges-and-labels">
@@ -336,6 +334,10 @@ the condition will be <code class="docutils literal"><span class="pre">true</spa
 <p>Other ports checking are using the same technic.</p>
 <p>Here is the result:</p>
 <img alt="_images/label001.png" class="align-center" src="_images/label001.png" />
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See details in <a class="reference external" href="24_web.html#status">Badge and Label definition in status definition</a></p>
+</div>
 </div>
 <div class="section" id="multiple-pages">
 <h2>Multiple pages<a class="headerlink" href="#multiple-pages" title="Permalink to this headline">¶</a></h2>
@@ -386,11 +388,11 @@ web.statistics.2.content.1.ds_graph_options.living_room_temp.label=Data 2
 </pre></div>
 </div>
 <p>The new page will be accessible by a drop down menu as shown in the screenshot bellow.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="_images/multipages001.png"><img alt="_images/multipages001.png" src="_images/multipages001.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text"><strong>RPi-Monitor</strong> showing multiple status pages</span></p>
 </div>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="_images/multipages002.png"><img alt="_images/multipages002.png" src="_images/multipages002.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text"><strong>RPi-Monitor</strong> showing multiple graph pages</span></p>
 </div>
@@ -421,9 +423,13 @@ Color can change base on <strong>warning</strong> and <strong>danger</strong> th
 </pre></div>
 </div>
 <p>Here is the result:</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="_images/web001.png"><img alt="_images/web001.png" src="_images/web001.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Show warning and critical and colors</span></p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See details in <a class="reference external" href="24_web.html#status">ProgressBar definition in status definition</a></p>
 </div>
 </div>
 <div class="section" id="justgagebar">
@@ -448,9 +454,13 @@ It is based on Raphaël library for vector drawing, so it’s completely resolut
 </pre></div>
 </div>
 <p>Here is the result:</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="_images/web002.png"><img alt="_images/web002.png" src="_images/web002.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Show warning and critical and colors</span></p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See details in <a class="reference external" href="24_web.html#status">JustGageBar definition in status definition</a></p>
 </div>
 </div>
 <div class="section" id="visibility">
@@ -484,9 +494,13 @@ web.status.1.content.1.line.1=&#39;Visibility: &lt;b&gt;Control row visibility&l
 </pre></div>
 </div>
 <p>Here is the result:</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="_images/visibility001.png"><img alt="_images/visibility001.png" src="_images/visibility001.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Show visibility feature</span></p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See details in <a class="reference external" href="24_web.html#status">Visibility definition in status definition</a></p>
 </div>
 </div>
 <div class="section" id="interval">
@@ -528,6 +542,10 @@ extract data every 30sec.</p>
 <p>Here is the result:</p>
 <div class="figure align-center">
 <img alt="_images/interval001.png" src="_images/interval001.png" />
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See details in <a class="reference external" href="24_web.html#status">Interval definition in status definition</a></p>
 </div>
 </div>
 <div class="section" id="alerts">
@@ -609,6 +627,10 @@ the following commands to generate data:</p>
 <p>Open the status page and check the auto update option to see the example running in real time as shown bellow:</p>
 <div class="figure align-center">
 <img alt="_images/alertanimation001.gif" src="_images/alertanimation001.gif" />
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See details in <a class="reference external" href="26_alert.html">Badge and Label definition in status definition</a></p>
 </div>
 </div>
 </div>
