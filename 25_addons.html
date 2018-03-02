@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -220,22 +218,21 @@
             
   <div class="section" id="addons-configuration">
 <h1>Addons configuration<a class="headerlink" href="#addons-configuration" title="Permalink to this headline">¶</a></h1>
-<p><strong>RPi-Monitor</strong> is providing addons. Addons are custom pages designed to give
-you the possibility to free your imagination and cutomise <strong>RPi-Monitor</strong> to your needs.</p>
+<p>Addons are custom pages designed to give you the possibility to free your imagination
+and cutomise <strong>RPi-Monitor</strong> interface to match your needs.</p>
 <p>Addons are <code class="docutils literal"><span class="pre">html</span></code> pages, <code class="docutils literal"><span class="pre">javascript</span></code> and <code class="docutils literal"><span class="pre">css</span></code> directly integrated into <strong>RPi-Monitor</strong>.
-The activation of an addon is done into <strong>RPi-Monitor</strong> configuration file.</p>
+Addons are installed in <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/addons/</span></code> and activation is done in configuration file.</p>
 <p>It is possible to use an addon many time into a same configuration file using
-different parameters if the addon support them as show with <a class="reference external" href="24_addons.html#id3">custom addon</a>.</p>
+different parameters if the addon support them as show hereunder with <a class="reference external" href="24_addons.html#id3">custom addon</a>.</p>
 <p>The next part of this chapter shows some examples of addons and highlight the possibilities of this feature.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/addons001.png"><img alt="_images/addons001.png" src="_images/addons001.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="about-addon">
 <h2>About Addon<a class="headerlink" href="#about-addon" title="Permalink to this headline">¶</a></h2>
-<p>About addons is activated by default and present addons feature.</p>
+<p><code class="docutils literal"><span class="pre">About</span> <span class="pre">addon</span></code> is activated by default and present addons feature.</p>
 <p>To remove this addons, simply comment out or delete the following lines from <code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">Addons</span>
-<span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">about</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">include</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">rpimonitor</span><span class="o">/</span><span class="n">template</span><span class="o">/</span><span class="n">addons</span><span class="o">.</span><span class="n">conf</span>
 </pre></div>
 </div>
 </div>
@@ -245,10 +242,10 @@ different parameters if the addon support them as show with <a class="reference 
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/addons002.png"><img alt="_images/addons002.png" src="_images/addons002.png" style="width: 400px;" /></a>
 </div>
-<p>This addons is designed to periodically generate HTML content. This content can be
-accessible from the addons menu and/or can be inserted into status page
+<p>This addons is designed to periodically generate HTML content. This content can
+be accessible from the addons menu and/or can be inserted into status page
 using the function <code class="docutils literal"><span class="pre">InsertHTML()</span></code>.</p>
-<p>Top3 addons shows the 3 process consuming the CPU time of CPU in addition to
+<p>Top3 addons shows the 3 process consuming the most CPU time in addition to
 cunsumption of <code class="docutils literal"><span class="pre">rpimonitord</span></code> process.</p>
 <p>To activate this addon, add the following lines to your configuration file</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">Top3</span>
@@ -269,23 +266,22 @@ iframe that can display any other web pages.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/addons003.png"><img alt="_images/addons003.png" src="_images/addons003.png" style="width: 500px;" /></a>
 </div>
+<p>Custom addon can be configured with the following parameters:</p>
 <dl class="docutils">
 <dt>web.addons.&lt;id&gt;.title=&lt;title&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;title&gt;</span></code> represent the title displayed in addon menu or addon title</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;title&gt;</span></code> represent the title displayed in addon menu or addon title
+This parameter will be evaluated by the javascript command with the function <code class="docutils literal"><span class="pre">eval()</span></code>
+theirfore parameter should be valid javacript.</dd>
 <dt>web.addons.&lt;id&gt;.addons=custom</dt>
 <dd><code class="docutils literal"><span class="pre">custom</span></code> is the addon activated</dd>
 <dt>web.addons.&lt;id&gt;.showtitle=&lt;title visibility&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;title</span> <span class="pre">visibility&gt;</span></code> define if title should be displayed or not</dd>
 <dt>web.addons.&lt;id&gt;.url=&lt;url&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">url</span></code> is defining the page to be displayed into the iframe. It can be a file
-reachable from <strong>RPi-Monitor</strong> internal server or a site available into the Internet.</dd>
+reachable from <strong>RPi-Monitor</strong> internal server or a site available on the Internet.</dd>
 <dt>web.addons.&lt;id&gt;.allowupdate=&lt;allow update&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;allow</span> <span class="pre">update&gt;</span></code> define is <code class="docutils literal"><span class="pre">url</span></code> can be updated in option</dd>
 </dl>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
-</div>
 <div class="section" id="shellinabox">
 <h3>Shellinabox<a class="headerlink" href="#shellinabox" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/shellinabox/shellinabox">Shellinabox</a> allow you to access to the shell of your
@@ -306,8 +302,9 @@ Raspberry Pi through a web interface.</p>
 </div>
 <div class="section" id="webcam">
 <h3>Webcam<a class="headerlink" href="#webcam" title="Permalink to this headline">¶</a></h3>
-<p>If you want to see the image of your webcam in your brower, you can use <a class="reference external" href="https://github.com/ipartola/hawkeye">hawkeye</a>.
-Once hawkeye installed, it is very easy to add it into <strong>RPi-Monitor</strong> interface
+<p>If you want to see the image of your webcam in your browser, you can use
+<a class="reference external" href="https://github.com/ipartola/hawkeye">hawkeye</a>.
+Once <code class="docutils literal"><span class="pre">hawkeye</span></code> is installed, it is very easy to add it into <strong>RPi-Monitor</strong> interface
 using the custom addon. The configuration will then be the following:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="n">Webcam</span> <span class="o">-</span> <span class="n">Hawkeye</span>
 <span class="n">web</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="mf">1.</span><span class="n">addons</span><span class="o">=</span><span class="n">custom</span>
@@ -321,10 +318,11 @@ using the custom addon. The configuration will then be the following:</p>
 <p>If you are doing such a configuration, keep in mind about the
 security of your images. You should use the capacity of hawkeye to
 restrict the access to the image using a login and a password.</p>
-<div class="last admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">You can also have a look to <a class="reference external" href="34_autentication.html">Authentication and secure access to RPi-Monitor</a>.</p>
+<p class="last">You can also have a look to</p>
 </div>
+<p class="last"><a class="reference external" href="34_autentication.html">Authentication and secure access to RPi-Monitor</a>.</p>
 </div>
 </div>
 </div>

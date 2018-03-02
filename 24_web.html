@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -250,9 +248,11 @@ the icon to be displayed into <strong>RPi-Monitor</strong> title bar</dd>
 RPi-Monotor title bar. This code can use status information with
 the keyword <code class="docutils literal"><span class="pre">data</span></code> including the <code class="docutils literal"><span class="pre">data.hostname</span></code> available natively</dd>
 <dt>web.page.pagetitle=&lt;page title&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">title&gt;</span></code> javascript code defining the text displayed into
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">title&gt;</span></code> javascript code defining the text displayed into
 tab and window title bar. This code can use status information with
-the keyword <code class="docutils literal"><span class="pre">data</span></code> including the <code class="docutils literal"><span class="pre">data.hostname</span></code> available natively</dd>
+the keyword <code class="docutils literal"><span class="pre">data</span></code> including the <code class="docutils literal"><span class="pre">data.hostname</span></code> available natively</p>
+<a class="last reference internal image-reference" href="_images/header001.png"><img alt="_images/header001.png" class="align-center" src="_images/header001.png" style="width: 500px;" /></a>
+</dd>
 </dl>
 </div>
 <div class="section" id="status">
@@ -265,7 +265,14 @@ Each page is identified by its <code class="docutils literal"><span class="pre">
 </div>
 <dl class="docutils">
 <dt>web.status.&lt;page id&gt;.title=&lt;page title&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">title&gt;</span></code> title of the page displayed into the drop down menu in case of multiple pages.</dd>
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">title&gt;</span></code> title of the page displayed into the drop down menu in case of multiple pages.
+This parameter will be evaluated by the javascript command with the function <code class="docutils literal"><span class="pre">eval()</span></code>
+theirfore parameter should be valid javacript.</p>
+<div class="last admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">You can use the function <code class="docutils literal"><span class="pre">LinkToGraph(page,graph,text)</span></code> direct link to graph.</p>
+</div>
+</dd>
 </dl>
 <p>Status page is split in strips displaying information. Each status strip is
 identified by a unique <code class="docutils literal"><span class="pre">&lt;status</span> <span class="pre">id&gt;</span></code>. Each status strip is defined by a title,
@@ -276,7 +283,7 @@ an icon and a serie of parameters described as follow:</p>
 <code class="docutils literal"><span class="pre">0</span></code>: to hide the row anything else but <code class="docutils literal"><span class="pre">0</span></code>: show the row</p>
 <div class="last admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">Example of implementation in <a class="reference external" href="#">TO BE COMPLETED</a></p>
+<p class="last">Example of implementation in <a class="reference external" href="27_configuration_templates.html#visibility">Visibility example</a></p>
 </div>
 </dd>
 <dt>web.status.&lt;page id&gt;.content.&lt;status id&gt;.title=&lt;display title&gt;</dt>
@@ -361,8 +368,8 @@ if the percentage is higher than danger value.</p>
 </li>
 <li><dl class="first docutils">
 <dt><strong>Clock(data.localtime)</strong></dt>
-<dd><p class="first last">This function is a little bit particular and should be written  and should be
-written exactly as in the upper line. It will display on screen the current time and
+<dd><p class="first last">This function is a little bit particular and should be written exactly
+as in the upper line. It will display on screen the current time and
 will simulate the seconds by incrementing them periodically.</p>
 </dd>
 </dl>
@@ -384,7 +391,11 @@ will simulate the seconds by incrementing them periodically.</p>
 </li>
 <li><dl class="first docutils">
 <dt><strong>InsertHTML(url)</strong></dt>
-<dd><p class="first last">This function is used to insert an HTML information inside a page. (Ref Top3 example showing top most process cpu usage)</p>
+<dd><p class="first">This function is used to insert an HTML information inside a page.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Example of implementation in <a class="reference external" href="25_addons.html#top3-addon">Top3 addon</a></p>
+</div>
 </dd>
 </dl>
 </li>
@@ -413,7 +424,8 @@ its <code class="docutils literal"><span class="pre">&lt;page</span> <span class
 <dl class="docutils">
 <dt>web.statistic.&lt;page id&gt;.title=&lt;page title&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;page</span> <span class="pre">title&gt;</span></code> title of the page displayed into the drop down menu in
-case of multiple pages.</dd>
+case of multiple pages. This parameter will be evaluated by the javascript
+command with the function <code class="docutils literal"><span class="pre">eval()</span></code> theirfore parameter should be valid javacript.</dd>
 </dl>
 <p>The statistic page displays statistics graphs. The graphs are
 identified an unique <code class="docutils literal"><span class="pre">&lt;statistic</span> <span class="pre">id&gt;</span></code> and by the following parameters.</p>
@@ -428,8 +440,9 @@ described in the KPI extraction section.</dd>
 <dt>web.statistics.&lt;page id&gt;.content.&lt;statistic id&gt;.ds_graph_options.&lt;data name&gt;.label=&lt;label&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code> same as the previous <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>
 <code class="docutils literal"><span class="pre">&lt;label&gt;</span></code> Label to display in legends. It is possible to setup other parameters
-of ds_graph_options. Refer to the following web page for details:
-<a class="reference external" href="http://javascriptrrd.sourceforge.net/docs/javascriptrrd_v0.5.0/doc/lib/rrdFlot_js.html">http://javascriptrrd.sourceforge.net/docs/javascriptrrd_v0.5.0/doc/lib/rrdFlot_js.html</a></dd>
+of ds_graph_options. Refer to
+<a class="reference external" href="http://javascriptrrd.sourceforge.net/docs/javascriptrrd_v0.5.0/doc/lib/rrdFlot_js.html">javascriptrrd documentation</a>
+for details.</dd>
 <dt>web.statistics.&lt;page id&gt;.content.&lt;statistic id&gt;.graph_options.&lt;parameter&gt;=&lt;value&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;parameter&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;value&gt;</span></code> can be find into the same web page as previous
 parameter. This allow to customize the graph and axis.</dd>
@@ -438,20 +451,18 @@ parameter. This allow to customize the graph and axis.</dd>
 <div class="section" id="addons">
 <h2>Addons<a class="headerlink" href="#addons" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p><strong>RPi-Monitor</strong> features can be extended by addons. Addons are html, javascript
-and css code installed in <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/addons/</span></code>.</p>
+<div><p><strong>RPi-Monitor</strong> features can be extended by addons. Addons are <code class="docutils literal"><span class="pre">html</span></code>, <code class="docutils literal"><span class="pre">javascript</span></code>
+and <code class="docutils literal"><span class="pre">css</span></code> code installed in <code class="docutils literal"><span class="pre">/usr/share/rpimonitor/web/addons/</span></code>.</p>
 <p>Each addons is idendifier by an <code class="docutils literal"><span class="pre">id</span></code> and the following parameters:</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last"><code class="docutils literal"><span class="pre">id</span></code> has to start by 1 and incrementing. This is defining the order of addons with the menu.</p>
-</div>
 <dl class="docutils">
 <dt>web.addons.&lt;id&gt;.title=&lt;title to be display&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;title</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">display&gt;</span></code> defines the text display in RPi-Monitor web interface</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;title</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">display&gt;</span></code> defines the text display in RPi-Monitor web interface.
+This parameter will be evaluated by the javascript command with the function <code class="docutils literal"><span class="pre">eval()</span></code>
+theirfore parameter should be valid javacript.</dd>
 <dt>web.addons.&lt;id&gt;.addons=&lt;addon name&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;addon</span> <span class="pre">name&gt;</span></code> defines the addon to activate</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;addon</span> <span class="pre">name&gt;</span></code> defines the addon to activate.</dd>
 <dt>web.addons.&lt;id&gt;.showTitle=&lt;0|1&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;0|1&gt;</span></code> defines it the title of addon has to be shown in addon page</dd>
+<dd><code class="docutils literal"><span class="pre">&lt;0|1&gt;</span></code> defines it the title of addon has to be shown in addon page.</dd>
 <dt>web.addons.&lt;id&gt;.&lt;parameter&gt;=&lt;value&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">&lt;parameter&gt;=&lt;value&gt;</span></code> are optional parameter to configure addon</dd>
 </dl>
