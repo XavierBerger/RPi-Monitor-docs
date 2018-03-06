@@ -243,10 +243,8 @@ it may be different.</p>
 <p>My first goal is to test this new display. I look on the internet and find
 different solution using Python or C. After few tries, I decided to use
 Python based on the information shared into this post.</p>
-<dl class="docutils">
-<dt>To use the PCD8544 display we need to install few software and load a</dt>
-<dd>kernel module.</dd>
-</dl>
+<p>To use the PCD8544 display we need to install few software and load a
+kernel module.</p>
 <p>First, let&#8217;s install wiringpi2 from drogon.net</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">git</span><span class="o">.</span><span class="n">drogon</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">wiringPi</span>
 <span class="n">cd</span> <span class="n">wiringPi</span>
@@ -468,14 +466,13 @@ example to create module that can be directly installed on the Raspberry Pi.</p>
 <p>This pcd8544 library resulting is available into its own dedicated repository
 in github.</p>
 <p>To install it, execute the following commands:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>   <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">XavierBerger</span><span class="o">/</span><span class="n">pcd8544</span><span class="o">.</span><span class="n">git</span>
-   <span class="n">cd</span> <span class="n">pcd8544</span>
-   <span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">clean</span> <span class="n">build</span>
-   <span class="n">sudo</span> <span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
-
-<span class="n">You</span> <span class="n">can</span> <span class="n">now</span> <span class="n">test</span> <span class="n">the</span> <span class="n">installation</span> <span class="k">with</span> <span class="n">the</span> <span class="n">proposed</span> <span class="n">examples</span><span class="p">:</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">XavierBerger</span><span class="o">/</span><span class="n">pcd8544</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">pcd8544</span>
+<span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">clean</span> <span class="n">build</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
 </pre></div>
 </div>
+<p>You can now test the installation with the proposed examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">examples</span>
 <span class="o">./</span><span class="n">pi_logo</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
@@ -488,7 +485,7 @@ in github.</p>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>As I said in introduction, RPi-Monitor is gathering a lot of information and
+<p>As I said in introduction, <strong>RPi-Monitor</strong> is gathering a lot of information and
 some of them may be interesting to have without having to start a PC.
 Information are made available from the embedded web server. To get and
 display the information we then just have to create a web client and use
@@ -516,10 +513,12 @@ the library to display.</p>
       <span class="n">rpi_temperature</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;living_room_temp&#39;</span><span class="p">]</span>
     <span class="k">except</span><span class="p">:</span>
       <span class="n">rpi_temperature</span><span class="o">=</span><span class="s2">&quot;--.---&quot;</span>
+
     <span class="k">try</span><span class="p">:</span>
       <span class="n">rpi_humidity</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span>
     <span class="k">except</span><span class="p">:</span>
       <span class="n">rpi_humidity</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span>
+
     <span class="c1"># Construct string to be displayed on screens</span>
     <span class="n">temperature</span> <span class="o">=</span> <span class="s2">&quot;Temp: </span><span class="si">%s</span><span class="s2"> C&quot;</span> <span class="o">%</span> <span class="n">rpi_temperature</span>
     <span class="n">humidity</span> <span class="o">=</span> <span class="s2">&quot;Humidity: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">rpi_humidity</span>
@@ -529,6 +528,7 @@ the library to display.</p>
     <span class="n">lcd</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
     <span class="n">lcd</span><span class="o">.</span><span class="n">gotorc</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">lcd</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">humidity</span><span class="p">)</span>
+
     <span class="c1"># Also print string in console</span>
     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;clear&quot;</span><span class="p">)</span>
     <span class="k">print</span> <span class="s2">&quot; RPi-Monitor &quot;</span>
@@ -587,7 +587,7 @@ the library to display.</p>
 </pre></div>
 </div>
 <p>This code is dedicated to extract the living room temperature and humidity
-from RPi-Monitor information.</p>
+from <strong>RPi-Monitor</strong> information.</p>
 <p>Copy this code into a file <code class="docutils literal"><span class="pre">rpimonitor-testlcd.py</span></code> the make this file
 executable <code class="docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">rpimonitor-testlcd.py</span></code> then execute <code class="docutils literal"><span class="pre">./rpimonitor-testlcd.py</span></code> it to see:</p>
 <div class="figure align-center">
@@ -617,7 +617,7 @@ executable <code class="docutils literal"><span class="pre">chmod</span> <span c
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Mar 02, 2018.
+      Last updated on Mar 06, 2018.
 
     </p>
   </div>
