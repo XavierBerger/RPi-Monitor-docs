@@ -299,18 +299,22 @@ will add a drop down list on the right of the top menu with a links to
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">name</span><span class="o">=</span><span class="n">ssh</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">22</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">1.</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span>
 
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">name</span><span class="o">=</span><span class="n">rpimonitor</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">8888</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">2.</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span>
 
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">name</span><span class="o">=</span><span class="n">http</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">80</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">3.</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span>
 
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">name</span><span class="o">=</span><span class="n">https</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">source</span><span class="o">=</span><span class="n">netstat</span> <span class="o">-</span><span class="n">nlt</span>
 <span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">regexp</span><span class="o">=</span><span class="n">tcp</span> <span class="o">.*</span><span class="p">:(</span><span class="mi">443</span><span class="p">)</span><span class="o">.*</span><span class="n">LISTEN</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="mf">4.</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span>
 
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Servers&quot;</span>
 <span class="n">web</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="mf">1.</span><span class="n">content</span><span class="o">.</span><span class="mf">1.</span><span class="n">icon</span><span class="o">=</span><span class="n">daemons</span><span class="o">.</span><span class="n">png</span>
@@ -656,7 +660,7 @@ the following commands to generate data:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Mar 06, 2018.
+      Last updated on Mar 10, 2018.
 
     </p>
   </div>

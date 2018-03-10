@@ -62,8 +62,6 @@
 <body class="wy-body-for-nav">
 
   
- 
-<img style="position: fixed; top: 0; right: 0; z-index: 100; height:300px; border: 0;" src="_images/wip.png">
 
 
   <div class="wy-grid-for-nav">
@@ -256,18 +254,120 @@
 <p>For manual installation, refer to <a class="reference external" href="32_contributing.html#packaging">Packaging</a>
 instruction which describes how and where install files.</p>
 </div>
-<div class="section" id="yocto">
-<h2>Yocto<a class="headerlink" href="#yocto" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Explain how to use meta-rpiexperiences.</p>
-</div>
-</div>
 <div class="section" id="docker">
 <h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Explain how to use docker.</p>
+<div class="section" id="docker-in-few-words">
+<h3>Docker in few words<a class="headerlink" href="#docker-in-few-words" title="Permalink to this headline">¶</a></h3>
+<p>Source: <a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)">Wikipedia</a></p>
+<p>Docker is a tool that can package an application and its dependencies in a virtual
+container that can run on any Linux server. This helps enable flexibility and
+portability on where the application can run, whether on premises,
+public cloud, private cloud, bare metal, etc.</p>
+<p>Docker technology is providing operating-system-level virtualization also
+known as containers. [...] Docker uses the resource isolation features of the
+Linux kernel [...] to allow independent &#8220;containers&#8221; to run within a
+single Linux instance, avoiding the overhead of starting and maintaining virtual machines (VMs).</p>
+</div>
+<div class="section" id="rpi-monitor-running-in-docker-container">
+<h3>RPi-Monitor running in Docker container<a class="headerlink" href="#rpi-monitor-running-in-docker-container" title="Permalink to this headline">¶</a></h3>
+<p>As specified in Wikipedia&#8217;s description, the goal of Docker is to isolate
+programs in containers. It has the advantage to keep the host system clean
+since programs and dependencies are installed inside a container but this advantage
+could become a problem if your goal is to perform monitoring of host.</p>
+<p>The solution provided by Michael is to share the part of host system with
+<strong>RPi-Monitor</strong>&#8216;s container to allow access to KPI.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vc</span>
+<span class="o">/</span><span class="n">boot</span>
+<span class="o">/</span><span class="n">sys</span>
+<span class="o">/</span><span class="n">etc</span>
+<span class="o">/</span><span class="n">proc</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+</pre></div>
+</div>
+<p>All volumes are mapped as read-only to ensure the container can&#8217;t modify the
+data on the docker host. Additionally access to the Raspberry Pi&#8217;s <code class="docutils literal"><span class="pre">vchiq</span></code> and <code class="docutils literal"><span class="pre">vcsm</span></code>
+device needs to be mapped to the container to access hardware sensors, like CPU Temperature, e.g.</p>
+<p>The following command does the job:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">vchiq</span> \
+<span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">vcsm</span> \
+<span class="o">--</span><span class="n">volume</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">vc</span><span class="p">:</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vc</span> \
+<span class="o">--</span><span class="n">volume</span><span class="o">=/</span><span class="n">boot</span><span class="p">:</span><span class="o">/</span><span class="n">boot</span> \
+<span class="o">--</span><span class="n">volume</span><span class="o">=/</span><span class="n">sys</span><span class="p">:</span><span class="o">/</span><span class="n">dockerhost</span><span class="o">/</span><span class="n">sys</span><span class="p">:</span><span class="n">ro</span> \
+<span class="o">--</span><span class="n">volume</span><span class="o">=/</span><span class="n">etc</span><span class="p">:</span><span class="o">/</span><span class="n">dockerhost</span><span class="o">/</span><span class="n">etc</span><span class="p">:</span><span class="n">ro</span> \
+<span class="o">--</span><span class="n">volume</span><span class="o">=/</span><span class="n">proc</span><span class="p">:</span><span class="o">/</span><span class="n">dockerhost</span><span class="o">/</span><span class="n">proc</span><span class="p">:</span><span class="n">ro</span> \
+<span class="o">--</span><span class="n">volume</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="p">:</span><span class="o">/</span><span class="n">dockerhost</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="p">:</span><span class="n">ro</span> \
+<span class="o">-</span><span class="n">p</span><span class="o">=</span><span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> \
+<span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;rpi-monitor&quot;</span> \
+<span class="o">-</span><span class="n">d</span> \
+<span class="n">michaelmiklis</span><span class="o">/</span><span class="n">rpi</span><span class="o">-</span><span class="n">monitor</span><span class="p">:</span><span class="n">latest</span>
+</pre></div>
+</div>
+<p>All the detail are gathered in <a class="reference external" href="https://hub.docker.com/r/michaelmiklis/rpi-monitor/">DockerHub</a> pages of the
+<a class="reference external" href="https://github.com/XavierBerger/Docker-RPi-Monitor">Docker-RPi-Monitor</a> project.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This docker image is based on <a class="reference external" href="https://hub.docker.com/r/resin/rpi-raspbian/">resin/rpi-raspbian:latest</a> image and is
+then designed to run on ARM based architecture such as Raspberry Pi.</p>
+</div>
+</div>
+</div>
+<div class="section" id="yocto">
+<h2>Yocto<a class="headerlink" href="#yocto" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">meta-rpiexperiences</span></code> is availabale on <a class="reference external" href="https://github.com/XavierBerger/meta-rpiexperiences">github</a>
+gathering the recipes to add <strong>RPi-Monitor</strong> and all its dependencies to your project.
+<a class="reference external" href="http://layers.openembedded.org/layerindex/branch/master/layer/meta-rpiexperiences/">meta-rpiexperiences</a>
+and <a class="reference external" href="http://layers.openembedded.org/layerindex/recipe/52439/">rpimonitor</a> are referenced on
+<a class="reference external" href="http://layers.openembedded.org/layerindex/branch/master/layers/">layers.openembedded.org</a></p>
+<div class="section" id="yocto-in-few-words">
+<h3>Yocto in few words<a class="headerlink" href="#yocto-in-few-words" title="Permalink to this headline">¶</a></h3>
+<p>Source: <a class="reference external" href="http://YoctoProject.org">YoctoProject.org</a></p>
+<p>The Yocto Project is an open source collaboration project that provides templates,
+tools and methods to help you create custom Linux-based systems for embedded products
+regardless of the hardware architecture.</p>
+</div>
+<div class="section" id="id2">
+<h3>meta-rpiexperiences<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>This layer provides <strong>RPi-Monitor</strong> moniritoring tools and its dependencies for Yocto.</p>
+<p><strong>Dependencies</strong></p>
+<p>This layer depends on:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">URI</span><span class="p">:</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">git</span><span class="o">.</span><span class="n">openembedded</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">openembedded</span><span class="o">-</span><span class="n">core</span>
+<span class="n">branch</span><span class="p">:</span> <span class="n">master</span>
+<span class="n">revision</span><span class="p">:</span> <span class="n">HEAD</span>
+<span class="n">prio</span><span class="p">:</span> <span class="n">default</span>
+
+<span class="n">URI</span><span class="p">:</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">git</span><span class="o">.</span><span class="n">openembedded</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">meta</span><span class="o">-</span><span class="n">openembedded</span><span class="o">/</span><span class="n">meta</span><span class="o">-</span><span class="n">oe</span>
+<span class="n">branch</span><span class="p">:</span> <span class="n">master</span>
+<span class="n">revision</span><span class="p">:</span> <span class="n">HEAD</span>
+<span class="n">prio</span><span class="p">:</span> <span class="n">default</span>
+
+<span class="n">URI</span><span class="p">:</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">git</span><span class="o">.</span><span class="n">openembedded</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">meta</span><span class="o">-</span><span class="n">openembedded</span><span class="o">/</span><span class="n">meta</span><span class="o">-</span><span class="n">perl</span>
+<span class="n">branch</span><span class="p">:</span> <span class="n">master</span>
+<span class="n">revision</span><span class="p">:</span> <span class="n">HEAD</span>
+<span class="n">prio</span><span class="p">:</span> <span class="n">default</span>
+</pre></div>
+</div>
+<p><strong>Adding RPi-Experiences layer to your build</strong></p>
+<p>In order to use this layer, you need to make the build system aware of it.</p>
+<p>Assuming the rpi-experiences layer exists at the top-level of your yocto build tree, you can add it to the build system by adding the location of the security layer to bblayers.conf, along with any other layers needed. e.g.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>BBLAYERS ?= &quot; \
+  /path/to/meta-openembedded/meta-oe \
+  /path/to/meta-openembedded/meta-perl \
+  /path/to/layer/meta-rpiexperiences \
+  ...
+  &quot;
+</pre></div>
+</div>
+<p><strong>Contents and Help</strong></p>
+<p>In this section the contents of the layer is listed, along with a short help for each package.</p>
+<ul class="simple">
+<li><strong>recipes-perl</strong>: This directory contains all the perl recipes needed for <strong>RPi-Monitor</strong>.</li>
+<li><strong>recipes-rpimonitor</strong>: This directory contains <strong>RPi-Monitor</strong> recipe.</li>
+</ul>
+<p><strong>Maintenance</strong></p>
+<p>Send pull requests, patches, comments or questions to <a class="reference external" href="https://github.com/XavierBerger/meta-rpiexperiences/issues">https://github.com/XavierBerger/meta-rpiexperiences/issues</a></p>
+<ul class="simple">
+<li><strong>Maintainer</strong>: Xavier Berger</li>
+</ul>
 </div>
 </div>
 </div>
@@ -293,7 +393,7 @@ instruction which describes how and where install files.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Mar 06, 2018.
+      Last updated on Mar 10, 2018.
 
     </p>
   </div>
