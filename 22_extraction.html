@@ -278,9 +278,9 @@ refer to <code class="docutils literal"><span class="pre">dynamic</span></code> 
 data source. Regexp groups <code class="docutils literal"><span class="pre">()</span></code> has to be used to extract the data
 In case of KPI list, each group will be affected to a KPI name.</dd>
 <dt>static.&lt;static data id&gt;.postprocess=&lt;data postprocess&gt;</dt>
-<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code> is an expression defining the postprocessing to
-be applied on result. KPI are idendified by <code class="docutils literal"><span class="pre">$1</span></code>. In case of list,
-other KPI are identified by <code class="docutils literal"><span class="pre">$2</span></code>, <code class="docutils literal"><span class="pre">$3</span></code>, ...
+<dd><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code> is an expression defining the postprocessing formula or the
+list of postprocessing formula (comma separated) to be applied on result.
+Each result is processed individually and is identified by <code class="docutils literal"><span class="pre">$1</span></code>
 This parameter will be evaluate by the command eval of <code class="docutils literal"><span class="pre">perl</span></code>.</dd>
 </dl>
 </div>
@@ -309,9 +309,10 @@ the output.</dd>
 data source. Regexp groups <code class="docutils literal"><span class="pre">()</span></code> has to be used to extract the data
 In case of KPI list, each group will be affected to a KPI name.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.postprocess=&lt;data postprocess&gt;</dt>
-<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">name&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">regexp&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code>
-This 4 first parameters have the same signification as for static
-parameters.</p>
+<dd><p class="first"><code class="docutils literal"><span class="pre">&lt;data</span> <span class="pre">postprocess&gt;</span></code> is an expression defining the postprocessing formula or the
+list of postprocessing formula (comma separated) to be applied on result.
+Each result is processed individually and is identified by <code class="docutils literal"><span class="pre">$1</span></code>
+This parameter will be evaluate by the command eval of <code class="docutils literal"><span class="pre">perl</span></code>.</p>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Static values are accessible for the post processing using the
@@ -324,8 +325,9 @@ You can refer to swap data extraction to see an example (cf. <code class="docuti
 define how many loop have to be waited before extracting this data.
 Default value is <code class="docutils literal"><span class="pre">1</span></code>. This means that data is extracted at every loop.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.default=&lt;default&gt;</dt>
-<dd>If <code class="docutils literal"><span class="pre">rpimonitord</span></code> can&#8217;t extract information, it is now possible to define
-a <code class="docutils literal"><span class="pre">&lt;default&gt;</span></code> value which will be set for the KPI.</dd>
+<dd>If <code class="docutils literal"><span class="pre">rpimonitord</span></code> can&#8217;t extract information, it is possible to define
+a <code class="docutils literal"><span class="pre">&lt;default&gt;</span></code> value which will be set for the KPI or defaults values of a list
+of KPI separated by comma.</dd>
 <dt>dynamic.&lt;dynamic data id&gt;.rrd=&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</dt>
 <dd><code class="docutils literal"><span class="pre">rrd</span></code> parameter is defining if the KPI has to be stored into a RRD
 database and how <code class="docutils literal"><span class="pre">&lt;GAUGE|COUNTER|DERIVE|ABSOLUTE|COMPUTE&gt;</span></code>. If the
@@ -407,7 +409,7 @@ and activate pass_persist extension</dd>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Xavier Berger.
-      Last updated on Mar 10, 2018.
+      Last updated on Mar 11, 2018.
 
     </p>
   </div>
