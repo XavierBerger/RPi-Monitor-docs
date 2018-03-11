@@ -215,29 +215,6 @@
             
   <div class="section" id="understanding-program-execution">
 <h1>Understanding program execution<a class="headerlink" href="#understanding-program-execution" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="startup-script">
-<h2>Startup script<a class="headerlink" href="#startup-script" title="Permalink to this headline">¶</a></h2>
-<p><strong>RPi-Monitor</strong> is configured to start automatically. <code class="docutils literal"><span class="pre">/etc/init.d/rpimonitor</span></code>
-and link in runlevel startup directory (<code class="docutils literal"><span class="pre">/etc/rc?.d/</span></code>) do the job.
-This script can be executed with the following parameters:</p>
-<dl class="docutils">
-<dt>start</dt>
-<dd>Start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
-<dt>stop</dt>
-<dd>Stop <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
-<dt>restart</dt>
-<dd>Stop and start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
-<dt>status</dt>
-<dd>Show <code class="docutils literal"><span class="pre">rpimonitord</span></code> status</dd>
-<dt>update</dt>
-<dd>Update &#8216;packages to be installed&#8217; list. This information is displayed in default
-configuration of Web interface</dd>
-<dt>install_auto_package_status_update</dt>
-<dd>Add a script to automatically call package update script when <code class="docutils literal"><span class="pre">apt</span></code> commands are executed</dd>
-<dt>remove_auto_package_status_update</dt>
-<dd>Remove script automatically call for package update</dd>
-</dl>
-</div>
 <div class="section" id="command-line">
 <h2>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">rpimonitord</span></code> can be directly executed with the following parameters:</p>
@@ -247,95 +224,69 @@ configuration of Web interface</dd>
 </div>
 <div class="section" id="options">
 <h3>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="14%" />
-<col width="70%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td rowspan="2">-a, &#8211;addr</td>
-<td rowspan="2">address</td>
-<td>Web server bind address</td>
-</tr>
-<tr class="row-even"><td>Default: 0.0.0.0</td>
-</tr>
-<tr class="row-odd"><td rowspan="2">-b, &#8211;background</td>
-<td rowspan="2">pid file</td>
-<td>Define the pid file when run in background</td>
-</tr>
-<tr class="row-even"><td>Default: not set, application run in foreground</td>
-</tr>
-<tr class="row-odd"><td rowspan="2">-c, &#8211;conf</td>
-<td rowspan="2">conf file</td>
-<td>Define the configuration file</td>
-</tr>
-<tr class="row-even"><td>Default: <code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code> <code class="docutils literal"><span class="pre">/etc/rpimonitor/daemon.conf</span></code></td>
-</tr>
-<tr class="row-odd"><td rowspan="2">-d, &#8211;delay</td>
-<td rowspan="2">delay</td>
-<td>Delay between check ins seconds</td>
-</tr>
-<tr class="row-even"><td>Default : 10</td>
-</tr>
-<tr class="row-odd"><td rowspan="2">-l, &#8211;logfile</td>
-<td rowspan="2">log file</td>
-<td>Logfile directory and prefix (ex: <code class="docutils literal"><span class="pre">/var/log/rpimonitor.log</span></code>)</td>
-</tr>
-<tr class="row-even"><td>Default: <code class="docutils literal"><span class="pre">/dev/null</span></code></td>
-</tr>
-<tr class="row-odd"><td rowspan="2">-p, &#8211;port</td>
-<td rowspan="2">port</td>
-<td>Web server port</td>
-</tr>
-<tr class="row-even"><td>Default: 8888</td>
-</tr>
-<tr class="row-odd"><td rowspan="2">-t, &#8211;timeout</td>
-<td rowspan="2">timeout</td>
-<td>KPI read timeout in seconds</td>
-</tr>
-<tr class="row-even"><td>Default: 5</td>
-</tr>
-</tbody>
-</table>
+<dl class="docutils">
+<dt>-a,&#8211;addr address</dt>
+<dd>Web server bind address
+Default: 0.0.0.0</dd>
+<dt>-b,&#8211;background pid-file</dt>
+<dd>Define the pid file when run in background
+Default: not set, application run in foreground</dd>
+<dt>-c,&#8211;conf conf-file</dt>
+<dd>Define the configuration file
+Default: <code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code> <code class="docutils literal"><span class="pre">/etc/rpimonitor/daemon.conf</span></code></dd>
+<dt>-d,&#8211;delay delay</dt>
+<dd>Delay between check ins seconds
+Default : 10</dd>
+<dt>-l,&#8211;logfile log-file</dt>
+<dd>Logfile directory and prefix (ex: <code class="docutils literal"><span class="pre">/var/log/rpimonitor.log</span></code>)
+Default: <code class="docutils literal"><span class="pre">/dev/null</span></code></dd>
+<dt>-p,&#8211;port port</dt>
+<dd>Web server port
+Default: 8888</dd>
+<dt>-t,&#8211;timeout timeout</dt>
+<dd>KPI read timeout in seconds
+Default: 5</dd>
+</dl>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you want to change the default <code class="docutils literal"><span class="pre">delay</span></code>, the rrd file will have to be deleted.
 <code class="docutils literal"><span class="pre">rpimonitord</span></code> will recreate database at next startup with the new time slice.</p>
 </div>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
 <tbody valign="top">
-<tr class="row-odd"><td>-h, &#8211;help</td>
-<td>Shows this help and exit</td>
-</tr>
-<tr class="row-even"><td>-i, &#8211;interactive</td>
-<td>Interactive configuration helper</td>
-</tr>
-<tr class="row-odd"><td>-k, &#8211;keep</td>
-<td>Keep log file (Default: logfile is delete at each start)</td>
-</tr>
-<tr class="row-even"><td>-m, &#8211;mib</td>
-<td>Get MIB for current configuration</td>
-</tr>
-<tr class="row-odd"><td>-n, &#8211;noserver</td>
-<td>Don&#8217;t start embeded web server</td>
-</tr>
-<tr class="row-even"><td>-r, &#8211;readonly</td>
-<td>Read only mode.</td>
-</tr>
-<tr class="row-odd"><td>-s, &#8211;show</td>
-<td>Show configuration as loaded and exit</td>
-</tr>
-<tr class="row-even"><td>-v, &#8211;verbose</td>
-<td>Write debug info on screen</td>
-</tr>
-<tr class="row-odd"><td>-V, &#8211;Version</td>
-<td>Show version and exit</td>
-</tr>
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Shows this help and exit</td></tr>
+</tbody>
+</table>
+<p>-i, &#8211;interactive Interactive configuration helper</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-k</span>, <span class="option">--keep</span></kbd></td>
+<td>Keep log file (Default: logfile is delete at each start)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span>, <span class="option">--mib</span></kbd></td>
+<td>Get MIB for current configuration</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--noserver</span></kbd></td>
+<td>Don&#8217;t start embeded web server</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--readonly</span></kbd></td>
+<td>Read only mode.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-s</span>, <span class="option">--show</span></kbd></td>
+<td>Show configuration as loaded and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>Write debug info on screen</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-V</span>, <span class="option">--Version</span></kbd></td>
+<td>Show version and exit</td></tr>
 </tbody>
 </table>
 </div>
@@ -343,8 +294,8 @@ configuration of Web interface</dd>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>Configuration can be defined into <code class="docutils literal"><span class="pre">/etc/rpimonitor/daemon.conf</span></code> and
-<code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code> or in a list of files specified by <code class="docutils literal"><span class="pre">-c</span></code> parameter.
-In <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/*.conf</span></code>, provided at installation, you can see
+<code class="docutils literal"><span class="pre">/etc/rpimonitor/data.conf</span></code> or in a list of files specified by <code class="docutils literal"><span class="pre">-c</span></code> parameter.</p>
+<p>In <code class="docutils literal"><span class="pre">/etc/rpimonitor/template/*.conf</span></code>, provided at installation, you can see
 how to customize <code class="docutils literal"><span class="pre">rpimonitord</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -390,27 +341,36 @@ available in json format and can be downloaded from the root of the web interfac
 </ul>
 <p>Statistic information are stored into RRD file available in the directory <code class="docutils literal"><span class="pre">/var/lib/rpimonitor/stat/</span></code></p>
 </div>
-<div class="section" id="web-interface">
-<h2>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h2>
-<p>The presentation of the information is performed by HTML5 pages. These pages dynamically download the
-information extracted from daemon and perform the rendering the in a nice looking format using:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://twitter.github.io/bootstrap/">bootstrap</a></li>
-<li><a class="reference external" href="http://jquery.com/">jquery</a></li>
-<li><a class="reference external" href="https://code.google.com/p/jsqrencode/">jsqrencode</a></li>
-<li><a class="reference external" href="http://javascriptrrd.sourceforge.net/">javascriptrrd</a></li>
-<li><a class="reference external" href="http://www.flotcharts.org/">flot</a></li>
-<li><a class="reference external" href="http://www.justgage.com">justgage</a> and <a class="reference external" href="http://raphaeljs.com">raphael</a></li>
-<li><a class="reference external" href="https://github.com/rubaxa/Sortable">Sortable</a></li>
-</ul>
-<p>This architecture has the advantage in an embedded architecture to offload the server task and delegate
-processing and rendering to the client.</p>
-<p>Some data are stored into client browser into <em>local storage</em>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>Embedded server doesn&#8217;t provide access control or authentication.</p>
-<p class="last">Refer to <a class="reference external" href="34_autentication.html#authentication-and-secure-access">Authentication and secure access</a>
-to see how to use <strong>nginx</strong> to secure <strong>RPi-Monitor</strong></p>
+<div class="section" id="startup-script">
+<h2>Startup script<a class="headerlink" href="#startup-script" title="Permalink to this headline">¶</a></h2>
+<p><strong>RPi-Monitor</strong> is configured to start automatically. <code class="docutils literal"><span class="pre">/etc/init.d/rpimonitor</span></code>
+and link in runlevel startup directory (<code class="docutils literal"><span class="pre">/etc/rc?.d/</span></code>) do the job.
+This script can be executed with the following parameters:</p>
+<dl class="docutils">
+<dt>start</dt>
+<dd>Start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>stop</dt>
+<dd>Stop <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>restart</dt>
+<dd>Stop and start <code class="docutils literal"><span class="pre">rpimonitord</span></code> daemon</dd>
+<dt>status</dt>
+<dd>Show <code class="docutils literal"><span class="pre">rpimonitord</span></code> status</dd>
+<dt>update</dt>
+<dd>Update &#8216;packages to be installed&#8217; list. This information is displayed in default
+configuration of Web interface</dd>
+<dt>install_auto_package_status_update</dt>
+<dd>Add a script to automatically call package update script when <code class="docutils literal"><span class="pre">apt</span></code> commands are executed</dd>
+<dt>remove_auto_package_status_update</dt>
+<dd>Remove script automatically call for package update</dd>
+</dl>
+</div>
+<div class="section" id="manpages">
+<h2>Manpages<a class="headerlink" href="#manpages" title="Permalink to this headline">¶</a></h2>
+<p>See also <strong>RPi-Monitor</strong> manpages :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">rpimonitor</span>
+<span class="n">man</span> <span class="n">rpimonitor</span><span class="o">-</span><span class="n">data</span>
+<span class="n">man</span> <span class="n">rpimonitor</span><span class="o">-</span><span class="n">daemon</span>
+</pre></div>
 </div>
 </div>
 </div>

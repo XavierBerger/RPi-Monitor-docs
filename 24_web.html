@@ -218,6 +218,31 @@
             
   <div class="section" id="web-interface-configuration">
 <h1>Web interface configuration<a class="headerlink" href="#web-interface-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The presentation of the information is performed by HTML5 pages. These pages
+dynamically download the information extracted from daemon and perform the
+rendering the in a nice looking format using:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://twitter.github.io/bootstrap/">bootstrap</a></li>
+<li><a class="reference external" href="http://jquery.com/">jquery</a></li>
+<li><a class="reference external" href="https://code.google.com/p/jsqrencode/">jsqrencode</a></li>
+<li><a class="reference external" href="http://javascriptrrd.sourceforge.net/">javascriptrrd</a></li>
+<li><a class="reference external" href="http://www.flotcharts.org/">flot</a></li>
+<li><a class="reference external" href="http://www.justgage.com">justgage</a> and <a class="reference external" href="http://raphaeljs.com">raphael</a></li>
+<li><a class="reference external" href="https://github.com/rubaxa/Sortable">Sortable</a></li>
+</ul>
+<p>This architecture has the advantage in an embedded architecture to offload the server task and delegate
+processing and rendering to the client.</p>
+<p>Some data are stored into client browser into <em>local storage</em>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Embedded server doesn&#8217;t provide access control or authentication.</p>
+<p class="last">Refer to <a class="reference external" href="34_autentication.html#authentication-and-secure-access">Authentication and secure access</a>
+to see how to use <strong>nginx</strong> to secure <strong>RPi-Monitor</strong></p>
+</div>
+<p>The following chapter is explaining how to customize the web interface.</p>
+</div>
 <div class="section" id="friends">
 <h2>Friends<a class="headerlink" href="#friends" title="Permalink to this headline">¶</a></h2>
 <p>Friends are defining a displayed title and a link reachable from a
